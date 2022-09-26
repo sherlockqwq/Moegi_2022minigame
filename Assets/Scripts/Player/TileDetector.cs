@@ -7,18 +7,41 @@ public class TileDetector : MonoBehaviour
     public GameObject tile ;
     public bool canGet = false ; 
 
+    public bool getState(){
+        return canGet ; 
+    }
+
+    public GameObject getTile(){
+        return gameObject ; 
+    }
+
     /// <summary>
     /// Sent when an incoming collider makes contact with this object's
     /// collider (2D physics only).
     /// </summary>
     /// <param name="other">The Collision2D data associated with this collision.</param>
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(tile != null){
-            if(other.CompareTag("tile")){
+            if(other.CompareTag("Tile")){
                 tile = other.gameObject;
-                canGet = false ; 
-            }
+                canGet = true ;
+//            Debug.Log(this.name + " >>>>>>>>> " + other.name);
+        }
+        
+    }
+
+    /// <summary>
+    /// Sent when another object leaves a trigger collider attached to
+    /// this object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Tile"))
+        {
+            tile = null;
+            canGet = false;
+//            Debug.Log(this.name + " Leave " + other.name);
         }
     }
 }
