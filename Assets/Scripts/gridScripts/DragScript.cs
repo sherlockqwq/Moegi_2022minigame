@@ -54,5 +54,6 @@ public class DragScript : MonoBehaviour
     {
         Cursor.visible = true;
         isDragable = false;
+        rb.enabled = false;
     }
 }
