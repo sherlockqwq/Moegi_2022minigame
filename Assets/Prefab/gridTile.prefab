@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  offsetColor: {r: 0.1764706, g: 0.1764706, b: 0.1764706, a: 1}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  offsetColor: {r: 1, g: 1, b: 1, a: 1}
   TileRenderer: {fileID: 7242758730851647334}
 --- !u!61 &860221408105311388
 BoxCollider2D:
