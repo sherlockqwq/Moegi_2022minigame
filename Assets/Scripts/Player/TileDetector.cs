@@ -25,7 +25,8 @@ public class TileDetector : MonoBehaviour
             if(other.CompareTag("Tile")){
                 tile = other.gameObject;
                 canGet = true ;
-//            Debug.Log(this.name + " >>>>>>>>> " + other.name);
+            //            Debug.Log(this.name + " >>>>>>>>> " + other.name);
+            other.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
         
     }
@@ -41,7 +42,9 @@ public class TileDetector : MonoBehaviour
         {
             tile = null;
             canGet = false;
-//            Debug.Log(this.name + " Leave " + other.name);
+            //            Debug.Log(this.name + " Leave " + other.name);
+            other.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+
         }
     }
 }
