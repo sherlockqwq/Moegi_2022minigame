@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(BoxCollider2D))]
 public class DragScript : MonoBehaviour
 {
     [SerializeField] private bool isDraging=false;
     [SerializeField] private bool isDragable=true;
     [SerializeField] private bool snapToGrid = true;
     [SerializeField] private float gridSize=1f;
+    private BoxCollider2D rb;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        rb = GetComponent<BoxCollider2D>();
+    }
     void Start()
     {
-        
+        rb.isTrigger = true;
     }
 
     // Update is called once per frame
@@ -34,5 +39,6 @@ public class DragScript : MonoBehaviour
     private void OnMouseUp()
     {
         Cursor.visible = true;
+        isDragable = false;
     }
 }
