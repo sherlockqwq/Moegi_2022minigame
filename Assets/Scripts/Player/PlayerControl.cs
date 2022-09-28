@@ -54,7 +54,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (down.canGet)
             {
-                transform.localPosition = down.tile.transform.localPosition;
+                transform.localPosition = down.tile.transform.position;
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, down.tile.transform.localPosition, step);
                 result = true;
 
@@ -65,7 +65,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (up.canGet)
             {
-                transform.localPosition = up.tile.transform.localPosition;
+                transform.localPosition = up.tile.transform.position;
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, up.tile.transform.localPosition, step);
                 result = true;
 
@@ -76,7 +76,8 @@ public class PlayerControl : MonoBehaviour
         {
             if (left.canGet)
             {
-                transform.localPosition = left.tile.transform.localPosition;
+                //transform.position = transform.TransformPoint(left.tile.transform.localPosition);
+                transform.localPosition = left.tile.transform.position;
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, left.tile.transform.localPosition, step);
                 result = true;
 
@@ -87,7 +88,8 @@ public class PlayerControl : MonoBehaviour
         {
             if (right.canGet)
             {
-                transform.localPosition = right.tile.transform.localPosition;
+                //transform.position = transform.TransformPoint(right.tile.transform.localPosition);
+                transform.localPosition = right.tile.transform.position;
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, right.tile.transform.localPosition, step);
                 result = true; 
             }
