@@ -4,10 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class DragScript : MonoBehaviour
 {
-    [SerializeField] private bool isDraging=false;
-    [SerializeField] private bool isDragable=true;
+    [SerializeField] public bool isDraging=false;
+    [SerializeField] public bool isDragable=true;
     [SerializeField] private bool snapToGrid = true;
     [SerializeField] private float gridSize=1f;
+    [SerializeField] private GameObject dragObject;
+
+
     private BoxCollider2D rb;
     // Start is called before the first frame update
     private void Awake()
@@ -24,11 +27,22 @@ public class DragScript : MonoBehaviour
     {
         
     }
+    private void OnMouseDown()
+    {
+        /*if (!isDragable)
+            return;
+        GameObject dragObject = Instantiate(gameObject);
+        dragObject.GetComponent<DragScript>().isDraging = true;
+        dragObject.GetComponent<DragScript>().isDragable = true;*/
+
+
+    }
     private void OnMouseDrag()
     {
         if (!isDragable)
             return;
         Cursor.visible = false;
+        
         transform.position =(Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (gridSize > 0&&snapToGrid)
         {
