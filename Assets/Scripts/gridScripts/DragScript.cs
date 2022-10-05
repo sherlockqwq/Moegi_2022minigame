@@ -48,6 +48,23 @@ public class DragScript : MonoBehaviour
         {
             transform.position = new Vector2(Mathf.RoundToInt(transform.position.x/gridSize)*gridSize, Mathf.RoundToInt(transform.position.y/gridSize)*gridSize);
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 90));
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var child = transform.GetChild(i).gameObject;
+                child.transform.rotation = Quaternion.Euler(child.transform.rotation.eulerAngles + new Vector3(0, 0, -90));
+
+            }
+            /*Transform[] childrenTransform = GetComponentsInChildren<Transform>();
+
+            foreach (var child in childrenTransform)
+            {
+                child.rotation = Quaternion.Euler(child.rotation.eulerAngles + new Vector3(0, 0, -90));
+            }*/
+
+        }
     }
     
     private void OnMouseUp()

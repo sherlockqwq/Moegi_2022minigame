@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(BoxCollider2D))]
 public class Tile : MonoBehaviour
 {
-    [SerializeField] private Color baseColor, offsetColor;
-    [SerializeField] private SpriteRenderer TileRenderer;
+     private Color baseColor, offsetColor;
+     private SpriteRenderer TileRenderer;
+    private BoxCollider2D coll;
     private void Awake()
     {
         TileRenderer = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
+
     }
     public void Init(bool isoffset)
     {
 
-        TileRenderer.color = isoffset ? offsetColor : baseColor;
-        
+        /*TileRenderer.color = isoffset ? offsetColor : baseColor;
+        */
     }
 
 }
