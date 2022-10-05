@@ -41,8 +41,8 @@ public class DragScript : MonoBehaviour
     {
         if (TileManager.Instance.dragNumInScene <=0|| !isDragable)
             return;
-        /*Cursor.visible = false;*/
-        
+        Cursor.visible = false;
+
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (gridSize > 0&&snapToGrid)
