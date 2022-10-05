@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class DragScript : MonoBehaviour
 {
-    [SerializeField] public bool isDraging=false;
+    
     [SerializeField] public bool isDragable=true;
     [SerializeField] private bool snapToGrid = true;
     [SerializeField] private float gridSize=1f;
@@ -39,7 +39,7 @@ public class DragScript : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (!isDragable)
+        if (TileManager.Instance.dragNumInScene <=0|| !isDragable)
             return;
         Cursor.visible = false;
         
@@ -55,5 +55,6 @@ public class DragScript : MonoBehaviour
         Cursor.visible = true;
         isDragable = false;
         rb.enabled = false;
+        TileManager.Instance.dragNumInScene -= 1;
     }
 }
