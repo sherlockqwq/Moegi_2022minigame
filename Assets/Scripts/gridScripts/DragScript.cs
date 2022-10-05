@@ -8,7 +8,7 @@ public class DragScript : MonoBehaviour
     [SerializeField] public bool isDragable=true;
     [SerializeField] private bool snapToGrid = true;
     [SerializeField] private float gridSize=1f;
-    [SerializeField] private GameObject dragObject;
+
 
 
     private BoxCollider2D rb;
@@ -41,9 +41,10 @@ public class DragScript : MonoBehaviour
     {
         if (TileManager.Instance.dragNumInScene <=0|| !isDragable)
             return;
-        Cursor.visible = false;
+        /*Cursor.visible = false;*/
         
-        transform.position =(Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (gridSize > 0&&snapToGrid)
         {
             transform.position = new Vector2(Mathf.RoundToInt(transform.position.x/gridSize)*gridSize, Mathf.RoundToInt(transform.position.y/gridSize)*gridSize);

@@ -247,52 +247,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &114668161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 114668162}
-  - component: {fileID: 114668163}
-  m_Layer: 0
-  m_Name: tileManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &114668162
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114668161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5074973, y: 2.8126345, z: -0.07857682}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114668163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114668161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b021751141daffc4c851d46b0ca9cb6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragNumInScene: 0
-  dragNumberData: {fileID: 11400000, guid: d0bb445de4f322b46a570750e68071c2, type: 2}
 --- !u!1 &119434874
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +900,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &623817273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2074,7 +2027,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &935738732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2153,7 +2105,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1000722322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4032,7 +3983,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1817385320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4130,7 +4080,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1848683208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4438,7 +4387,6 @@ MonoBehaviour:
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1913664307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4644,3 +4592,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &237521102224192646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5074973
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8126345
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07857682
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612807, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Name
+      value: TileManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
