@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc980492bb3eba0458576667b3e3040e, type: 3}
+  m_Name: sceneDragNumber
+  m_EditorClassIdentifier: 
+  sceneDragNumber:
+    m_keys:
+    - Test_Demo
+    - TestDemo2
+    m_values:
+    - 4
+    - 3

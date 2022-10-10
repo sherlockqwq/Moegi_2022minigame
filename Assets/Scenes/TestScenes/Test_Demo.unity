@@ -195,9 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 19687363}
 --- !u!212 &19687363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -322,9 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 119434878}
 --- !u!212 &119434878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -449,9 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 162354112}
 --- !u!212 &162354112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -576,9 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 277430093}
 --- !u!212 &277430093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -703,9 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 497154086}
 --- !u!212 &497154086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -830,9 +815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 598778440}
 --- !u!212 &598778440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -915,11 +897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &623817273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -954,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623817271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.61, y: 1, z: 0}
+  m_LocalPosition: {x: 9.61, y: -2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1037,9 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 632594714}
 --- !u!212 &632594714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1164,9 +1141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 635620637}
 --- !u!212 &635620637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1291,9 +1265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 657766818}
 --- !u!212 &657766818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1418,9 +1389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 752139040}
 --- !u!212 &752139040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1602,9 +1570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 801810538}
 --- !u!212 &801810538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1729,9 +1694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 815222240}
 --- !u!212 &815222240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1856,9 +1818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 821572058}
 --- !u!212 &821572058
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1983,9 +1942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 853570706}
 --- !u!212 &853570706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2068,11 +2024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &935738732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2148,11 +2102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1000722322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2327,9 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1044610265}
 --- !u!212 &1044610265
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2454,9 +2403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1159935139}
 --- !u!212 &1159935139
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2581,9 +2527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1219980897}
 --- !u!212 &1219980897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2708,9 +2651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1238589793}
 --- !u!212 &1238589793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2835,9 +2775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1272099110}
 --- !u!212 &1272099110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2962,9 +2899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1333278905}
 --- !u!212 &1333278905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3089,9 +3023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1338281038}
 --- !u!212 &1338281038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3273,9 +3204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1444473651}
 --- !u!212 &1444473651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3457,9 +3385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1528476412}
 --- !u!212 &1528476412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3584,9 +3509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1537610337}
 --- !u!212 &1537610337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3768,9 +3690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1645201395}
 --- !u!212 &1645201395
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3979,9 +3898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1683427790}
 --- !u!212 &1683427790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4064,11 +3980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1817385320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4163,11 +4077,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1848683208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4266,9 +4178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1851598709}
 --- !u!212 &1851598709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4393,9 +4302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 1908972356}
 --- !u!212 &1908972356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4478,11 +4384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ecc897caf5f342825e506c483ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraging: 0
   isDragable: 1
   snapToGrid: 1
   gridSize: 1
-  dragObject: {fileID: 0}
 --- !u!61 &1913664307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4600,9 +4504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  offsetColor: {r: 1, g: 1, b: 1, a: 1}
-  TileRenderer: {fileID: 2033278015}
 --- !u!212 &2033278015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4691,3 +4592,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &237521102224192646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5074973
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8126345
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07857682
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237521102185612807, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Name
+      value: TileManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}

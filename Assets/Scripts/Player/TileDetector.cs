@@ -43,7 +43,7 @@ public class TileDetector : MonoBehaviour
             tile = null;
             canGet = false;
             //            Debug.Log(this.name + " Leave " + other.name);
-            other.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+            /*other.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);*/
 
         }
     }

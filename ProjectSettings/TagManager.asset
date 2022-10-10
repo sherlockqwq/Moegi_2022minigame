@@ -16,8 +16,8 @@ TagManager:
   - TileLayer
   - 
   - 
-  - 
-  - 
+  - Obstacle
+  - Trigger
   - 
   - 
   - 
