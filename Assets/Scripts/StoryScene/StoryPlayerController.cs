@@ -11,32 +11,32 @@ namespace StoryScene {
 	public class StoryPlayerController : MonoBehaviour {
 		[SerializeField] private KeyCode _leftKey = KeyCode.A, _rightKey = KeyCode.D;
 		[SerializeField] private KeyCode _interactKey = KeyCode.E, _deleteKey = KeyCode.Q;
+		[SerializeField] private float _speed = 1f;
 
 		public static StoryPlayerController Current { get; private set; }
 
 		void Awake() {
 			Current = this;
-			ResumeAll();
 		}
+
+		void Update() {
+			if (!Paused) {
+				Move();
+			}
+		}
+
+		#region 移动
+
+		private void Move() {
+			var dir = new Vector2((Input.GetKey(_leftKey) ? -1 : 0) + (Input.GetKey(_rightKey) ? 1 : 0), 0);
+			transform.Translate(dir * _speed * Time.deltaTime);
+		}
+
+		#endregion
 
 		#region 暂停相关
 
-		public static bool Controlling { get; private set; } = true;
-		private static int _controlIndex = 0;
-		private static HashSet<int> _pauseList = new HashSet<int>();
-		public static void Pause(out int pauseId) {
-			Controlling = false;
-			pauseId = ++_controlIndex;
-			_pauseList.Add(_controlIndex);
-		}
-		public static void Resume(int pauseId) {
-			_pauseList.Remove(pauseId);
-			Controlling = _pauseList.Count == 0;
-		}
-		public static void ResumeAll() {
-			_pauseList.Clear();
-			Controlling = true;
-		}
+		public bool Paused => DialogManager.Showing;
 
 		#endregion
 	}
