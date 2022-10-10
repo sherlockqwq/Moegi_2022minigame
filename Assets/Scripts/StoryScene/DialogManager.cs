@@ -25,12 +25,18 @@ namespace StoryScene {
 		[SerializeField] private KeyCode[] _skipKeys = new KeyCode[] { KeyCode.LeftControl };
 
 		// TODO 这里序列化各种立绘
+		[SerializeField] private Sprite _doctorAvatar;
 
 		private void SetSpeaker(DialogMsg message) {
 			_avatarImg.sprite = message.avatar.ToLower() switch {
+				"doctor" => _doctorAvatar,
 				_ => null
 			};
-			_avatarImg.enabled = _avatarImg.sprite != null;
+			if (_avatarImg.sprite != null) {
+				_avatarImg.enabled = true;
+				_avatarImg.SetNativeSize();
+			}
+			else _avatarImg.enabled = false;
 			_nameText.text = message.name;
 		}
 
