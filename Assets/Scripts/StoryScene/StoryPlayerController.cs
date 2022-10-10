@@ -17,13 +17,16 @@ namespace StoryScene {
 		[SerializeField] private LayerMask _triggerLayer;
 		private Collider2D[] _triggerBuffer;
 
+
 		public static StoryPlayerController Current { get; private set; }
+		public static StoryPlayerModel Model { get; private set; }
 
 		private Rigidbody2D _rb2d;
 		private Collider2D _collider2d;
 
 		void Awake() {
 			Current = this;
+			Model = GetComponentInChildren<StoryPlayerModel>();
 			_rb2d = GetComponent<Rigidbody2D>();
 			_collider2d = GetComponent<Collider2D>();
 			_triggerBuffer = new Collider2D[_triggerBufferSize];
@@ -44,10 +47,12 @@ namespace StoryScene {
 		private void Move() {
 			var dir = new Vector2((Input.GetKey(_leftKey) ? -1 : 0) + (Input.GetKey(_rightKey) ? 1 : 0), 0);
 			_rb2d.velocity = dir * _speed;
+			Model.SetAnimVelocity(_rb2d.velocity.x);
 		}
 
 		private void Stop() {
 			_rb2d.velocity = Vector2.zero;
+			Model.SetAnimVelocity(0);
 		}
 
 		#endregion
