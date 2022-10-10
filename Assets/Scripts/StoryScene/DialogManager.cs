@@ -5,68 +5,82 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using EasyTools;
+using NaughtyAttributes;
+using System;
+using Newtonsoft.Json;
 
 namespace StoryScene {
 
 	public class DialogManager : MonoBehaviour {
-		public static bool Showing { get; private set; } = false;
 
-		[SerializeField] private GameObject panel;
-		[SerializeField] private Image avatar;
+		public static bool Showing { get; private set; } = false;
+		public static DialogManager Current { get; private set; }
+
+		[SerializeField] private GameObject _panel;
+		[SerializeField] private Image _avatarImg;
+		[SerializeField] private TMP_Text _nameText;
+		[SerializeField] private TMP_Text _contentText;
+		[SerializeField] private AudioClip _sfx;
+		[SerializeField] private KeyCode[] _nextKeys = new KeyCode[] { KeyCode.Mouse0, KeyCode.Mouse1 };
+		[SerializeField] private KeyCode[] _skipKeys = new KeyCode[] { KeyCode.LeftControl };
 
 		// TODO 这里序列化各种立绘
+		[SerializeField] private Sprite _doctorAvatar;
 
-		[SerializeField] private AudioClip _sfx;
-		private TMP_Text tmp;
-
-		private struct Dialogue { public string from, content; }
-		private Queue<(string From, string Content)> dialogues = new Queue<(string, string)>();
-
-
-		private void Awake() {
-			tmp = panel.GetComponentInChildren<TMP_Text>();
-			panel.SetActive(false);
-		}
-
-		private Sprite GetAvatar(string from) {
-			return from.ToLower() switch {
+		private void SetSpeaker(DialogMsg message) {
+			_avatarImg.sprite = message.avatar.ToLower() switch {
+				"doctor" => _doctorAvatar,
 				_ => null
 			};
+			if (_avatarImg.sprite != null) {
+				_avatarImg.enabled = true;
+				_avatarImg.SetNativeSize();
+			}
+			else _avatarImg.enabled = false;
+			_nameText.text = message.name;
+		}
+
+		private Queue<DialogMsg> dialogues = new Queue<DialogMsg>();
+
+		private void Awake() {
+			Current = this;
+			_contentText = _panel.GetComponentInChildren<TMP_Text>();
+			_panel.SetActive(false);
 		}
 
 		public void Show(params DialogMsg[] messages) => DelayShow(0, messages);
 		public void DelayShow(float delay, params DialogMsg[] messages) {
 			foreach (var dialogue in messages) {
-				if (!dialogue.IsEmpty) dialogues.Enqueue(dialogue.Content);
+				dialogues.Enqueue(dialogue);
 			}
-			if (!Showing && dialogues.Count > 0) StartCoroutine(ShowDialogC(delay));
+			if (!Showing && dialogues.Count > 0) ShowDialogC(delay).ApplyTo(this);
 		}
 
 		private int myPauseId;
 		IEnumerator ShowDialogC(float delay) {
 			Showing = true;
-			StoryPlayerController.Pause(out myPauseId);
 
 			yield return Wait.Seconds(delay);
 
-			panel.SetActive(true);
-			while (dialogues.TryDequeue(out var dialogue)) {
-				avatar.sprite = GetAvatar(dialogue.From);
-				avatar.enabled = avatar.sprite != null;
+			_panel.SetActive(true);
+			while (dialogues.TryDequeue(out var message)) {
+				SetSpeaker(message);
 
-				tmp.text = "";
+				_contentText.text = "";
 				yield return null;
 				StartSFX();
-				for (int count = 0; count < dialogue.Content.Length; count++) {
+
+				for (int count = 0; count < message.content.Length; count++) {
 					yield return Wait.Seconds(0.05f, CanSkip);
 
 					if (CanSkip()) {
-						tmp.text = dialogue.Content;
+						_contentText.text = message.content;
 						yield return null;
 						break;
 					}
-					tmp.text += dialogue.Content[count];
+					_contentText.text += message.content[count];
 				}
+
 				StopSFX();
 				yield return Wait.Until(CanSkip);
 			}
@@ -74,13 +88,12 @@ namespace StoryScene {
 			Hide();
 		}
 
-		private bool CanSkip() => Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKey(KeyCode.LeftControl);
+		private bool CanSkip() => _nextKeys.Any(c => Input.GetKeyDown(c)) || _skipKeys.Any(c => Input.GetKey(c));
 
 		public void Hide() {
 			StopSFX();
 
-			panel.SetActive(false);
-			StoryPlayerController.Resume(myPauseId);
+			_panel.SetActive(false);
 			if (Showing) {
 				StopAllCoroutines();
 				dialogues.Clear();
@@ -89,16 +102,15 @@ namespace StoryScene {
 		}
 
 		public void ShowAsFloat(DialogMsg message) {
-			avatar.sprite = GetAvatar(message.Content.From);
-			avatar.enabled = avatar.sprite != null;
-			tmp.text = message.Content.Content;
-			panel.SetActive(true);
-			panel.GetComponent<Image>().enabled = false;
+			SetSpeaker(message);
+			_contentText.text = message.content;
+			_panel.SetActive(true);
+			_panel.GetComponent<Image>().enabled = false;
 		}
 
 		public void HideFloat() {
-			panel.GetComponent<Image>().enabled = true;
-			panel.SetActive(false);
+			_panel.GetComponent<Image>().enabled = true;
+			_panel.SetActive(false);
 		}
 
 		#region 音效相关
@@ -130,8 +142,7 @@ namespace StoryScene {
 		#endregion
 	}
 
-	public class DialogMsg : Dictionary<string, string> {
-		public bool IsEmpty => base.Count <= 0;
-		public (string From, string Content) Content => (base.Keys.First(), base[base.Keys.First()]);
+	public class DialogMsg {
+		public string avatar = string.Empty, name = string.Empty, content = string.Empty, position = "left";
 	}
 }
