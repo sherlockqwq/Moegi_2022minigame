@@ -25,11 +25,13 @@ namespace StoryScene {
 		[SerializeField] private KeyCode[] _skipKeys = new KeyCode[] { KeyCode.LeftControl };
 
 		// TODO 这里序列化各种立绘
-		[SerializeField] private Sprite _doctorAvatar;
+		[SerializeField] private Sprite _doctorAvatar, _sonAvatar, _wifeAvatar;
 
 		private void SetSpeaker(DialogMsg message) {
 			_avatarImg.sprite = message.avatar.ToLower() switch {
 				"doctor" => _doctorAvatar,
+				"son" => _sonAvatar,
+				"wife" => _wifeAvatar,
 				_ => null
 			};
 			if (_avatarImg.sprite != null) {
@@ -44,11 +46,17 @@ namespace StoryScene {
 
 		private void Awake() {
 			Current = this;
-			_contentText = _panel.GetComponentInChildren<TMP_Text>();
 			_panel.SetActive(false);
 		}
 
+		/// <summary>
+		/// 显示一串对话内容
+		/// </summary>
 		public void Show(params DialogMsg[] messages) => DelayShow(0, messages);
+
+		/// <summary>
+		/// 在延时一段时间后显示一串对话内容
+		/// </summary>
 		public void DelayShow(float delay, params DialogMsg[] messages) {
 			foreach (var dialogue in messages) {
 				dialogues.Enqueue(dialogue);
@@ -56,7 +64,7 @@ namespace StoryScene {
 			if (!Showing && dialogues.Count > 0) ShowDialogC(delay).ApplyTo(this);
 		}
 
-		private int myPauseId;
+		// 显示对话的协程
 		IEnumerator ShowDialogC(float delay) {
 			Showing = true;
 
@@ -90,6 +98,9 @@ namespace StoryScene {
 
 		private bool CanSkip() => _nextKeys.Any(c => Input.GetKeyDown(c)) || _skipKeys.Any(c => Input.GetKey(c));
 
+		/// <summary>
+		/// 隐藏对话框
+		/// </summary>
 		public void Hide() {
 			StopSFX();
 
@@ -101,6 +112,9 @@ namespace StoryScene {
 			}
 		}
 
+		/// <summary>
+		/// 以悬浮窗方式显示一条对话（不影响点击、移动等）
+		/// </summary>
 		public void ShowAsFloat(DialogMsg message) {
 			SetSpeaker(message);
 			_contentText.text = message.content;
@@ -108,6 +122,9 @@ namespace StoryScene {
 			_panel.GetComponent<Image>().enabled = false;
 		}
 
+		/// <summary>
+		/// 隐藏以悬浮窗方式显示的对话框
+		/// </summary>
 		public void HideFloat() {
 			_panel.GetComponent<Image>().enabled = true;
 			_panel.SetActive(false);
@@ -125,7 +142,7 @@ namespace StoryScene {
 				_audio.playOnAwake = false;
 				_audio.Stop();
 			}
-			_dialogCoroutine = PlaySFX().ApplyTo(this);
+			if (_sfx != null) _dialogCoroutine = PlaySFX().ApplyTo(this);
 		}
 		private void StopSFX() {
 			if (_dialogCoroutine != null) StopCoroutine(_dialogCoroutine);
@@ -142,7 +159,17 @@ namespace StoryScene {
 		#endregion
 	}
 
+	/// <summary>
+	/// 一条对话内容
+	/// </summary>
 	public class DialogMsg {
-		public string avatar = string.Empty, name = string.Empty, content = string.Empty, position = "left";
+		/// <summary> 立绘 </summary>
+		public string avatar = string.Empty;
+		/// <summary> 显示的名称 </summary>
+		public string name = string.Empty;
+		/// <summary> 对话内容 </summary>
+		public string content = string.Empty;
+		/// <summary> 立绘位置 </summary>
+		public string position = "left";
 	}
 }

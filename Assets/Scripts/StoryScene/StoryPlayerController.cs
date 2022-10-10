@@ -13,18 +13,20 @@ namespace StoryScene {
 		[SerializeField] private float _speed = 1f;
 
 		[Header("触发器")]
-		[SerializeField] private Vector2 _triggerSize = Vector2.one;
 		[SerializeField] private int _triggerBufferSize = 10;
 		[SerializeField] private LayerMask _triggerLayer;
 		private Collider2D[] _triggerBuffer;
 
+
 		public static StoryPlayerController Current { get; private set; }
+		public static StoryPlayerModel Model { get; private set; }
 
 		private Rigidbody2D _rb2d;
 		private Collider2D _collider2d;
 
 		void Awake() {
 			Current = this;
+			Model = GetComponentInChildren<StoryPlayerModel>();
 			_rb2d = GetComponent<Rigidbody2D>();
 			_collider2d = GetComponent<Collider2D>();
 			_triggerBuffer = new Collider2D[_triggerBufferSize];
@@ -35,6 +37,7 @@ namespace StoryScene {
 				Move();
 				CheckInteractable();
 			}
+			else Stop();
 			if (Input.GetKeyDown(KeyCode.Minus)) transform.Translate(-5, 0, 0);
 			if (Input.GetKeyDown(KeyCode.Equals)) transform.Translate(5, 0, 0);
 		}
@@ -44,6 +47,12 @@ namespace StoryScene {
 		private void Move() {
 			var dir = new Vector2((Input.GetKey(_leftKey) ? -1 : 0) + (Input.GetKey(_rightKey) ? 1 : 0), 0);
 			_rb2d.velocity = dir * _speed;
+			Model.SetAnimVelocity(_rb2d.velocity.x);
+		}
+
+		private void Stop() {
+			_rb2d.velocity = Vector2.zero;
+			Model.SetAnimVelocity(0);
 		}
 
 		#endregion
@@ -51,7 +60,7 @@ namespace StoryScene {
 		#region 交互
 
 		private void CheckInteractable() {
-			var count = Physics2D.OverlapBoxNonAlloc(_rb2d.position, _triggerSize, 0, _triggerBuffer, _triggerLayer);
+			var count = Physics2D.OverlapPointNonAlloc(_rb2d.position, _triggerBuffer, _triggerLayer);
 			IPlayerInteractable interactable = null;
 			for (int i = 0; i < count; i++) {
 				if (_triggerBuffer[i].TryGetComponent<IPlayerInteractable>(out interactable)) {
@@ -75,8 +84,5 @@ namespace StoryScene {
 
 		#endregion
 
-		void OnDrawGizmos() {
-			Gizmos.DrawWireCube(transform.position, _triggerSize);
-		}
 	}
 }
