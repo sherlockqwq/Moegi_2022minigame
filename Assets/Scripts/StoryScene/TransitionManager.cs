@@ -38,23 +38,19 @@ namespace StoryScene {
 
 		[SerializeField] private Image _mask;
 
-		public void MaskFadeIn(float fadeTime = 0.5f) {
+		public void MaskFadeIn(float fadeTime = 0.5f) => MaskFadeIn(Color.black, fadeTime);
+		public void MaskFadeIn(Color maskColor, float fadeTime = 0.5f) {
 			StopFade();
+			_mask.color = maskColor;
 			ShowMaskCoroutine(fadeTime).ApplyTo(this);
 		}
-		public void MaskFadeOut(float fadeTime = 0.5f) {
+		public void MaskFadeOut(float fadeTime = 0.5f) => MaskFadeOut(Color.black, fadeTime);
+		public void MaskFadeOut(Color maskColor, float fadeTime = 0.5f) {
 			StopFade();
+			_mask.color = maskColor;
 			HideMaskCoroutine(fadeTime).ApplyTo(this);
 		}
 		public void StopFade() => StopAllCoroutines();
-
-		public void EnableMask() {
-			_mask.enabled = true;
-			_mask.SetA(1);
-		}
-		public void DisableMask() {
-			_mask.enabled = false;
-		}
 
 		public IEnumerator ShowMaskCoroutine(float fadeTime = 0.5f) {
 			_mask.enabled = true;
@@ -62,6 +58,14 @@ namespace StoryScene {
 		}
 		public IEnumerator HideMaskCoroutine(float fadeTime = 0.5f) {
 			yield return EasyTools.Gradient.Linear(fadeTime, d => _mask.SetA(1 - d));
+			_mask.enabled = false;
+		}
+
+		public void EnableMask() {
+			_mask.enabled = true;
+			_mask.SetA(1);
+		}
+		public void DisableMask() {
 			_mask.enabled = false;
 		}
 	}
