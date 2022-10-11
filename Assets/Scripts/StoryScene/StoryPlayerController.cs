@@ -8,9 +8,13 @@ namespace StoryScene {
 
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class StoryPlayerController : MonoBehaviour {
-		[SerializeField] private KeyCode _leftKey = KeyCode.A, _rightKey = KeyCode.D;
-		[SerializeField] private KeyCode _interactKey = KeyCode.E, _deleteKey = KeyCode.Q;
+		[Header("移动")]
 		[SerializeField] private float _speed = 1f;
+		[SerializeField] private KeyCode _leftKey = KeyCode.A, _rightKey = KeyCode.D;
+
+		[Header("交互")]
+		[SerializeField] private GameObject _interactTip;
+		[SerializeField] private KeyCode _interactKey = KeyCode.E, _deleteKey = KeyCode.Q;
 
 		[Header("触发器")]
 		[SerializeField] private int _triggerBufferSize = 10;
@@ -64,7 +68,7 @@ namespace StoryScene {
 			IPlayerInteractable interactable = null;
 			for (int i = 0; i < count; i++) {
 				if (_triggerBuffer[i].TryGetComponent<IPlayerInteractable>(out interactable)) {
-					// TODO 显示交互图标
+					_interactTip.SetActive(true);
 					if (Input.GetKeyDown(_interactKey)) {
 						interactable.Interact(this);
 					}
@@ -72,7 +76,7 @@ namespace StoryScene {
 				}
 			}
 			if (interactable == null) {
-				// TODO 隐藏交互图标
+				_interactTip.SetActive(false);
 			}
 		}
 
