@@ -14,6 +14,9 @@ namespace EasyTools {
 
 		public static event Action onLangSwitched = delegate { };
 
+		/// <summary>
+		/// 切换到指定的语言
+		/// </summary>
 		public static bool SwitchLang(string lang) {
 			if (SetLang(lang)) {
 				onLangSwitched();
@@ -34,12 +37,19 @@ namespace EasyTools {
 			return true;
 		}
 
+		/// <summary>
+		/// 从指定的翻译文件中获取指定键所对应的值（以指定的类型返回）
+		/// </summary>
 		public static T Get<T>(string fileName, string key) {
 			if (_lib == null) ResetDefaultLang();
 			if (_lib.TryGetValue(fileName, out var dict) && dict.TryGetValue(key, out var value)) return value.To<T>();
 			else return default;
 		}
 
+		/// <summary>
+		/// 从指定的翻译文件中获取指定键所对应的值，以指定的类型赋值给 value
+		/// </summary>
+		/// <returns> 是否获取到 </returns>
 		public static bool TryGet<T>(string fileName, string key, out T value) {
 			if (_lib == null) ResetDefaultLang();
 			if (_lib.TryGetValue(fileName, out var dict) && dict.TryGetValue(key, out var v)) {
@@ -51,15 +61,6 @@ namespace EasyTools {
 				return false;
 			}
 		}
-
-		public static T GetTutorial<T>(string key) => Get<T>("Tutorial", key);
-		public static T GetSleep<T>(string key) => Get<T>("Sleep", key);
-		public static T GetFloat<T>(string key) => Get<T>("Float", key);
-		public static T GetBook<T>(string key) => Get<T>("Book", key);
-		public static T GetDailyDialog<T>(string key) => Get<T>("DailyDialog", key);
-		public static T GetWindow<T>(string key) => Get<T>("Window", key);
-		public static T GetInteractable<T>(string key) => Get<T>("InteractableMessage", key);
-		public static T GetDream<T>(string key) => Get<T>("Dream", key);
 
 
 		private static T To<T>(this object obj) => FromJson<T>(ToJson(obj));

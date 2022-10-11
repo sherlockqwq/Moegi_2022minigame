@@ -1,0 +1,75 @@
+{
+	"LeftDoor": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "现在还没有下班。"
+		}
+	],
+	"Computer": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "本部发来的分析资料上写着该患者脑内的记忆信息已损坏。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "当年手术的失误导致患者记忆信息位置出现错误，过去的信息复制到了近年的记忆里......"
+		}
+	],
+	"Documentations": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "症状表现......记忆丧失、行为退缩、感情淡漠、缺乏注意力......"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "据患者家属描述，患者总将身边的人认成其妻子，生活已经无法自理。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "看来只要删除掉妻子这个错误信息元就好了。"
+		}
+	],
+	"Son": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "安全起见，信息修复需要有家属全程陪同。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "必须全程陪同？好吧......"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "他最近已经完全认不了人了，见到谁都以为是我妈"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "之前检测的数据表明，他的大脑在强化这些错误信息。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "嗯......自从那次事故后，症状就一直在恶化。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "博士，这次能保证成功吗？我真的......不想再失去唯一重要的亲人了。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "放心吧，我们都是专业的。"
+		}
+	]
+}
