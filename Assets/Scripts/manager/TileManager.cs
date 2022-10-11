@@ -36,7 +36,7 @@ public class TileManager : Singleton<TileManager>
         //对于UI的更新我这里先写在Update函数里面了
         //有必要的话后续记得改
 
-        UI_DragNumber.text = (dragNumInScene-1).ToString();
+        UI_DragNumber.text = (dragNumInScene).ToString();
         //这里因为拖拽判定的是 > 0 ,所以实际数目需-1
     }
 }
