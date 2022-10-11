@@ -8,13 +8,38 @@ using EasyTools;
 using NaughtyAttributes;
 using System;
 using Newtonsoft.Json;
+using UnityEditor;
 
 namespace StoryScene {
 
 	public class DialogManager : MonoBehaviour {
 
+		#region 实例化
+
+		private static string _prefabPath = "Assets/Prefab/StoryScene/Dialog.prefab";
+		[RuntimeInitializeOnLoadMethod]
+		private static void InitSelf() {
+			var obj = AssetDatabase.LoadAssetAtPath<GameObject>(_prefabPath);
+			if (obj != null && obj.TryGetComponent<DialogManager>(out _)) {
+				obj = Instantiate(obj);
+				DontDestroyOnLoad(obj);
+				_instance = obj.GetComponent<DialogManager>();
+			}
+			else Debug.LogError("DialogManager 初始化失败！请确认 Prefab 路径是否正确！");
+		}
+
+		#endregion
+
 		public static bool Showing { get; private set; } = false;
-		public static DialogManager Current { get; private set; }
+
+		private static DialogManager _instance;
+		public static DialogManager Current {
+			get {
+				if (_instance == null) throw new NullReferenceException("DialogManager 已被摧毁！");
+				else return _instance;
+			}
+			private set => _instance = value;
+		}
 
 		[SerializeField] private GameObject _panel;
 		[SerializeField] private Image _avatarImg;
@@ -45,8 +70,8 @@ namespace StoryScene {
 		private Queue<DialogMsg> dialogues = new Queue<DialogMsg>();
 
 		private void Awake() {
-			Current = this;
 			_panel.SetActive(false);
+			InitAudio();
 		}
 
 		/// <summary>
@@ -134,14 +159,15 @@ namespace StoryScene {
 
 		private AudioSource _audio;
 
-		private void StartSFX() {
-			if (_audio == null) {
-				if (!TryGetComponent<AudioSource>(out _audio)) {
-					_audio = gameObject.AddComponent<AudioSource>();
-				}
-				_audio.playOnAwake = false;
-				_audio.Stop();
+		private void InitAudio() {
+			if (!TryGetComponent<AudioSource>(out _audio)) {
+				_audio = gameObject.AddComponent<AudioSource>();
 			}
+			_audio.playOnAwake = false;
+			_audio.Stop();
+		}
+
+		private void StartSFX() {
 			if (_sfx != null) _dialogCoroutine = PlaySFX().ApplyTo(this);
 		}
 		private void StopSFX() {
