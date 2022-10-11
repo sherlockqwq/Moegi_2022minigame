@@ -14,7 +14,15 @@ namespace StoryScene {
 	public class DialogManager : MonoBehaviour {
 
 		public static bool Showing { get; private set; } = false;
-		public static DialogManager Current { get; private set; }
+
+		private static DialogManager _instance;
+		public static DialogManager Current {
+			get {
+				if (_instance == null) throw new NullReferenceException("DialogManager未实例化！请将预制体置于首个加载的场景中");
+				else return _instance;
+			}
+			private set => _instance = value;
+		}
 
 		[SerializeField] private GameObject _panel;
 		[SerializeField] private Image _avatarImg;
@@ -45,8 +53,14 @@ namespace StoryScene {
 		private Queue<DialogMsg> dialogues = new Queue<DialogMsg>();
 
 		private void Awake() {
-			Current = this;
+			if (_instance != null && _instance != this) Destroy(gameObject);
+			else {
+				_instance = this;
+				DontDestroyOnLoad(gameObject);
+			}
+
 			_panel.SetActive(false);
+			InitAudio();
 		}
 
 		/// <summary>
@@ -134,14 +148,15 @@ namespace StoryScene {
 
 		private AudioSource _audio;
 
-		private void StartSFX() {
-			if (_audio == null) {
-				if (!TryGetComponent<AudioSource>(out _audio)) {
-					_audio = gameObject.AddComponent<AudioSource>();
-				}
-				_audio.playOnAwake = false;
-				_audio.Stop();
+		private void InitAudio() {
+			if (!TryGetComponent<AudioSource>(out _audio)) {
+				_audio = gameObject.AddComponent<AudioSource>();
 			}
+			_audio.playOnAwake = false;
+			_audio.Stop();
+		}
+
+		private void StartSFX() {
 			if (_sfx != null) _dialogCoroutine = PlaySFX().ApplyTo(this);
 		}
 		private void StopSFX() {
