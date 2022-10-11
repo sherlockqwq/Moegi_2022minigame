@@ -25,7 +25,7 @@ namespace StoryScene {
 				DontDestroyOnLoad(obj);
 				_instance = obj.GetComponent<DialogManager>();
 			}
-			else Debug.LogError("DialogManager初始化失败！请确认 Prefab 路径是否正确！");
+			else Debug.LogError("DialogManager 初始化失败！请确认 Prefab 路径是否正确！");
 		}
 
 		#endregion
@@ -35,7 +35,7 @@ namespace StoryScene {
 		private static DialogManager _instance;
 		public static DialogManager Current {
 			get {
-				if (_instance == null) throw new NullReferenceException("DialogManager已被摧毁！");
+				if (_instance == null) throw new NullReferenceException("DialogManager 已被摧毁！");
 				else return _instance;
 			}
 			private set => _instance = value;
