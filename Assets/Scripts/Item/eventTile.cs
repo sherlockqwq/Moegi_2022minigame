@@ -40,6 +40,7 @@ public class eventTile : MonoBehaviour
     private void deadArea()
     {
         Debug.Log("X area");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void exitScene()

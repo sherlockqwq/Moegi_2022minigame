@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 387396912}
   - component: {fileID: 387396911}
   - component: {fileID: 387396910}
+  - component: {fileID: 387396913}
   m_Layer: 0
   m_Name: $
   m_TagString: Tile
@@ -743,6 +744,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &387396913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387396908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseEvent: 0
 --- !u!1 &413624445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1570,7 @@ GameObject:
   - component: {fileID: 795741574}
   - component: {fileID: 795741573}
   - component: {fileID: 795741572}
+  - component: {fileID: 795741575}
   m_Layer: 0
   m_Name: End
   m_TagString: Tile
@@ -1668,6 +1683,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &795741575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795741570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseEvent: 2
 --- !u!1 &807574785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1953,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 905375347537594800, guid: a44e1e4017de2944480c20ef542dd890, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 905375347537594800, guid: a44e1e4017de2944480c20ef542dd890, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1985,7 +2013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 905375347537594814, guid: a44e1e4017de2944480c20ef542dd890, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a44e1e4017de2944480c20ef542dd890, type: 3}
@@ -1998,7 +2026,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7233229446307931040, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7233229446307931040, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2537,7 +2565,7 @@ Transform:
   - {fileID: 1576794626}
   - {fileID: 795741571}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1016343612
 GameObject:
@@ -3101,7 +3129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4561,6 +4589,7 @@ GameObject:
   - component: {fileID: 1662588472}
   - component: {fileID: 1662588471}
   - component: {fileID: 1662588470}
+  - component: {fileID: 1662588473}
   m_Layer: 0
   m_Name: x
   m_TagString: Tile
@@ -4673,6 +4702,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1662588473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662588468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseEvent: 1
 --- !u!1001 &1709951715
 PrefabInstance:
   m_ObjectHideFlags: 0
