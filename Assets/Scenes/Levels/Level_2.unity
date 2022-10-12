@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 92703107}
   m_Layer: 0
   m_Name: x
-  m_TagString: Tile
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
