@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8402194942432378496}
   - component: {fileID: 354739082465822246}
   - component: {fileID: 2011415414236196218}
+  - component: {fileID: 6049592028397403284}
   m_Layer: 0
   m_Name: gridTileOrange
   m_TagString: Tile
@@ -98,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53eed850ec8e014a820a666ccc699e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isdragging: 0
+  fadeInTime: 0.5
+  fadeOutTime: 0.5
 --- !u!61 &2011415414236196218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,5 +126,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
+--- !u!50 &6049592028397403284
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719137429600612384}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
