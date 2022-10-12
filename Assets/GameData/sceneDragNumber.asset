@@ -19,9 +19,15 @@ MonoBehaviour:
     - Level_1
     - Level_2
     - Level_3
+    - Level_4
+    - Level_5
+    - Level_6
     m_values:
     - 4
     - 3
     - 3
     - 3
     - 4
+    - 6
+    - 3
+    - 5
