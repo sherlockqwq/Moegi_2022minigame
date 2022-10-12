@@ -6,20 +6,10 @@ using UnityEngine.Events;
 
 namespace StoryScene {
 
-	public class SimpleDialog : MonoBehaviour, IPlayerInteractable {
+	public class SimpleDialog : PlayerInteractable {
 		[SerializeField] private string _fileName, _keyName;
 
-		[SerializeField] private UnityEvent<bool> _onInteractableChange;
-
-		void Awake() {
-			_onInteractableChange.Invoke(false);
-		}
-
-		void IPlayerInteractable.OnPlayerLeave(StoryPlayerController player) => _onInteractableChange.Invoke(false);
-
-		void IPlayerInteractable.OnPlayerTouch(StoryPlayerController player) => _onInteractableChange.Invoke(true);
-
-		void IPlayerInteractable.OnInteract(StoryPlayerController player) {
+		protected override void OnInteract(StoryPlayerController player) {
 			DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_fileName, _keyName));
 		}
 	}

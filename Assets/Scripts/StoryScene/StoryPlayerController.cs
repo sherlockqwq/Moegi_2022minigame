@@ -37,7 +37,7 @@ namespace StoryScene {
 		}
 
 		void Update() {
-			if (!Paused) {
+			if (!IsPaused) {
 				Move();
 				CheckInteractable();
 			}
@@ -63,26 +63,26 @@ namespace StoryScene {
 
 		#region 交互
 
-		private IPlayerInteractable _lastInteractable;
+		private PlayerInteractable _lastInteractable;
 
 		/// <summary>
 		/// 与可交互物体的触碰与交互的相关逻辑
 		/// </summary>
 		private void CheckInteractable() {
 			var count = Physics2D.OverlapPointNonAlloc(_rb2d.position, _triggerBuffer, _triggerLayer);
-			IPlayerInteractable interactable = null;
+			PlayerInteractable interactable = null;
 			for (int i = 0; i < count; i++) {
-				if (_triggerBuffer[i].TryGetComponent<IPlayerInteractable>(out interactable)) { // 有可交互物体
+				if (_triggerBuffer[i].TryGetComponent<PlayerInteractable>(out interactable)) { // 有可交互物体
 					_interactTip.SetActive(true);   // 显示提示图标
-					if (Input.GetKeyDown(_interactKey)) interactable.OnInteract(this);	// 检查交互按键键
+					if (Input.GetKeyDown(_interactKey)) interactable.Interact(this);  // 检查交互按键键
 					break;  // 只和该物体交互
 				}
 			}
 			if (interactable == null) _interactTip.SetActive(false);  // 若当前不可交互则隐藏提示图标
 
 			if (_lastInteractable != interactable) {    // 可交互物体发生变动
-				_lastInteractable?.OnPlayerLeave(this);
-				interactable?.OnPlayerTouch(this);
+				_lastInteractable?.Leave();
+				interactable?.Touch();
 				_lastInteractable = interactable;
 			}
 		}
@@ -91,7 +91,24 @@ namespace StoryScene {
 
 		#region 暂停相关
 
-		public bool Paused => DialogManager.Showing || Door.IsFading;
+		public bool IsPaused { get; private set; }
+
+		private int _controlIndex = 0;
+		private HashSet<int> _pauseList = new HashSet<int>();
+
+		public void Pause(out int pauseId) {
+			IsPaused = true;
+			pauseId = ++_controlIndex;
+			_pauseList.Add(_controlIndex);
+		}
+		public void Resume(int pauseId) {
+			_pauseList.Remove(pauseId);
+			IsPaused = _pauseList.Count != 0;
+		}
+		public void ResumeAll() {
+			_pauseList.Clear();
+			IsPaused = false;
+		}
 
 		#endregion
 

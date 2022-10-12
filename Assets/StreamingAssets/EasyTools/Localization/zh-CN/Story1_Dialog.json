@@ -71,5 +71,24 @@
 			"name": "博士",
 			"content": "放心吧，我们都是专业的。"
 		}
+	],
+	"Assistant1": [
+		{
+			"avatar": "",
+			"name": "助理",
+			"content": "博士，设备启动已经准备好了。"
+		}
+	],
+	"Assistant2": [
+		{
+			"avatar": "",
+			"name": "助理",
+			"content": "我帮你戴上。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "好的，麻烦你了，那开始吧。"
+		}
 	]
 }

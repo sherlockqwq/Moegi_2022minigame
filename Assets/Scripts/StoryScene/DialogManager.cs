@@ -89,9 +89,11 @@ namespace StoryScene {
 			if (!Showing && dialogues.Count > 0) ShowDialogC(delay).ApplyTo(this);
 		}
 
+		private int myPauseId;
 		// 显示对话的协程
 		IEnumerator ShowDialogC(float delay) {
 			Showing = true;
+			StoryPlayerController.Current.Pause(out myPauseId);
 
 			yield return Wait.Seconds(delay);
 
@@ -130,6 +132,7 @@ namespace StoryScene {
 			StopSFX();
 
 			_panel.SetActive(false);
+			StoryPlayerController.Current.Resume(myPauseId);
 			if (Showing) {
 				StopAllCoroutines();
 				dialogues.Clear();
