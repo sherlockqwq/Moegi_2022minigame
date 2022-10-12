@@ -17,10 +17,13 @@ public class DragScript : MonoBehaviour
     private void Awake()
     {
         coll = GetComponent<BoxCollider2D>();
+
     }
     void Start()
     {
         coll.isTrigger = true;
+        TileManager.Instance.RegisterModules(gameObject);
+
     }
 
     // Update is called once per frame
@@ -30,11 +33,10 @@ public class DragScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        /*if (!isDragable)
-            return;
-        GameObject dragObject = Instantiate(gameObject);
-        dragObject.GetComponent<DragScript>().isDraging = true;
-        dragObject.GetComponent<DragScript>().isDragable = true;*/
+        Debug.Log("点击的" +
+            "名字是" +
+            name);
+        TileManager.Instance.CreateRegisteredModules(gameObject);
 
 
 
@@ -85,6 +87,7 @@ public class DragScript : MonoBehaviour
     private void OnMouseUp()
     {
         ChildrenDragFinished();
+
         Cursor.visible = true;
         isDragable = false;
         coll.enabled = false;

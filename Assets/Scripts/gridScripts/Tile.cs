@@ -1,27 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
 public class Tile : MonoBehaviour
 {
     private Color baseColor, offsetColor;
     private SpriteRenderer TileRenderer;
     private BoxCollider2D coll;
+    private Rigidbody2D rb;
     private GameObject overlapTile;
     public bool isdragging = false;
     SpriteRenderer targetRenderer;
     [SerializeField] private float fadeInTime = 0.5f;
     [SerializeField] private float fadeOutTime = 0.5f;
 
+
     private void Awake()
     {
         TileRenderer = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
 
     }
     private void Start()
     {
-
+        rb.isKinematic = true;
+        coll.size = new Vector2(0.9f, 0.9f);
     }
     public void Init(bool isoffset)
     {
