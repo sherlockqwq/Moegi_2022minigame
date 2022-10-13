@@ -27,16 +27,12 @@ public class DragScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
 
-    }
     private void OnMouseDown()
     {
-        Debug.Log("点击的" +
-            "名字是" +
-            name);
+
         TileManager.Instance.CreateRegisteredModules(gameObject);
+        isDragable = true;
 
 
 
@@ -63,8 +59,6 @@ public class DragScript : MonoBehaviour
                 child.transform.rotation = Quaternion.Euler(child.transform.rotation.eulerAngles + new Vector3(0, 0, -90));
 
             }
-
-
         }
 
 

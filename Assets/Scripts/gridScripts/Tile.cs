@@ -25,6 +25,7 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         rb.isKinematic = true;
+        coll.isTrigger = true;
         coll.size = new Vector2(0.9f, 0.9f);
     }
     public void Init(bool isoffset)

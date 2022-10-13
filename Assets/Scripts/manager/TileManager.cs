@@ -10,13 +10,16 @@ public class TileManager : Singleton<TileManager>
     public int dragNumInScene;
     [SerializeField] private DragNumber_SO dragNumberData;
 
-    [SerializeField] private Text UI_DragNumber; 
+    [SerializeField] private Text UI_DragNumber;
+
+    [SerializeField] private List<GameObject> dragModules;
+    [SerializeField] private List<Transform> modulesTransform;
     private void Start()
     {
 
         if (dragNumberData.sceneDragNumber.ContainsKey(SceneManager.GetActiveScene().name))
         {
-            string dragNumInData= dragNumberData.sceneDragNumber[SceneManager.GetActiveScene().name];
+            string dragNumInData = dragNumberData.sceneDragNumber[SceneManager.GetActiveScene().name];
 
             Debug.Log(dragNumInData);
             dragNumInScene = int.Parse(dragNumInData);
@@ -28,7 +31,7 @@ public class TileManager : Singleton<TileManager>
         }
 
         UI_DragNumber = GameObject.Find("UI").transform.Find("DragNumberUI").gameObject.GetComponent<Text>();
-        
+
     }
 
     private void Update()
@@ -39,4 +42,21 @@ public class TileManager : Singleton<TileManager>
         UI_DragNumber.text = (dragNumInScene).ToString();
         //这里因为拖拽判定的是 > 0 ,所以实际数目需-1
     }
+    public void RegisterModules(GameObject modules)//注册场景里符合要求的模块
+    {
+        if (!dragModules.Contains(modules))
+        {
+            dragModules.Add(modules);
+            modulesTransform.Add(modules.transform);
+        }
+    }
+    public void CreateRegisteredModules(GameObject modules)
+    {
+        if (dragModules.Contains(modules) && dragNumInScene > 0)
+        {
+            int gameobjectIndex = dragModules.IndexOf(modules);
+            Instantiate(dragModules[gameobjectIndex], modulesTransform[gameobjectIndex].position, modulesTransform[gameobjectIndex].rotation);
+        }
+    }
+
 }
