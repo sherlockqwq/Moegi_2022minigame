@@ -6,6 +6,9 @@ using System;
 
 namespace EasyTools {
 
+	/// <summary>
+	/// 一个简单的多语言、外部文件读取支持类
+	/// </summary>
 	public static class EasyLocalization {
 		public const string DefaultLang = "zh-CN";
 		public static string CurrentLang { get; set; } = DefaultLang;
@@ -13,6 +16,12 @@ namespace EasyTools {
 		private static Dictionary<string, Dictionary<string, object>> _lib;
 
 		public static event Action onLangSwitched = delegate { };
+
+		[RuntimeInitializeOnLoadMethod]
+		private static void OnStartup() {
+			// TODO 读取设置并设置语言
+			SwitchLang(DefaultLang);
+		}
 
 		/// <summary>
 		/// 切换到指定的语言

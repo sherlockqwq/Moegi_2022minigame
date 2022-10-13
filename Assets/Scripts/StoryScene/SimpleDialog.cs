@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 namespace StoryScene {
 
+	/// <summary>
+	/// 交互并进行一段对话的简单的物体，使用到 EasyLocalization
+	/// </summary>
 	public class SimpleDialog : PlayerInteractable {
 		[SerializeField] private string _fileName, _keyName;
 
