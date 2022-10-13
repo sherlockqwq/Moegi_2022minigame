@@ -42,6 +42,12 @@ public class PlayerControl : MonoBehaviour
         
     }
 
+    public void linkCopyPlayer(CopyPlayer _copy)
+    {
+        theCopyPlayer = _copy;
+        haveCopyPlayer = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
