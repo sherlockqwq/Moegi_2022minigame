@@ -6,6 +6,10 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed;
 
+    [Header("∏¥÷∆ÃÂ…Ë÷√")]
+    public bool haveCopyPlayer ;
+    public CopyPlayer theCopyPlayer; 
+
     [Header("Detectors")]
     [SerializeField] private float X_offset ;
     [SerializeField] private float Y_offset ; 
@@ -54,7 +58,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (down.canGet)
             {
+                if (haveCopyPlayer && !theCopyPlayer.down.canGet)
+                {
+                    return false ;
+                }
+            
+
                 transform.localPosition = down.tile.transform.position;
+                theCopyPlayer.moveIt(moveDirection.down);
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, down.tile.transform.localPosition, step);
                 result = true;
 
@@ -65,7 +76,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (up.canGet)
             {
+                if (haveCopyPlayer && !theCopyPlayer.up.canGet)
+                {
+                    return false;
+                }
+
                 transform.localPosition = up.tile.transform.position;
+                theCopyPlayer.moveIt(moveDirection.up);
+
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, up.tile.transform.localPosition, step);
                 result = true;
 
@@ -76,8 +94,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (left.canGet)
             {
+                if(haveCopyPlayer && !theCopyPlayer.left.canGet)
+                {
+                    return false; 
+                }
+
                 //transform.position = transform.TransformPoint(left.tile.transform.localPosition);
                 transform.localPosition = left.tile.transform.position;
+                theCopyPlayer.moveIt(moveDirection.left);
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, left.tile.transform.localPosition, step);
                 result = true;
 
@@ -88,8 +112,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (right.canGet)
             {
+                if(haveCopyPlayer && !theCopyPlayer.right.canGet)
+                {
+                    return false;
+                }
+
                 //transform.position = transform.TransformPoint(right.tile.transform.localPosition);
                 transform.localPosition = right.tile.transform.position;
+                theCopyPlayer.moveIt(moveDirection.right);
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, right.tile.transform.localPosition, step);
                 result = true; 
             }
