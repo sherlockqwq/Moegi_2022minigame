@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using EasyTools;
@@ -12,10 +11,10 @@ namespace StoryScene {
 
 		#region 实例化
 
-		private static string _prefabPath = "Assets/Prefab/StoryScene/Transition.prefab";
+		private static string _prefabPath = "Prefabs/Transition";
 		[RuntimeInitializeOnLoadMethod]
 		private static void InitSelf() {
-			var obj = AssetDatabase.LoadAssetAtPath<GameObject>(_prefabPath);
+			var obj = Resources.Load<GameObject>(_prefabPath);
 			if (obj != null && obj.TryGetComponent<TransitionManager>(out _)) {
 				obj = Instantiate(obj);
 				DontDestroyOnLoad(obj);

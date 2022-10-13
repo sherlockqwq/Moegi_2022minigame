@@ -8,7 +8,6 @@ using EasyTools;
 using NaughtyAttributes;
 using System;
 using Newtonsoft.Json;
-using UnityEditor;
 
 namespace StoryScene {
 
@@ -16,10 +15,10 @@ namespace StoryScene {
 
 		#region 实例化
 
-		private static string _prefabPath = "Assets/Prefab/StoryScene/Dialog.prefab";
+		private static string _prefabPath = "Prefabs/Dialog";
 		[RuntimeInitializeOnLoadMethod]
 		private static void InitSelf() {
-			var obj = AssetDatabase.LoadAssetAtPath<GameObject>(_prefabPath);
+			var obj = Resources.Load<GameObject>(_prefabPath);
 			if (obj != null && obj.TryGetComponent<DialogManager>(out _)) {
 				obj = Instantiate(obj);
 				DontDestroyOnLoad(obj);
