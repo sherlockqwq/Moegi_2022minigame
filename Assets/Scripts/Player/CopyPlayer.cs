@@ -24,6 +24,12 @@ public class CopyPlayer : MonoBehaviour
         detectors.Add(left);
         detectors.Add(right);
     }
+
+    private void Start()
+    {
+        GameObject.Find("Player").GetComponent<PlayerControl>().linkCopyPlayer(this);
+        Debug.Log("Íê³É");
+    }
     public bool moveIt(moveDirection direction)
     {
         bool result = false;

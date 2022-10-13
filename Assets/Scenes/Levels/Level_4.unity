@@ -414,6 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 2
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
 --- !u!50 &23643976
 Rigidbody2D:
   serializedVersion: 4
@@ -4820,7 +4822,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1705829433468748893, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
       propertyPath: m_Name
-      value: UI-2
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705829433468748893, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}

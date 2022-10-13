@@ -804,7 +804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1705829433468748893, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
       propertyPath: m_Name
-      value: UI-2
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705829433468748893, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
@@ -3468,6 +3472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 2
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &1368155527
 Rigidbody2D:
   serializedVersion: 4
@@ -4601,8 +4608,9 @@ GameObject:
   - component: {fileID: 1751382686}
   - component: {fileID: 1751382685}
   - component: {fileID: 1751382688}
+  - component: {fileID: 1751382689}
   m_Layer: 0
-  m_Name: Tile6 5
+  m_Name: Copy
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4737,6 +4745,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1751382689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751382683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseEvent: 0
+  theCopyPlayer: {fileID: 4217704076866076194, guid: d62fff5098e02be45a490d0eb6ad4706, type: 3}
+  copyPlayerLocation: {fileID: 1490002369}
+  isUsed: 0
 --- !u!1 &1752174994
 GameObject:
   m_ObjectHideFlags: 0

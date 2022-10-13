@@ -40,7 +40,6 @@ public class TileManager : Singleton<TileManager>
         //有必要的话后续记得改
 
         UI_DragNumber.text = (dragNumInScene).ToString();
-        //这里因为拖拽判定的是 > 0 ,所以实际数目需-1
     }
     public void RegisterModules(GameObject modules)//注册场景里符合要求的模块
     {
