@@ -6,6 +6,9 @@ using NaughtyAttributes;
 
 namespace StoryScene {
 
+	/// <summary>
+	/// 剧情场景中的玩家
+	/// </summary>
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class StoryPlayerController : MonoBehaviour {
 		[Header("移动")]
@@ -26,13 +29,11 @@ namespace StoryScene {
 		public static StoryPlayerModel Model { get; private set; }
 
 		private Rigidbody2D _rb2d;
-		private Collider2D _collider2d;
 
 		void Awake() {
 			Current = this;
 			Model = GetComponentInChildren<StoryPlayerModel>();
 			_rb2d = GetComponent<Rigidbody2D>();
-			_collider2d = GetComponent<Collider2D>();
 			_triggerBuffer = new Collider2D[_triggerBufferSize];
 		}
 
@@ -42,8 +43,6 @@ namespace StoryScene {
 				CheckInteractable();
 			}
 			else Stop();
-			if (Input.GetKeyDown(KeyCode.Minus)) transform.Translate(-5, 0, 0);
-			if (Input.GetKeyDown(KeyCode.Equals)) transform.Translate(5, 0, 0);
 		}
 
 		#region 移动
@@ -96,15 +95,26 @@ namespace StoryScene {
 		private int _controlIndex = 0;
 		private HashSet<int> _pauseList = new HashSet<int>();
 
+		/// <summary>
+		/// 暂停当前玩家
+		/// </summary>
+		/// <param name="pauseId">用于恢复玩家控制的ID</param>
 		public void Pause(out int pauseId) {
 			IsPaused = true;
 			pauseId = ++_controlIndex;
 			_pauseList.Add(_controlIndex);
 		}
+		/// <summary>
+		/// 恢复玩家控制
+		/// </summary>
+		/// <param name="pauseId">通过 Pause 函数获取的ID</param>
 		public void Resume(int pauseId) {
 			_pauseList.Remove(pauseId);
 			IsPaused = _pauseList.Count != 0;
 		}
+		/// <summary>
+		/// 完全恢复玩家控制（无视当前暂停的数量）
+		/// </summary>
 		public void ResumeAll() {
 			_pauseList.Clear();
 			IsPaused = false;
