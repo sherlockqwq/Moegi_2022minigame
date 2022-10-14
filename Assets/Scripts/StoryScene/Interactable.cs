@@ -9,7 +9,7 @@ namespace StoryScene {
 	/// </summary>
 	public abstract class PlayerInteractable : MonoBehaviour {
 
-		[SerializeField] private GameObject _outline;
+		[SerializeField] protected GameObject _outline;
 
 		protected virtual void Awake() {
 			Leave();

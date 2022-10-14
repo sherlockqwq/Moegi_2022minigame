@@ -42,7 +42,10 @@ namespace StoryScene {
 				Move();
 				CheckInteractable();
 			}
-			else Stop();
+			else {
+				Stop();
+				ClearInteractTip();
+			}
 		}
 
 		#region 移动
@@ -84,6 +87,10 @@ namespace StoryScene {
 				interactable?.Touch();
 				_lastInteractable = interactable;
 			}
+		}
+
+		private void ClearInteractTip() {
+			_interactTip.SetActive(false);
 		}
 
 		#endregion
