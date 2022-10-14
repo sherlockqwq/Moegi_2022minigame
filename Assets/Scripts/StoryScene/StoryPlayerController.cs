@@ -29,13 +29,11 @@ namespace StoryScene {
 		public static StoryPlayerModel Model { get; private set; }
 
 		private Rigidbody2D _rb2d;
-		private Collider2D _collider2d;
 
 		void Awake() {
 			Current = this;
 			Model = GetComponentInChildren<StoryPlayerModel>();
 			_rb2d = GetComponent<Rigidbody2D>();
-			_collider2d = GetComponent<Collider2D>();
 			_triggerBuffer = new Collider2D[_triggerBufferSize];
 		}
 
@@ -45,8 +43,6 @@ namespace StoryScene {
 				CheckInteractable();
 			}
 			else Stop();
-			if (Input.GetKeyDown(KeyCode.Minus)) transform.Translate(-5, 0, 0);
-			if (Input.GetKeyDown(KeyCode.Equals)) transform.Translate(5, 0, 0);
 		}
 
 		#region 移动

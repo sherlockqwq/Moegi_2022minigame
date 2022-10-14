@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EasyTools;
@@ -19,39 +20,53 @@ namespace StoryScene {
 			_mask.enabled = false;
 		}
 
-		/// <summary>
-		/// 设置遮罩颜色（注意会始终有效）
-		/// </summary>
-		public void SetColor(Color color) {
-			color.a = _mask.color.a;
-			_mask.color = color;
-		}
+		#region 不带颜色
 
 		/// <summary>
 		/// 遮罩淡入
 		/// </summary>
-		public void MaskFadeIn(float fadeTime = 0.5f) {
-			StopFade();
-			ShowMaskCoroutine(fadeTime).ApplyTo(this);
-		}
+		public void MaskFadeIn(float fadeTime = 0.5f) => MaskFadeIn(Color.black, fadeTime);
 
 		/// <summary>
 		/// 遮罩淡出
 		/// </summary>
-		public void MaskFadeOut(float fadeTime = 0.5f) {
-			StopFade();
-			HideMaskCoroutine(fadeTime).ApplyTo(this);
-		}
-
-		/// <summary>
-		/// 停止淡入与淡出
-		/// </summary>
-		public void StopFade() => StopAllCoroutines();
+		public void MaskFadeOut(float fadeTime = 0.5f) => MaskFadeOut(Color.black, fadeTime);
 
 		/// <summary>
 		/// 遮罩淡入（必须在协程中配合 yield return 使用）
 		/// </summary>
-		public IEnumerator ShowMaskCoroutine(float fadeTime = 0.5f) {
+		public IEnumerator ShowMaskCoroutine(float fadeTime = 0.5f) => ShowMaskCoroutine(Color.black, fadeTime);
+
+		/// <summary>
+		/// 遮罩淡出（必须在协程中配合 yield return 使用）
+		/// </summary>
+		public IEnumerator HideMaskCoroutine(float fadeTime = 0.5f) => HideMaskCoroutine(Color.black, fadeTime);
+
+		#endregion
+
+		#region 带颜色
+
+		/// <summary>
+		/// 设置遮罩颜色并淡入
+		/// </summary>
+		public void MaskFadeIn(Color maskColor, float fadeTime = 0.5f) {
+			StopFade();
+			ShowMaskCoroutine(maskColor, fadeTime).ApplyTo(this);
+		}
+
+		/// <summary>
+		/// 设置遮罩颜色并淡出
+		/// </summary>
+		public void MaskFadeOut(Color maskColor, float fadeTime = 0.5f) {
+			StopFade();
+			HideMaskCoroutine(maskColor, fadeTime).ApplyTo(this);
+		}
+
+		/// <summary>
+		/// 遮罩淡入（必须在协程中配合 yield return 使用）
+		/// </summary>
+		public IEnumerator ShowMaskCoroutine(Color maskColor, float fadeTime = 0.5f) {
+			SetColor(maskColor);
 			_mask.enabled = true;
 			yield return EasyTools.Gradient.Linear(fadeTime, _mask.SetA);
 		}
@@ -59,9 +74,24 @@ namespace StoryScene {
 		/// <summary>
 		/// 遮罩淡出（必须在协程中配合 yield return 使用）
 		/// </summary>
-		public IEnumerator HideMaskCoroutine(float fadeTime = 0.5f) {
+		public IEnumerator HideMaskCoroutine(Color maskColor, float fadeTime = 0.5f) {
+			SetColor(maskColor);
 			yield return EasyTools.Gradient.Linear(fadeTime, d => _mask.SetA(1 - d));
 			_mask.enabled = false;
 		}
+
+		private void SetColor(Color? color) {
+			if (!(color is Color c)) c = Color.black;
+			c.a = _mask.color.a;
+			_mask.color = c;
+		}
+
+		#endregion
+
+		/// <summary>
+		/// 停止淡入与淡出
+		/// </summary>
+		public void StopFade() => StopAllCoroutines();
+
 	}
 }
