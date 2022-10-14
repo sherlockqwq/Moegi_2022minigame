@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum theEvent {  collection, deadArea, exit };
+public enum theEvent {  collection, deadArea, exit ,copy };
 
 public class eventTile : MonoBehaviour
 {
     public theEvent choseEvent;
 
+    public GameObject theCopyPlayer;
+    public Transform copyPlayerLocation;
+    [SerializeField] private bool isUsed = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")){
-            GetPoint();
             if(choseEvent == theEvent.collection)
             {
                 GetPoint();
@@ -26,6 +29,15 @@ public class eventTile : MonoBehaviour
             if (choseEvent == theEvent.exit)
             {
                 exitScene();
+            }
+
+            if(choseEvent == theEvent.copy)
+            {
+                if (!isUsed)
+                {
+                    copyIt();
+                    isUsed = true;
+                }
             }
         }
     }
@@ -46,5 +58,10 @@ public class eventTile : MonoBehaviour
     private void exitScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void copyIt() { 
+        Vector3 _position = new Vector3(copyPlayerLocation.position.x, copyPlayerLocation.position.y, copyPlayerLocation.position.z);
+        GameObject.Instantiate(theCopyPlayer,_position,Quaternion.identity);
     }
 }
