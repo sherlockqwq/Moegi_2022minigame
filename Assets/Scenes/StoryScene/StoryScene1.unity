@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outline: {fileID: 334575410}
+  _outline: {fileID: 334575412}
   _fileName: Story1_Dialog
   _keyName: Documentations
 --- !u!1 &1263606110
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outline: {fileID: 329502270}
+  _outline: {fileID: 329502272}
   _fileName: Story1_Dialog
   _keyName: LeftDoor
 --- !u!61 &1456770050
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f133a5c56c5fcc4a9d45b41bdde8837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outline: {fileID: 2129604900}
+  _outline: {fileID: 2129604902}
   _panel: {fileID: 2010999223}
 --- !u!1 &1515124260
 GameObject:
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outline: {fileID: 1263606110}
+  _outline: {fileID: 1263606112}
   _fileName: Story1_Dialog
   _keyName: Computer
 --- !u!1 &1683333448
@@ -2396,7 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9c5408f79e0bd499860fd330c6e6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _outline: {fileID: 9188309}
+  _outline: {fileID: 9188311}
   _leftCam: {fileID: 1710603781}
   _rightCam: {fileID: 182478897}
   _leftPos: {fileID: 492889020314408160}

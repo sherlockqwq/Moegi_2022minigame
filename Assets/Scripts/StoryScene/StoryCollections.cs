@@ -9,9 +9,9 @@ namespace StoryScene {
 	/// 剧情关卡中需要收集的物品
 	/// </summary>
 	public class StoryCollections : PlayerInteractable {
-        /// <summary>
-        /// 该物体是否已被收集？
-        /// </summary>
+		/// <summary>
+		/// 该物体是否已被收集？
+		/// </summary>
 		public bool Collected { get; private set; }
 
 		[SerializeField] private SpriteRenderer _sprite;
@@ -22,10 +22,9 @@ namespace StoryScene {
 
 			StoryPlayerController.Current.Pause(out var id);
 
-			SpriteRenderer outlineSprite = _outline == null ? null : _outline.GetComponent<SpriteRenderer>();
 			yield return EasyTools.Gradient.Linear(0.5f, d => {
-				_sprite?.SetA(1 - d);
-				outlineSprite?.SetA(1 - d);
+				if (_sprite != null) _sprite.SetA(1 - d);
+				if (_outline != null) _outline.SetA(1 - d);
 			});
 
 			Collected = true;

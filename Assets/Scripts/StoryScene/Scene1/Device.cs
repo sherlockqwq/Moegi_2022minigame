@@ -29,8 +29,8 @@ namespace StoryScene.Scene1 {
 		public void OnStartButtonClick() {
 			if (!_clicked) {
 				_clicked = true;
-				// 切换场景时此 MonoBehaviour 会被摧毁，需利用 TransitionManager 挂载协程
-				SwitchScene().ApplyTo(TransitionManager.Current);
+				// 切换场景时此 MonoBehaviour 会被摧毁，需利用 EasyGameLoop 挂载协程
+				EasyGameLoop.Do(SwitchScene());
 			}
 		}
 

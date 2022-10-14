@@ -27,8 +27,8 @@ namespace StoryScene {
 			GetComponent<SpriteRenderer>().enabled = true;
 		}
 
-		// 切换时该物体将被 Disable，故使用 TransitionManager 挂载协程
-		protected override void OnInteract(StoryPlayerController player) => ToRepairScene().ApplyTo(TransitionManager.Current);
+		// 切换时该物体将被 Disable，故使用 EasyGameLoop 挂载协程
+		protected override void OnInteract(StoryPlayerController player) => EasyGameLoop.Do(ToRepairScene());
 
 		IEnumerator ToRepairScene() {
 			StoryPlayerController.Current.Pause(out var id);
