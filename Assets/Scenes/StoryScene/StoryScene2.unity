@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &73566062
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131194697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 6.3, z: 0}
+  m_LocalPosition: {x: 1.2300014, y: 6.3, z: 0}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -252,8 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136245233}
-  - component: {fileID: 136245234}
   - component: {fileID: 136245236}
+  - component: {fileID: 136245234}
   - component: {fileID: 136245235}
   m_Layer: 11
   m_Name: 1420
@@ -371,19 +371,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 2087295957}
   _replaceTip: {fileID: 345069387}
-  _firstDialog: 0
-  _fadeOut: 1
-  _fadeIn: 0
-  _autoDialog: 1
-  _nextDialog: 0
+  _waitFor: []
+  _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
-  _spriteToFadeOut: {fileID: 136245234}
-  _spriteToFadeIn: {fileID: 0}
-  _autoDialogFile: Story2_Dialog
-  _autoDialogKey: Clock
-  _nextDialogFile: 
-  _nextDialogKey: 
+  _canReplace: 1
+  _spritesToFadeOut:
+  - {fileID: 136245234}
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 1
+  _replacedDialogFile: Story2_Dialog
+  _replacedDialogKey: Clock
+  _canFinalInteract: 0
+  _finalDialogFile: 
+  _finalDialogKey: 
 --- !u!1 &289364444
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,19 +550,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
-  _firstDialog: 1
-  _fadeOut: 1
-  _fadeIn: 1
-  _autoDialog: 0
-  _nextDialog: 1
+  _waitFor: []
+  _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Desk_Wrong
-  _spriteToFadeOut: {fileID: 1936794167}
-  _spriteToFadeIn: {fileID: 2027806492}
-  _autoDialogFile: 
-  _autoDialogKey: 
-  _nextDialogFile: Story2_Dialog
-  _nextDialogKey: Desk_Correct
+  _canReplace: 1
+  _spritesToFadeOut:
+  - {fileID: 1936794167}
+  _spritesToFadeIn:
+  - {fileID: 2027806492}
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story2_Dialog
+  _finalDialogKey: Desk_Correct
 --- !u!1 &345069385
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430051515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 3.41, z: 0}
+  m_LocalPosition: {x: 1.69, y: 3.41, z: 0}
   m_LocalScale: {x: 0.9499999, y: 0.9499999, z: 0.9499999}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -754,7 +757,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 40
   m_Sprite: {fileID: 21300000, guid: 1fdece1d5407f7646b2dfbd1338b3463, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -1058,7 +1061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647713962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.35, y: -5.2, z: 0}
+  m_LocalPosition: {x: 17.18, y: -5.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1092,7 +1095,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 1}
+  m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &647713965
 MonoBehaviour:
@@ -1108,19 +1111,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
-  _firstDialog: 1
-  _fadeOut: 1
-  _fadeIn: 1
-  _autoDialog: 0
-  _nextDialog: 1
+  _waitFor: []
+  _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Sofa_Wrong
-  _spriteToFadeOut: {fileID: 1608924853}
-  _spriteToFadeIn: {fileID: 430051517}
-  _autoDialogFile: 
-  _autoDialogKey: 
-  _nextDialogFile: Story2_Dialog
-  _nextDialogKey: Sofa_Correct
+  _canReplace: 1
+  _spritesToFadeOut:
+  - {fileID: 1608924853}
+  _spritesToFadeIn:
+  - {fileID: 430051517}
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story2_Dialog
+  _finalDialogKey: Sofa_Correct
 --- !u!1 &824851313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &871578698
 Transform:
   m_ObjectHideFlags: 0
@@ -1665,7 +1670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604412996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.397778, y: -0.010000706, z: -10}
+  m_LocalPosition: {x: -16.407778, y: -0.009999752, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1731,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608924851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.41, z: 0}
+  m_LocalPosition: {x: 1.4800014, y: 3.41, z: 0}
   m_LocalScale: {x: 0.9499999, y: 0.9499999, z: 0.9499999}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2246,7 +2251,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 40
   m_Sprite: {fileID: 21300000, guid: 1fdece1d5407f7646b2dfbd1338b3463, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

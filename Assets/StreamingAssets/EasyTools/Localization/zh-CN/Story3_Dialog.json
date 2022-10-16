@@ -1,0 +1,98 @@
+{
+	"Box": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "哇，满满的一箱信件啊，都是两人以前往来的情书吧。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "不过科技如此发达的时代，还保持书信交流的情趣，挺难得的。"
+		}
+	],
+	"Photo": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "非常温馨的合照呢。"
+		}
+	],
+	"Sofa_Wrong": [
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "真怀念呐，当年我们还是在文学部相识的。没想到从那之后，我们竟相互陪伴了这么久。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "学生时代收到这么多你写的信，如今再翻阅，字里行间全是满满的回忆感呀。"
+		}
+	],
+	"Door_Wrong": [
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "我回来了。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "儿子，快进来休息吧。"
+		}
+	],
+	"Door_Correct": [
+		{
+			"avatar": "postman",
+			"name": "邮递员",
+			"content": "你好，有位女士希望能在她结婚四十周年时给丈夫一个小惊喜，定制了我们时光邮局的送信服务，可以向未来的收信人寄出六年的信件。"
+		},
+		{
+			"avatar": "postman",
+			"name": "邮递员",
+			"content": "这些信是这位女士几年前写的。原本说的是每一年写两封，不过中途我们就没收到了信了。但签过合同，我们还是会将已有的信件送达给收信人。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "行，我爸在房间里，我就代他签收了吧。"
+		}
+	],
+	"Sofa_Correct": [
+		{
+			"avatar": "son_sad",
+			"name": "患者儿子",
+			"content": "爸，这是妈寄来的信，我念给你听吧......"
+		}
+	],
+	"Sofa_Finished": [
+		{
+			"avatar": "son_sad",
+			"name": "患者儿子",
+			"content": "爸，你别哭啊......"
+		}
+	],
+	"Finished": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "现实中的患者因为见不到妻子而感到不安，大脑自动强化了那些错误的记忆，导致身体也出现了异样。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "删除掉所有错误信息，患者身体就能好转。唉，总觉得有些残酷呢。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "......诶？"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "不好！患者的机体开始出现了排斥反应，修复记忆脉络时我可得小心点了。"
+		}
+	]
+}

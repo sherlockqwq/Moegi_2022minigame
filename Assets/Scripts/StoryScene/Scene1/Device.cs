@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EasyTools;
+using NaughtyAttributes;
 
 namespace StoryScene.Scene1 {
 
 	public class Device : PlayerInteractable {
 		[SerializeField] private Transform _panel;
+		[Scene, SerializeField] private int _toScene;
 
 		private void Start() {
 			_panel.localScale = Vector3.zero;
@@ -37,7 +39,7 @@ namespace StoryScene.Scene1 {
 		IEnumerator SwitchScene() {
 			yield return TransitionManager.Current.ShowMaskCoroutine();
 
-			// TODO 场景切换
+			yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(_toScene);
 
 			yield return TransitionManager.Current.HideMaskCoroutine();
 
