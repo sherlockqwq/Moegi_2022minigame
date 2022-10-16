@@ -42,7 +42,10 @@ namespace StoryScene {
 				Move();
 				CheckInteractable();
 			}
-			else Stop();
+			else {
+				Stop();
+				ClearInteractTip();
+			}
 		}
 
 		#region 移动
@@ -72,8 +75,13 @@ namespace StoryScene {
 			PlayerInteractable interactable = null;
 			for (int i = 0; i < count; i++) {
 				if (_triggerBuffer[i].TryGetComponent<PlayerInteractable>(out interactable)) { // 有可交互物体
-					_interactTip.SetActive(true);   // 显示提示图标
-					if (Input.GetKeyDown(_interactKey)) interactable.Interact(this);  // 检查交互按键键
+					if (interactable.Replaceable) { // 是要替换的物体
+						if (Input.GetKeyDown(_deleteKey)) interactable.Interact(this);  // 检查按键
+					}
+					else {  // 不是要替换的物体
+						_interactTip.SetActive(true);   // 显示提示图标
+						if (Input.GetKeyDown(_interactKey)) interactable.Interact(this);  // 检查交互按键
+					}
 					break;  // 只和该物体交互
 				}
 			}
@@ -84,6 +92,12 @@ namespace StoryScene {
 				interactable?.Touch();
 				_lastInteractable = interactable;
 			}
+		}
+
+		private void ClearInteractTip() {
+			_lastInteractable?.Leave();
+			_lastInteractable = null;
+			_interactTip.SetActive(false);
 		}
 
 		#endregion
