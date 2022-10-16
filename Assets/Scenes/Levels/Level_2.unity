@@ -414,6 +414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &92703108
 Rigidbody2D:
   serializedVersion: 4
@@ -2976,7 +2979,7 @@ GameObject:
   m_Layer: 0
   m_Name: TileController-1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3388,6 +3391,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 2
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &2004483871
 Rigidbody2D:
   serializedVersion: 4

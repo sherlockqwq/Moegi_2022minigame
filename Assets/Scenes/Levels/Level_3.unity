@@ -712,6 +712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 0
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &387396914
 Rigidbody2D:
   serializedVersion: 4
@@ -1101,6 +1104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 2
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &795741576
 Rigidbody2D:
   serializedVersion: 4
@@ -2245,7 +2251,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170031763}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2890,7 +2896,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502231613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3337,7 +3343,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624910476}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3586,6 +3592,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &1662588474
 Rigidbody2D:
   serializedVersion: 4

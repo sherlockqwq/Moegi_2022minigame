@@ -75,7 +75,7 @@ public class Tile : MonoBehaviour
     {
         if (collision.CompareTag("Tile") && isdragging)
         {
-            Debug.Log(name + "进入" + collision.name + "的trigger");
+            /*Debug.Log(name + "进入" + collision.name + "的trigger");*/
             collision.GetComponent<SpriteRenderer>().color = Color.red;
             overlapTile = collision.gameObject;
         }
