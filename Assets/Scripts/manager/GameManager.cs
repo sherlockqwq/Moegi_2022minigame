@@ -5,21 +5,33 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
-    
-    override protected void  Awake()
+
+    override protected void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
     }
     private void Update()
     {
-        ReLoadScene();  
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReLoadScene();
+        }
     }
     void ReLoadScene()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-        }
+
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+
+    }
+    public void LoadSceneByName(string sceneName)
+    {
+        StartCoroutine(LoadScene(sceneName));
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+        yield return 1;
     }
 }

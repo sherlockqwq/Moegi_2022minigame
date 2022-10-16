@@ -27,10 +27,19 @@ namespace StoryScene.Scene1 {
 
 		private bool _clicked = false;
 		public void OnStartButtonClick() {
-			if (_clicked) return;
+			if (!_clicked) {
+				_clicked = true;
+				// 切换场景时此 MonoBehaviour 会被摧毁，需利用 EasyGameLoop 挂载协程
+				EasyGameLoop.Do(SwitchScene());
+			}
+		}
 
-			_clicked = true;
+		IEnumerator SwitchScene() {
+			yield return TransitionManager.Current.ShowMaskCoroutine();
+
 			// TODO 场景切换
+
+			yield return TransitionManager.Current.HideMaskCoroutine();
 
 			StoryPlayerController.Current.Resume(_myPauseId);
 		}

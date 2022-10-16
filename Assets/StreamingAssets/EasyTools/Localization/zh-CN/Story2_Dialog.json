@@ -1,0 +1,74 @@
+{
+	"Desk_Wrong": [
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "亲爱的，稍等一下，等我填完表后，你就可以去做治疗前的身体检查了。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "饿了的话，我等会儿去给你买个你最喜欢的蜂蜜蛋糕。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "填好啦，我们先去休息区坐一会儿吧。"
+		}
+	],
+	"Desk_Correct": [
+		{
+			"avatar": "assistant",
+			"name": "助手",
+			"content": "本次检查与测试是为了让机构更全面了解患者当下的身体状态。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "行，然后这些是之前的医疗机构给的文件，给你。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "但事故后的那次手术并非完全成功，现在后遗症越来越严重了。"
+		},
+		{
+			"avatar": "assistant",
+			"name": "助手",
+			"content": "请二位在休息区稍等片刻，我先看一下目前填写和提交的材料。"
+		},
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "麻烦可以快一点吗？等会儿我还要赶去上班，结束后再来接我爸。"
+		}
+	],
+	"Clock": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "原来当天是早上来的啊。"
+		}
+	],
+	"Sofa_Wrong": [
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "医生等下会带你去检查，我买好点心后就在门口等你。"
+		}
+	],
+	"Sofa_Correct": [
+		{
+			"avatar": "son",
+			"name": "患者儿子",
+			"content": "爸，我先去公司一趟了，晚点来送你回家。"
+		}
+	],
+	"Finished": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "这里修复得差不多了，去下一处吧。"
+		}
+	]
+}

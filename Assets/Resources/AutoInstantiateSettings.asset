@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a269544dda7ea4285128a6ce8452ab, type: 3}
+  m_Name: AutoInstantiateSettings
+  m_EditorClassIdentifier: 
+  _dontDestroyOnLoad:
+  - {fileID: 3021010956964407191, guid: 60ac088b90db435479917a9f1587b245, type: 3}
+  - {fileID: 3213567683961497867, guid: a8b916ae436998a4db3378a2d7058698, type: 3}
+  _instantiateOnSceneLoaded: []

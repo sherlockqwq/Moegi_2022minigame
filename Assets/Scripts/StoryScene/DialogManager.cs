@@ -5,40 +5,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using EasyTools;
-using NaughtyAttributes;
-using System;
-using Newtonsoft.Json;
 
 namespace StoryScene {
 
+	/// <summary>
+	/// 对话框管理器（单例 Current）
+	/// </summary>
 	public class DialogManager : MonoBehaviour {
-
-		#region 实例化
-
-		private static string _prefabPath = "Prefabs/Dialog";
-		[RuntimeInitializeOnLoadMethod]
-		private static void InitSelf() {
-			var obj = Resources.Load<GameObject>(_prefabPath);
-			if (obj != null && obj.TryGetComponent<DialogManager>(out _)) {
-				obj = Instantiate(obj);
-				DontDestroyOnLoad(obj);
-				_instance = obj.GetComponent<DialogManager>();
-			}
-			else Debug.LogError("DialogManager 初始化失败！请确认 Prefab 路径是否正确！");
-		}
-
-		#endregion
+		public static DialogManager Current { get; private set; }
 
 		public static bool Showing { get; private set; } = false;
-
-		private static DialogManager _instance;
-		public static DialogManager Current {
-			get {
-				if (_instance == null) throw new NullReferenceException("DialogManager 已被摧毁！");
-				else return _instance;
-			}
-			private set => _instance = value;
-		}
 
 		[SerializeField] private GameObject _panel;
 		[SerializeField] private Image _avatarImg;
@@ -69,6 +45,8 @@ namespace StoryScene {
 		private Queue<DialogMsg> dialogues = new Queue<DialogMsg>();
 
 		private void Awake() {
+			Current = this;
+
 			_panel.SetActive(false);
 			InitAudio();
 		}

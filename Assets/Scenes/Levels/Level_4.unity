@@ -416,6 +416,7 @@ MonoBehaviour:
   choseEvent: 2
   theCopyPlayer: {fileID: 0}
   copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!50 &23643976
 Rigidbody2D:
   serializedVersion: 4
@@ -972,7 +973,7 @@ Transform:
   m_GameObject: {fileID: 205224657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.230001, y: 4.5399995, z: 0}
-  m_LocalScale: {x: 0.82322, y: 0.82322, z: 0.82322}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 609628336}
@@ -2223,7 +2224,7 @@ Transform:
   m_GameObject: {fileID: 922665223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.34, y: 1.16, z: 0}
-  m_LocalScale: {x: 0.82322, y: 0.82322, z: 0.82322}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1836371580}
@@ -2597,7 +2598,7 @@ Transform:
   m_GameObject: {fileID: 1049611550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82322, y: 0.82322, z: 0.82322}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1901592439}

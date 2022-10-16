@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum theEvent {  collection, deadArea, exit ,copy };
+public enum theEvent { collection, deadArea, exit, copy };
 
 public class eventTile : MonoBehaviour
 {
@@ -18,8 +18,9 @@ public class eventTile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")){
-            if(choseEvent == theEvent.collection)
+        if (other.CompareTag("Player"))
+        {
+            if (choseEvent == theEvent.collection)
             {
                 GetPoint();
             }
@@ -34,7 +35,7 @@ public class eventTile : MonoBehaviour
                 exitScene();
             }
 
-            if(choseEvent == theEvent.copy)
+            if (choseEvent == theEvent.copy)
             {
                 if (!isUsed)
                 {
@@ -68,8 +69,9 @@ public class eventTile : MonoBehaviour
         }
     }
 
-    private void copyIt() { 
+    private void copyIt()
+    {
         Vector3 _position = new Vector3(copyPlayerLocation.position.x, copyPlayerLocation.position.y, copyPlayerLocation.position.z);
-        GameObject.Instantiate(theCopyPlayer,_position,Quaternion.identity);
+        GameObject.Instantiate(theCopyPlayer, _position, Quaternion.identity);
     }
 }

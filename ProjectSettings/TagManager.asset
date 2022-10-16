@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tile
   - X_Tile
+  - collection
+  - exit
   layers:
   - Default
   - TransparentFX

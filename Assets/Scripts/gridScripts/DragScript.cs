@@ -23,6 +23,7 @@ public class DragScript : MonoBehaviour
     {
         coll.isTrigger = true;
         TileManager.Instance.RegisterModules(gameObject);
+        setChildrenCollider(false);
 
     }
 
@@ -30,6 +31,7 @@ public class DragScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        setChildrenCollider(true);
 
         TileManager.Instance.CreateRegisteredModules(gameObject);
         isDragable = true;
@@ -119,7 +121,18 @@ public class DragScript : MonoBehaviour
             }
         }
     }
-
+    private void setChildrenCollider(bool stateBool)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("Tile"))
+            {
+                BoxCollider2D childCollider = child.GetComponent<BoxCollider2D>();
+                childCollider.enabled = stateBool;
+                /*Debug.Log("把" + child.name + "的碰撞体设置为" + stateBool);*/
+            }
+        }
+    }
 
 
 

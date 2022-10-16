@@ -7,12 +7,12 @@ public class PlayerControl : MonoBehaviour
     public float speed;
 
     [Header("复制体设置")]
-    public bool haveCopyPlayer ;
-    public CopyPlayer theCopyPlayer; 
+    public bool haveCopyPlayer;
+    public CopyPlayer theCopyPlayer;
 
     [Header("Detectors")]
-    [SerializeField] private float X_offset ;
-    [SerializeField] private float Y_offset ; 
+    [SerializeField] private float X_offset;
+    [SerializeField] private float Y_offset;
     [SerializeField] private TileDetector up;
     [SerializeField] private TileDetector down;
     [SerializeField] private TileDetector left;
@@ -22,8 +22,8 @@ public class PlayerControl : MonoBehaviour
     private Dictionary<TileDetector, Transform> maps = new Dictionary<TileDetector, Transform>();
     //TileDetector用于检测是否可以移动，Tranform是对应的四个方向的格子
 
-    [SerializeField]public LayerMask groundLayer ; 
-    public float groundRayLength ; 
+    [SerializeField] public LayerMask groundLayer;
+    public float groundRayLength;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void linkCopyPlayer(CopyPlayer _copy)
@@ -57,7 +57,8 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public bool MoveInTile(){
+    public bool MoveInTile()
+    {
         bool result = false;
         float step = speed * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.S))
@@ -66,9 +67,9 @@ public class PlayerControl : MonoBehaviour
             {
                 if (haveCopyPlayer && !theCopyPlayer.down.canGet)
                 {
-                    return false ;
+                    return false;
                 }
-            
+
 
                 transform.localPosition = down.tile.transform.position;
                 theCopyPlayer.moveIt(moveDirection.down);
@@ -100,9 +101,9 @@ public class PlayerControl : MonoBehaviour
         {
             if (left.canGet)
             {
-                if(haveCopyPlayer && !theCopyPlayer.left.canGet)
+                if (haveCopyPlayer && !theCopyPlayer.left.canGet)
                 {
-                    return false; 
+                    return false;
                 }
 
                 //transform.position = transform.TransformPoint(left.tile.transform.localPosition);
@@ -118,7 +119,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (right.canGet)
             {
-                if(haveCopyPlayer && !theCopyPlayer.right.canGet)
+                if (haveCopyPlayer && !theCopyPlayer.right.canGet)
                 {
                     return false;
                 }
@@ -127,11 +128,11 @@ public class PlayerControl : MonoBehaviour
                 transform.localPosition = right.tile.transform.position;
                 theCopyPlayer.moveIt(moveDirection.right);
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, right.tile.transform.localPosition, step);
-                result = true; 
+                result = true;
             }
         }
 
-        return result; 
+        return result;
     }
 
     private void FreshDectors()
@@ -145,8 +146,12 @@ public class PlayerControl : MonoBehaviour
 
         up.transform.localPosition = new Vector3(up.transform.localPosition.x, Y_offset, up.transform.localPosition.z);
         down.transform.localPosition = new Vector3(down.transform.localPosition.x, -Y_offset, down.transform.localPosition.z);
-        left.transform.localPosition = new Vector3(-X_offset , left.transform.localPosition.y, left.transform.localPosition.z);
+        left.transform.localPosition = new Vector3(-X_offset, left.transform.localPosition.y, left.transform.localPosition.z);
         right.transform.localPosition = new Vector3(X_offset, right.transform.localPosition.y, right.transform.localPosition.z);
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 
     }
 
