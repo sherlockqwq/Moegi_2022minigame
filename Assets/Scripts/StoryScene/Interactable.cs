@@ -11,6 +11,10 @@ namespace StoryScene {
 	public abstract class PlayerInteractable : MonoBehaviour {
 
 		[SerializeField] protected SpriteRenderer _outline;
+		[SerializeField] private SpriteRenderer _replaceTip;
+
+		/// <summary> 是否是需要替换的物体 </summary>
+		public virtual bool Replaceable => false;
 
 		protected virtual void Awake() {
 			Leave();
@@ -32,6 +36,8 @@ namespace StoryScene {
 				EasyGameLoop.Stop(_outlineFadeCoroutine);
 				_outlineFadeCoroutine = EasyGameLoop.Do(OutlineFade(1));
 			}
+			if (Replaceable && _replaceTip != null) _replaceTip.SetA(1);
+
 			OnPlayerTouch();
 		}
 
@@ -43,6 +49,8 @@ namespace StoryScene {
 				EasyGameLoop.Stop(_outlineFadeCoroutine);
 				_outlineFadeCoroutine = EasyGameLoop.Do(OutlineFade(0));
 			}
+			if (_replaceTip != null) _replaceTip.SetA(0);
+
 			OnPlayerLeave();
 		}
 
