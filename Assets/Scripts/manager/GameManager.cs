@@ -28,6 +28,7 @@ public class GameManager : Singleton<GameManager>
     {
         StartCoroutine(LoadScene(sceneName));
     }
+
     IEnumerator LoadScene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
