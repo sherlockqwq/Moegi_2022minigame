@@ -150,4 +150,18 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    public void PlayerEnterExit()
+    {
+        if (haveCopyPlayer)
+        {
+            transform.position = theCopyPlayer.transform.position;
+            Destroy(theCopyPlayer);
+            haveCopyPlayer = false;
+        }
+        else
+        {
+            //直接过关  
+        }
+    }
+
 }

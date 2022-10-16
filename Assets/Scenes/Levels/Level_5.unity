@@ -2270,6 +2270,7 @@ GameObject:
   - component: {fileID: 1332549136}
   - component: {fileID: 1332549135}
   - component: {fileID: 1332549138}
+  - component: {fileID: 1332549139}
   m_Layer: 0
   m_Name: End
   m_TagString: Tile
@@ -2406,6 +2407,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1332549139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332549133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 2
+  exitCount: 0
+  choseEvent: 2
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &1333078232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,9 +2566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
   choseEvent: 3
   theCopyPlayer: {fileID: 4217704076866076194, guid: d62fff5098e02be45a490d0eb6ad4706, type: 3}
   copyPlayerLocation: {fileID: 168267545}
+  isUsed: 0
 --- !u!50 &1333078238
 Rigidbody2D:
   serializedVersion: 4

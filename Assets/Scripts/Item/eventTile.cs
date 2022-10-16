@@ -60,6 +60,7 @@ public class eventTile : MonoBehaviour
 
     private void exitScene()
     {
+        GameObject.Find("Player").GetComponent<PlayerControl>().PlayerEnterExit();
         exitCount++;
         if(exitCount >= exitCondition)
         {
