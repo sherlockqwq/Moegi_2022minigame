@@ -6,6 +6,10 @@ public class Exit : MonoBehaviour
 {
     public string sceneName;
     private SpriteRenderer exitRenderer;
+
+    [Header("4-6关复制体部分专用")]
+    [SerializeField] private bool needDouble; // 需要两个都进入    
+
     private void Awake()
     {
         exitRenderer = GetComponent<SpriteRenderer>();
@@ -14,7 +18,14 @@ public class Exit : MonoBehaviour
     {
         if (collision.CompareTag("Player") && TileManager.Instance.getCollectionsCount() <= 0)
         {
-            GameManager.Instance.LoadSceneByName(sceneName);
+            if (!needDouble)
+            {
+                GameManager.Instance.LoadSceneByName(sceneName);
+            }
+            else
+            {
+                needDouble = false;
+            }
         }
     }
     private void Update()

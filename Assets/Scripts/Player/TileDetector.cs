@@ -22,7 +22,8 @@ public class TileDetector : MonoBehaviour
     /// <param name="other">The Collision2D data associated with this collision.</param>
     private void OnTriggerEnter2D(Collider2D other)
     {
-            if(other.CompareTag("Tile")){
+            if(other.CompareTag("Tile") || other.CompareTag("collection")|| other.CompareTag("X_Tile"))
+        {
                 tile = other.gameObject;
                 canGet = true ;
         }
@@ -36,7 +37,7 @@ public class TileDetector : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Tile"))
+        if (other.CompareTag("Tile") || other.CompareTag("collection") || other.CompareTag("X_Tile"))
         {
             tile = null;
             canGet = false;
