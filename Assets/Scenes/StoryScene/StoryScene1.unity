@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 334575412}
   _replaceTip: {fileID: 0}
-  _waitFor: []
+  _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 329502272}
   _replaceTip: {fileID: 0}
-  _waitFor: []
+  _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 1263606112}
   _replaceTip: {fileID: 0}
-  _waitFor: []
+  _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
-  _waitFor: []
+  _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 

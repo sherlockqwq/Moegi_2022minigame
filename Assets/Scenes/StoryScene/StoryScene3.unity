@@ -525,24 +525,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
-  _waitFor: []
-  _firstDialog: 1
-  _fadeOut: 1
-  _fadeIn: 1
-  _autoDialog: 0
-  _nextDialog: 1
+  _required: []
+  _canFirstInteract: 0
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Desk_Wrong
-  _spriteToFadeOut:
-  - {fileID: 1936794167}
-  - {fileID: 1916673958}
-  _spriteToFadeIn:
-  - {fileID: 2027806492}
-  - {fileID: 218038732}
-  _autoDialogFile: 
-  _autoDialogKey: 
-  _nextDialogFile: Story2_Dialog
-  _nextDialogKey: Desk_Correct
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 0
+  _finalDialogFile: 
+  _finalDialogKey: 
 --- !u!1 &417971862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,22 +1032,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
-  _waitFor: []
-  _firstDialog: 1
-  _fadeOut: 1
-  _fadeIn: 1
-  _autoDialog: 0
-  _nextDialog: 1
+  _required: []
+  _canFirstInteract: 0
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Sofa_Wrong
-  _spriteToFadeOut:
-  - {fileID: 1608924853}
-  _spriteToFadeIn:
-  - {fileID: 430051517}
-  _autoDialogFile: 
-  _autoDialogKey: 
-  _nextDialogFile: Story2_Dialog
-  _nextDialogKey: Sofa_Correct
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 0
+  _finalDialogFile: 
+  _finalDialogKey: 
 --- !u!1 &824851313
 GameObject:
   m_ObjectHideFlags: 0
