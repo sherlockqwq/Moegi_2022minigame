@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3600083756032858768}
   - component: {fileID: 3600083756032858775}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: Exit 1
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

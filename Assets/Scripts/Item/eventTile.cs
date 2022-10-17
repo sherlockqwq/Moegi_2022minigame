@@ -7,6 +7,9 @@ public enum theEvent { collection, deadArea, exit, copy };
 
 public class eventTile : MonoBehaviour
 {
+    public int exitCondition = 1; //要几次进入终点才行
+    [SerializeField] private int exitCount;
+
     public theEvent choseEvent;
 
     public GameObject theCopyPlayer;
@@ -58,7 +61,12 @@ public class eventTile : MonoBehaviour
 
     private void exitScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.Find("Player").GetComponent<PlayerControl>().PlayerEnterExit();
+        exitCount++;
+        if(exitCount >= exitCondition)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private void copyIt()
