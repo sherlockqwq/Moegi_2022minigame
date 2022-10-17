@@ -153,7 +153,6 @@ public class PlayerControl : MonoBehaviour
         foreach (TileDetector detector in detectors)
         {
             detector.gameObject.SetActive(false);
-            Debug.Log("Update");
             detector.gameObject.SetActive(true);
         }
 
