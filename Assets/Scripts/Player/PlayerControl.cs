@@ -72,7 +72,10 @@ public class PlayerControl : MonoBehaviour
 
 
                 transform.localPosition = down.tile.transform.position;
-                theCopyPlayer.moveIt(moveDirection.down);
+                if (haveCopyPlayer)
+                {
+                    theCopyPlayer.moveIt(moveDirection.down);
+                }
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, down.tile.transform.localPosition, step);
                 result = true;
 
@@ -89,7 +92,10 @@ public class PlayerControl : MonoBehaviour
                 }
 
                 transform.localPosition = up.tile.transform.position;
-                theCopyPlayer.moveIt(moveDirection.up);
+                if (haveCopyPlayer)
+                {
+                    theCopyPlayer.moveIt(moveDirection.up);
+                }
 
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, up.tile.transform.localPosition, step);
                 result = true;
@@ -108,7 +114,10 @@ public class PlayerControl : MonoBehaviour
 
                 //transform.position = transform.TransformPoint(left.tile.transform.localPosition);
                 transform.localPosition = left.tile.transform.position;
-                theCopyPlayer.moveIt(moveDirection.left);
+                if (haveCopyPlayer)
+                {
+                    theCopyPlayer.moveIt(moveDirection.left);
+                }
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, left.tile.transform.localPosition, step);
                 result = true;
 
@@ -126,7 +135,11 @@ public class PlayerControl : MonoBehaviour
 
                 //transform.position = transform.TransformPoint(right.tile.transform.localPosition);
                 transform.localPosition = right.tile.transform.position;
-                theCopyPlayer.moveIt(moveDirection.right);
+
+                if (haveCopyPlayer)
+                {
+                    theCopyPlayer.moveIt(moveDirection.right);
+                }
                 //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, right.tile.transform.localPosition, step);
                 result = true;
             }
