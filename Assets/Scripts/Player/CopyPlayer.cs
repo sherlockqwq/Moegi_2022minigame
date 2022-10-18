@@ -28,7 +28,6 @@ public class CopyPlayer : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Player").GetComponent<PlayerControl>().linkCopyPlayer(this);
-        Debug.Log("Íê³É");
     }
     public bool moveIt(moveDirection direction)
     {
@@ -72,7 +71,6 @@ public class CopyPlayer : MonoBehaviour
         foreach (TileDetector detector in detectors)
         {
             detector.gameObject.SetActive(false);
-            Debug.Log("Update");
             detector.gameObject.SetActive(true);
         }
 

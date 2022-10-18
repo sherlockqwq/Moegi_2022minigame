@@ -32,7 +32,7 @@ public class eventTile : MonoBehaviour
 
             if (choseEvent == theEvent.exit)
             {
-                exitScene();
+                //exitScene(other.transform);
             }
 
             if (choseEvent == theEvent.copy)
@@ -59,15 +59,17 @@ public class eventTile : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void exitScene()
+    /*
+    private void exitScene(Transform _location)
     {
-        GameObject.Find("Player").GetComponent<PlayerControl>().PlayerEnterExit();
+        GameObject.Find("Player").GetComponent<PlayerControl>().PlayerEnterExit(_location);
         exitCount++;
         if(exitCount >= exitCondition)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+    */
 
     private void copyIt()
     {

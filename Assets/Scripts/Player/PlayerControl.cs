@@ -167,18 +167,33 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    public void PlayerEnterExit()
+    public void PlayerEnterExit(string _EnterName)
     {
+        Debug.Log(_EnterName);
         if (haveCopyPlayer)
         {
-            transform.position = theCopyPlayer.transform.position;
-            Destroy(theCopyPlayer);
-            haveCopyPlayer = false;
+            if(_EnterName == "Player")
+            {
+                Debug.Log("Player进入");
+                transform.position = theCopyPlayer.transform.position;
+                Destroy(theCopyPlayer.gameObject);
+                gameObject.name = "CopyPlayer(Clone)";
+                haveCopyPlayer = false;
+            }
+            else
+            {
+                Debug.Log("复制体先进入");
+                Destroy(theCopyPlayer.gameObject);
+                haveCopyPlayer = false;
+            }
         }
-        else
-        {
-            //直接过关  
-        }
+        
+
+    }
+
+    public bool getHaveCopy()
+    {
+        return haveCopyPlayer;
     }
 
 }
