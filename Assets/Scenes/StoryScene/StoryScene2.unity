@@ -470,6 +470,7 @@ MonoBehaviour:
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
+  _showFloating: 1
   _canReplace: 1
   _spritesToFadeOut:
   - {fileID: 136245234}
@@ -833,6 +834,7 @@ MonoBehaviour:
   _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Desk_Wrong
+  _showFloating: 1
   _canReplace: 1
   _spritesToFadeOut:
   - {fileID: 1936794167}
@@ -2168,6 +2170,7 @@ MonoBehaviour:
   _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
   _firstDialogKey: Sofa_Wrong
+  _showFloating: 1
   _canReplace: 1
   _spritesToFadeOut:
   - {fileID: 1608924853}
@@ -2547,7 +2550,7 @@ MonoBehaviour:
   - {fileID: 647713965}
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
-  _nextScene: 2
+  _nextScene: StoryScene3
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0

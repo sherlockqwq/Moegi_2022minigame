@@ -11,7 +11,7 @@ namespace StoryScene {
 	public class RepairManager : MonoBehaviour {
 		[SerializeField] private ReplaceAndDialog[] _required;
 		[SerializeField] private string _finishDialogFile, _finishDialogKey;
-		[SerializeField, Scene] private int _nextScene;
+		[SerializeField, Scene] private string _nextScene;
 
 		void Start() {
 			EasyGameLoop.Do(C());

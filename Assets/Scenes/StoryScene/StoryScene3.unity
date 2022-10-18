@@ -2717,7 +2717,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5061c111d7af7f5489f8fa784abe5a5f, type: 3}
   - {fileID: 21300000, guid: dfbf734d4e3b15b4ba78d2d19cee216b, type: 3}
   _nextKeys: 4301000065000000
-  _nextScene: 3
+  _nextScene: SampleScene
 --- !u!1 &2101410737
 GameObject:
   m_ObjectHideFlags: 0

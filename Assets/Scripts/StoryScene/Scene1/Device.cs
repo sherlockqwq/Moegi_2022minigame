@@ -8,7 +8,7 @@ namespace StoryScene.Scene1 {
 
 	public class Device : PlayerInteractable {
 		[SerializeField] private Transform _panel;
-		[Scene, SerializeField] private int _toScene;
+		[SerializeField, Scene] private string _toScene;
 
 		private void Start() {
 			_panel.localScale = Vector3.zero;

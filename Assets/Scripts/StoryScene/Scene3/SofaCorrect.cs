@@ -14,7 +14,7 @@ namespace StoryScene.Scene3 {
 		[SerializeField] private Image _letter;
 		[SerializeField] private Sprite[] _letters;
 		[SerializeField] private KeyCode[] _nextKeys = new KeyCode[] { KeyCode.Mouse0 };
-		[SerializeField, Scene] private int _nextScene;
+		[SerializeField, Scene] private string _nextScene;
 
 		private IEnumerator Start() {
 			_letter.SetA(0);
