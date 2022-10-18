@@ -4668,7 +4668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1705829433468748881, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1705829433468748881, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4754,6 +4754,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 19.900146
       objectReference: {fileID: 0}
+    - target: {fileID: 5141603516130068747, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bee7c9b2b2b0f641b5b59710077ee84, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ef384815452af4c96a5ba4c8a19fd3, type: 3}
 --- !u!1 &1860741382
@@ -4963,7 +4967,7 @@ SpriteRenderer:
   m_SortingLayerID: 896862079
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b48e1f9f3e87e8d4b91070f87ea70161, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c62dac835f1f81469bb5d64aeb50afb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

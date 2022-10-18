@@ -1892,6 +1892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398282113, guid: 919a3e71845ba8d419de3cffec8bd1ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc2aca8da4b40fa4c86e904b697e1ab8, type: 3}
     - target: {fileID: 5834123033038012631, guid: 919a3e71845ba8d419de3cffec8bd1ed, type: 3}
       propertyPath: m_Name
       value: UI
@@ -2903,7 +2907,7 @@ SpriteRenderer:
   m_SortingLayerID: 896862079
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9c62dac835f1f81469bb5d64aeb50afb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b48e1f9f3e87e8d4b91070f87ea70161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
