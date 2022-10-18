@@ -50,8 +50,8 @@ namespace StoryScene {
 			switch (_progress) {
 				case Progress.First:
 					DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_firstDialogFile, _firstDialogKey));
-					yield return Wait.Until(() => DialogManager.Showing);
-					// TODO 飘字
+					yield return Wait.Until(() => !DialogManager.Showing);
+					yield return StoryPlayerController.Current.ShowFloating();
 					break;
 
 				case Progress.Replace:
@@ -61,13 +61,13 @@ namespace StoryScene {
 						yield return EasyTools.Gradient.Linear(1f, d => _spritesToFadeIn.Each(sp => sp.SetA(d)));
 					if (_dialogAfterReplace) {
 						DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_replacedDialogFile, _replacedDialogKey));
-						yield return Wait.Until(() => DialogManager.Showing);
+						yield return Wait.Until(() => !DialogManager.Showing);
 					}
 					break;
 
 				case Progress.Final:
 					DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_finalDialogFile, _finalDialogKey));
-					yield return Wait.Until(() => DialogManager.Showing);
+					yield return Wait.Until(() => !DialogManager.Showing);
 					Finished = true;
 					break;
 			}
