@@ -19,6 +19,9 @@ namespace StoryScene {
 		[SerializeField] private GameObject _interactTip;
 		[SerializeField] private KeyCode _interactKey = KeyCode.E, _deleteKey = KeyCode.Q;
 
+		[Header("飘字")]
+		[SerializeField] private TMPro.TMP_Text _floating;
+
 		[Header("触发器")]
 		[SerializeField] private int _triggerBufferSize = 10;
 		[SerializeField] private LayerMask _triggerLayer;
@@ -35,6 +38,8 @@ namespace StoryScene {
 			Model = GetComponentInChildren<StoryPlayerModel>();
 			_rb2d = GetComponent<Rigidbody2D>();
 			_triggerBuffer = new Collider2D[_triggerBufferSize];
+
+			FloatingAwake();
 		}
 
 		void Update() {
@@ -136,5 +141,27 @@ namespace StoryScene {
 
 		#endregion
 
+		#region 飘字
+
+		private Vector3 _floatingPos;
+		private Coroutine _floatPosCoroutine;
+
+		private void FloatingAwake() {
+			_floatingPos = _floating.transform.localPosition;
+		}
+
+		public IEnumerator ShowFloating() {
+			if (_floatPosCoroutine != null) StopCoroutine(_floatPosCoroutine);
+			_floating.transform.localPosition = _floatingPos;
+			_floatPosCoroutine = EasyTools.Gradient.Linear(
+				3f, _ => _floating.transform.Translate(Vector3.up * 0.1f * Time.deltaTime)
+			).ApplyTo(this);
+
+			yield return EasyTools.Gradient.Linear(0.5f, _floating.SetA);
+			yield return Wait.Seconds(1.5f);
+			yield return EasyTools.Gradient.Linear(0.5f, d => _floating.SetA(1 - d));
+		}
+
+		#endregion
 	}
 }
