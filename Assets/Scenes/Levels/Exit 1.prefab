@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3600083756032858775}
   m_Layer: 0
   m_Name: Exit 1
-  m_TagString: Tile
+  m_TagString: collection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level_3
+  needDouble: 0

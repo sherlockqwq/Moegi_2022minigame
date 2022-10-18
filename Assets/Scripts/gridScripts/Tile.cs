@@ -39,7 +39,7 @@ public class Tile : MonoBehaviour
     {
 
     }
-    public void FadeOut()
+    public void FadeOut()// 这块的功能摸了（
     {
         StartCoroutine(FadeOutZoom());
     }
@@ -79,12 +79,20 @@ public class Tile : MonoBehaviour
             collision.GetComponent<SpriteRenderer>().color = Color.red;
             overlapTile = collision.gameObject;
         }
+        else if (collision.CompareTag("X_Tile") && isdragging)
+        {
+            overlapTile = collision.gameObject;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Tile") && isdragging)
         {
             collision.GetComponent<SpriteRenderer>().color = Color.white;
+            overlapTile = null;
+        }
+        else if (collision.CompareTag("X_Tile") && isdragging)
+        {
             overlapTile = null;
         }
     }

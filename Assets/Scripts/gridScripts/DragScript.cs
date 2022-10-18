@@ -36,8 +36,6 @@ public class DragScript : MonoBehaviour
         TileManager.Instance.CreateRegisteredModules(gameObject);
         isDragable = true;
 
-
-
     }
     private void OnMouseDrag()
     {
@@ -52,7 +50,7 @@ public class DragScript : MonoBehaviour
         {
             transform.position = new Vector2(Mathf.RoundToInt(transform.position.x / gridSize) * gridSize, Mathf.RoundToInt(transform.position.y / gridSize) * gridSize);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))//右键旋转
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 90));
             for (int i = 0; i < transform.childCount; i++)
@@ -116,8 +114,16 @@ public class DragScript : MonoBehaviour
             child.isdragging = false;
             if (child.getOverlapTile() != null)
             {
-                Destroy(child.getOverlapTile());
-                Destroy(child.gameObject);
+                if (child.getOverlapTile().CompareTag("Tile"))
+                {
+                    Destroy(child.getOverlapTile());
+                    Destroy(child.gameObject);
+                }
+                else if (child.getOverlapTile().CompareTag("X_Tile"))
+                {
+                    Destroy(child.gameObject);
+                }
+
             }
         }
     }

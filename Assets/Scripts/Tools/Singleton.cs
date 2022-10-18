@@ -20,7 +20,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         {
             instance = (T)this;
         }
-        DontDestroyOnLoad(this);
+        /*DontDestroyOnLoad(this);*/
     }
     public static bool isInitialized
     {
