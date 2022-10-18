@@ -8,24 +8,53 @@ public class Exit : MonoBehaviour
     private SpriteRenderer exitRenderer;
 
     [Header("4-6关复制体部分专用")]
-    [SerializeField] private bool needDouble; // 需要两个都进入    
+    [SerializeField] private bool needCopy; 
+    [SerializeField] private bool theCopyEnter = true; // 需要两个都进入
+    [SerializeField] private bool PlayerEnter = false; // 需要两个都进入 
+    [SerializeField] private PlayerControl player; 
 
     private void Awake()
     {
         exitRenderer = GetComponent<SpriteRenderer>();
+        player = GameObject.Find("Player").GetComponent<PlayerControl>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.name);
         if (collision.CompareTag("Player") && TileManager.Instance.getCollectionsCount() <= 0)
         {
-            if (!needDouble)
+
+            if (needCopy)
             {
-                GameManager.Instance.LoadSceneByName(sceneName);
+                if(collision.name == "CopyPlayer(Clone)")
+                {
+                    theCopyEnter = true;
+                    player.PlayerEnterExit(collision.name);
+                }
+
+                if (collision.name == "CopyPlayer(Clone)" && PlayerEnter)
+                {
+                    GameManager.Instance.LoadSceneByName(sceneName);
+                }
+
+                if (collision.name == "Player" && !theCopyEnter && player.getHaveCopy())
+                {
+                    PlayerEnter = true; 
+                    player.PlayerEnterExit(collision.name);
+                }
+
+                if (collision.name == "Player" && theCopyEnter)
+                {
+                    GameManager.Instance.LoadSceneByName(sceneName);
+                }
+
+
             }
             else
             {
-                needDouble = false;
+                GameManager.Instance.LoadSceneByName(sceneName);
             }
+
         }
     }
     private void Update()
