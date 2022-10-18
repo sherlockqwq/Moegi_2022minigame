@@ -1493,7 +1493,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level_3
-  needDouble: 0
+  needCopy: 0
+  theCopyEnter: 1
+  PlayerEnter: 0
+  player: {fileID: 0}
 --- !u!61 &643388668
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3363,6 +3366,14 @@ PrefabInstance:
     - target: {fileID: 7233229446307931042, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233229446307931047, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
+      propertyPath: X_offset
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233229446307931047, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
+      propertyPath: Y_offset
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed10a1820b8aa2469c7dece59475fe4, type: 3}
