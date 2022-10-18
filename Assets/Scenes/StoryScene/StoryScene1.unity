@@ -877,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
+  _replaceTip: {fileID: 0}
   _assistantModel: {fileID: 607047794}
   _2ndSprite: {fileID: 21300000, guid: 23eb8f288f7d1204aa181610c103e682, type: 3}
   _device: {fileID: 1479958252}
@@ -1194,7 +1195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164697271}
-  - component: {fileID: 1164697273}
+  - component: {fileID: 1164697274}
   - component: {fileID: 1164697272}
   m_Layer: 11
   m_Name: Documentations
@@ -1245,7 +1246,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1164697273
+--- !u!114 &1164697274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1254,12 +1255,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164697270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 334575412}
-  _fileName: Story1_Dialog
-  _keyName: Documentations
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: 
+  _firstDialogKey: 
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story1_Dialog
+  _finalDialogKey: Documentations
 --- !u!1 &1263606110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456770048}
-  - component: {fileID: 1456770049}
+  - component: {fileID: 1456770051}
   - component: {fileID: 1456770050}
   m_Layer: 11
   m_Name: LeftDoor
@@ -1446,21 +1459,6 @@ Transform:
   m_Father: {fileID: 730025526}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1456770049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456770047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _outline: {fileID: 329502272}
-  _fileName: Story1_Dialog
-  _keyName: LeftDoor
 --- !u!61 &1456770050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1487,6 +1485,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1456770051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456770047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: {fileID: 329502272}
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: 
+  _firstDialogKey: 
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story1_Dialog
+  _finalDialogKey: LeftDoor
 --- !u!1 &1479958249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1585,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 2129604902}
+  _replaceTip: {fileID: 0}
   _panel: {fileID: 2010999223}
+  _toScene: 1
 --- !u!1 &1515124260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,12 +1657,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1515124260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 1263606112}
-  _fileName: Story1_Dialog
-  _keyName: Computer
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: 
+  _firstDialogKey: 
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story1_Dialog
+  _finalDialogKey: Computer
 --- !u!1 &1683333448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,12 +2105,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779377655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c40175f8bd90b34cac4182c182918f9, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
-  _fileName: Story1_Dialog
-  _keyName: Son
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: 
+  _firstDialogKey: 
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story1_Dialog
+  _finalDialogKey: Son
 --- !u!1 &1930388729
 GameObject:
   m_ObjectHideFlags: 3
@@ -2397,6 +2448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _outline: {fileID: 9188311}
+  _replaceTip: {fileID: 0}
   _leftCam: {fileID: 1710603781}
   _rightCam: {fileID: 182478897}
   _leftPos: {fileID: 492889020314408160}
