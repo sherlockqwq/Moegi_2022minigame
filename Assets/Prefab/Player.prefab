@@ -276,8 +276,8 @@ MonoBehaviour:
   speed: 100
   haveCopyPlayer: 0
   theCopyPlayer: {fileID: 0}
-  X_offset: 7
-  Y_offset: 3.2
+  X_offset: 3.5
+  Y_offset: 3.5
   up: {fileID: 7233229446135146413}
   down: {fileID: 7233229447044548729}
   left: {fileID: 7233229447080404935}
