@@ -14,7 +14,7 @@ namespace StoryScene {
 	public class DialogManager : MonoBehaviour {
 		public static DialogManager Current { get; private set; }
 
-		public static bool Showing { get; private set; } = false;
+		public bool Showing { get; private set; } = false;
 
 		[SerializeField] private GameObject _panel;
 		[SerializeField] private Image _avatarImg;
@@ -55,26 +55,30 @@ namespace StoryScene {
 		/// <summary>
 		/// 显示一串对话内容
 		/// </summary>
-		public void Show(params DialogMsg[] messages) => DelayShow(0, messages);
+		public void Show(params DialogMsg[] messages) => ShowAndWait(messages).ApplyTo(this);
 
 		/// <summary>
-		/// 在延时一段时间后显示一串对话内容
+		/// 通过 EasyLocalization 获取对话并显示（协程方法）
 		/// </summary>
-		public void DelayShow(float delay, params DialogMsg[] messages) {
-			if (messages == null) return;
+		public IEnumerator ShowEasyLocalizationAndWait(string fileName, string key) =>
+			ShowAndWait(EasyLocalization.Get<DialogMsg[]>(fileName, key));
+
+		/// <summary>
+		/// 显示一串对话内容（协程方法）
+		/// </summary>
+		public IEnumerator ShowAndWait(params DialogMsg[] messages) {
+			if (messages == null) yield break;
 			foreach (var dialogue in messages) {
 				dialogues.Enqueue(dialogue);
 			}
-			if (!Showing && dialogues.Count > 0) ShowDialogC(delay).ApplyTo(this);
+			if (!Showing && dialogues.Count > 0) yield return ShowDialogC();
 		}
 
 		private int myPauseId;
 		// 显示对话的协程
-		IEnumerator ShowDialogC(float delay) {
+		IEnumerator ShowDialogC() {
 			Showing = true;
 			StoryPlayerController.Current.Pause(out myPauseId);
-
-			yield return Wait.Seconds(delay);
 
 			_panel.SetActive(true);
 			while (dialogues.TryDequeue(out var message)) {
