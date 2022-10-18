@@ -12,6 +12,7 @@ namespace StoryScene {
 
 		[SerializeField, Header("首次交互")] private bool _canFirstInteract;
 		[SerializeField, ShowIf(nameof(_canFirstInteract))] private string _firstDialogFile, _firstDialogKey;
+		[SerializeField, ShowIf(nameof(_canFirstInteract))] private bool _showFloating = true;
 
 		[SerializeField, Header("替换")] private bool _canReplace;
 		[SerializeField, ShowIf(nameof(_canReplace))] private SpriteRenderer[] _spritesToFadeOut;
@@ -29,8 +30,10 @@ namespace StoryScene {
 		public override bool Replaceable => _replaceable;
 
 		private IEnumerator Start() {
-			_spritesToFadeOut.Each(sp => sp.SetA(1));
-			_spritesToFadeIn.Each(sp => sp.SetA(0));
+			if (_canReplace) {
+				_spritesToFadeOut.Each(sp => sp.SetA(1));
+				_spritesToFadeIn.Each(sp => sp.SetA(0));
+			}
 
 			if (!_canFirstInteract) UpdateProgress();
 
@@ -51,7 +54,7 @@ namespace StoryScene {
 				case Progress.First:
 					DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_firstDialogFile, _firstDialogKey));
 					yield return Wait.Until(() => !DialogManager.Showing);
-					yield return StoryPlayerController.Current.ShowFloating();
+					if (_showFloating) yield return StoryPlayerController.Current.ShowFloating();
 					break;
 
 				case Progress.Replace:

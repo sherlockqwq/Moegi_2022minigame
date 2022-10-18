@@ -199,7 +199,6 @@ MonoBehaviour:
   _interactKey: 101
   _deleteKey: 113
   _floating: {fileID: 7028312953628610564}
-  _floatingSpeed: 0.1
   _triggerBufferSize: 10
   _triggerLayer:
     serializedVersion: 2

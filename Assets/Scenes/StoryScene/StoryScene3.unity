@@ -252,6 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 155303278}
+  - component: {fileID: 155303280}
+  - component: {fileID: 155303279}
   m_Layer: 11
   m_Name: Photo
   m_TagString: Untagged
@@ -267,13 +269,67 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155303277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.02, y: -5, z: 0}
+  m_LocalPosition: {x: -9.48, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 417971863}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &155303279
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155303277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.813187, y: 5.626374}
+    newSize: {x: 2.813187, y: 5.626374}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &155303280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155303277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: {fileID: 0}
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: 
+  _firstDialogKey: 
+  _showFloating: 1
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story3_Dialog
+  _finalDialogKey: Photo
 --- !u!1 &218038730
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,18 +582,23 @@ MonoBehaviour:
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
   _required: []
-  _canFirstInteract: 0
-  _firstDialogFile: Story2_Dialog
-  _firstDialogKey: Desk_Wrong
-  _canReplace: 0
-  _spritesToFadeOut: []
-  _spritesToFadeIn: []
+  _canFirstInteract: 1
+  _firstDialogFile: Story3_Dialog
+  _firstDialogKey: Door_Wrong
+  _showFloating: 1
+  _canReplace: 1
+  _spritesToFadeOut:
+  - {fileID: 1936794167}
+  - {fileID: 1916673958}
+  _spritesToFadeIn:
+  - {fileID: 2027806492}
+  - {fileID: 218038732}
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
-  _canFinalInteract: 0
-  _finalDialogFile: 
-  _finalDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story3_Dialog
+  _finalDialogKey: Door_Correct
 --- !u!1 &417971862
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +631,7 @@ Transform:
   - {fileID: 647713963}
   - {fileID: 155303278}
   - {fileID: 294065316}
+  - {fileID: 2095019036}
   m_Father: {fileID: 871578698}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -901,6 +963,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591842556}
+  - component: {fileID: 591842558}
+  - component: {fileID: 591842557}
   m_Layer: 11
   m_Name: Box
   m_TagString: Untagged
@@ -916,13 +980,67 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591842555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -5, z: 0}
+  m_LocalPosition: {x: -1.38, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 417971863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &591842557
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591842555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.813187, y: 5.626374}
+    newSize: {x: 2.813187, y: 5.626374}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &591842558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591842555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: {fileID: 0}
+  _replaceTip: {fileID: 0}
+  _required: []
+  _canFirstInteract: 0
+  _firstDialogFile: Story3_Dialog
+  _firstDialogKey: Box
+  _showFloating: 0
+  _canReplace: 0
+  _spritesToFadeOut: []
+  _spritesToFadeIn: []
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 1
+  _finalDialogFile: Story3_Dialog
+  _finalDialogKey: Box
 --- !u!1 &636584614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,12 +1151,15 @@ MonoBehaviour:
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
   _required: []
-  _canFirstInteract: 0
-  _firstDialogFile: Story2_Dialog
+  _canFirstInteract: 1
+  _firstDialogFile: Story3_Dialog
   _firstDialogKey: Sofa_Wrong
-  _canReplace: 0
-  _spritesToFadeOut: []
-  _spritesToFadeIn: []
+  _showFloating: 1
+  _canReplace: 1
+  _spritesToFadeOut:
+  - {fileID: 1608924853}
+  _spritesToFadeIn:
+  - {fileID: 430051517}
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
@@ -1781,7 +1902,7 @@ SpriteRenderer:
   m_Size: {x: 24.965874, y: 5.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1642345468
@@ -2268,6 +2389,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2095019035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095019036}
+  - component: {fileID: 2095019038}
+  - component: {fileID: 2095019037}
+  m_Layer: 11
+  m_Name: SofaCorrect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095019036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095019035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.78, y: -5.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417971863}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2095019037
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095019035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.813187, y: 5.626374}
+    newSize: {x: 2.813187, y: 5.626374}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &2095019038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095019035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f93b856bfc86f4cae060f51982b82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: {fileID: 0}
+  _replaceTip: {fileID: 0}
+  _required:
+  - {fileID: 647713965}
+  - {fileID: 294065318}
+  _canFirstInteract: 1
+  _firstDialogFile: Story3_Dialog
+  _firstDialogKey: Sofa_Correct
+  _showFloating: 0
+  _canReplace: 0
+  _spritesToFadeOut:
+  - {fileID: 0}
+  _spritesToFadeIn:
+  - {fileID: 0}
+  _dialogAfterReplace: 0
+  _replacedDialogFile: 
+  _replacedDialogKey: 
+  _canFinalInteract: 0
+  _finalDialogFile: 
+  _finalDialogKey: 
 --- !u!1 &2101410737
 GameObject:
   m_ObjectHideFlags: 0

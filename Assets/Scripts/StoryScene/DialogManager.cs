@@ -25,12 +25,13 @@ namespace StoryScene {
 		[SerializeField] private KeyCode[] _skipKeys = new KeyCode[] { KeyCode.LeftControl };
 
 		// TODO 这里序列化各种立绘
-		[SerializeField] private Sprite _doctorAvatar, _sonAvatar, _wifeAvatar;
+		[SerializeField] private Sprite _doctorAvatar, _sonAvatar, _sonSadAvatar, _wifeAvatar;
 
 		private void SetSpeaker(DialogMsg message) {
 			_avatarImg.sprite = message.avatar.ToLower() switch {
 				"doctor" => _doctorAvatar,
 				"son" => _sonAvatar,
+				"son_sad" => _sonSadAvatar,
 				"wife" => _wifeAvatar,
 				_ => null
 			};
@@ -60,6 +61,7 @@ namespace StoryScene {
 		/// 在延时一段时间后显示一串对话内容
 		/// </summary>
 		public void DelayShow(float delay, params DialogMsg[] messages) {
+			if (messages == null) return;
 			foreach (var dialogue in messages) {
 				dialogues.Enqueue(dialogue);
 			}
