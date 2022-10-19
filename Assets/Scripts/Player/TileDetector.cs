@@ -39,8 +39,8 @@ public class TileDetector : MonoBehaviour
     {
         if (other.CompareTag("Tile") || other.CompareTag("collection") || other.CompareTag("X_Tile"))
         {
-            tile = null;
-            canGet = false;
+                tile = null;
+                canGet = false;
 
         }
     }

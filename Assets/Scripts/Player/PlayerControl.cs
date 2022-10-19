@@ -10,6 +10,9 @@ public class PlayerControl : MonoBehaviour
     public bool haveCopyPlayer;
     public CopyPlayer theCopyPlayer;
 
+    [Header("方块脱落")]
+    public bool tileDestory;
+
     [Header("Detectors")]
     [SerializeField] private float X_offset;
     [SerializeField] private float Y_offset;
@@ -18,6 +21,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private TileDetector left;
     [SerializeField] private TileDetector right;
     private List<TileDetector> detectors = new List<TileDetector>();
+
+    public GameObject tile_Now;
 
     private Dictionary<TileDetector, Transform> maps = new Dictionary<TileDetector, Transform>();
     //TileDetector用于检测是否可以移动，Tranform是对应的四个方向的格子
@@ -70,13 +75,18 @@ public class PlayerControl : MonoBehaviour
                     return false;
                 }
 
+                if (tileDestory)
+                {
+                    Destroy(tile_Now);
+                }
 
                 transform.localPosition = down.tile.transform.position;
                 if (haveCopyPlayer)
                 {
+
+
                     theCopyPlayer.moveIt(moveDirection.down);
                 }
-                //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, down.tile.transform.localPosition, step);
                 result = true;
 
             }
@@ -91,13 +101,19 @@ public class PlayerControl : MonoBehaviour
                     return false;
                 }
 
+                if (tileDestory)
+                {
+                    Destroy(tile_Now);
+                }
+
                 transform.localPosition = up.tile.transform.position;
                 if (haveCopyPlayer)
                 {
+
+
                     theCopyPlayer.moveIt(moveDirection.up);
                 }
 
-                //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, up.tile.transform.localPosition, step);
                 result = true;
 
             }
@@ -112,13 +128,18 @@ public class PlayerControl : MonoBehaviour
                     return false;
                 }
 
-                //transform.position = transform.TransformPoint(left.tile.transform.localPosition);
+                if (tileDestory)
+                {
+                    Destroy(tile_Now);
+                }
+
                 transform.localPosition = left.tile.transform.position;
+                
                 if (haveCopyPlayer)
                 {
+
                     theCopyPlayer.moveIt(moveDirection.left);
                 }
-                //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, left.tile.transform.localPosition, step);
                 result = true;
 
             }
@@ -133,14 +154,17 @@ public class PlayerControl : MonoBehaviour
                     return false;
                 }
 
-                //transform.position = transform.TransformPoint(right.tile.transform.localPosition);
+                if (tileDestory)
+                {
+                    Destroy(tile_Now);
+                }
+
                 transform.localPosition = right.tile.transform.position;
 
                 if (haveCopyPlayer)
                 {
                     theCopyPlayer.moveIt(moveDirection.right);
                 }
-                //gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, right.tile.transform.localPosition, step);
                 result = true;
             }
         }
@@ -162,10 +186,15 @@ public class PlayerControl : MonoBehaviour
         right.transform.localPosition = new Vector3(X_offset, right.transform.localPosition.y, right.transform.localPosition.z);
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Tile"))
+        {
+            tile_Now = other.gameObject;
+        }
 
     }
+
 
     public void PlayerEnterExit(string _EnterName)
     {

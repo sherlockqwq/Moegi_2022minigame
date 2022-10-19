@@ -24,6 +24,11 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 
     }
+
+    public void callReLoadScene()
+    {
+        ReLoadScene();
+    }
     public void LoadSceneByName(string sceneName)
     {
         StartCoroutine(LoadScene(sceneName));
