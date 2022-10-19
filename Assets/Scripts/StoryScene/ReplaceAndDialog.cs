@@ -12,6 +12,7 @@ namespace StoryScene {
 
 		[SerializeField, Header("首次交互")] private bool _canFirstInteract;
 		[SerializeField, ShowIf(nameof(_canFirstInteract))] private string _firstDialogFile, _firstDialogKey;
+		[SerializeField, ShowIf(nameof(_canFirstInteract))] private bool _showFloating = true;
 
 		[SerializeField, Header("替换")] private bool _canReplace;
 		[SerializeField, ShowIf(nameof(_canReplace))] private SpriteRenderer[] _spritesToFadeOut;
@@ -29,8 +30,10 @@ namespace StoryScene {
 		public override bool Replaceable => _replaceable;
 
 		private IEnumerator Start() {
-			_spritesToFadeOut.Each(sp => sp.SetA(1));
-			_spritesToFadeIn.Each(sp => sp.SetA(0));
+			if (_canReplace) {
+				_spritesToFadeOut.Each(sp => sp.SetA(1));
+				_spritesToFadeIn.Each(sp => sp.SetA(0));
+			}
 
 			if (!_canFirstInteract) UpdateProgress();
 
@@ -49,9 +52,8 @@ namespace StoryScene {
 
 			switch (_progress) {
 				case Progress.First:
-					DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_firstDialogFile, _firstDialogKey));
-					yield return Wait.Until(() => DialogManager.Showing);
-					// TODO 飘字
+					yield return DialogManager.Current.ShowEasyLocalizationAndWait(_firstDialogFile, _firstDialogKey);
+					if (_showFloating) yield return StoryPlayerController.Current.ShowFloating();
 					break;
 
 				case Progress.Replace:
@@ -59,15 +61,13 @@ namespace StoryScene {
 						yield return EasyTools.Gradient.Linear(1f, d => _spritesToFadeOut.Each(sp => sp.SetA(1 - d)));
 					if (_spritesToFadeIn.Length > 0)
 						yield return EasyTools.Gradient.Linear(1f, d => _spritesToFadeIn.Each(sp => sp.SetA(d)));
-					if (_dialogAfterReplace) {
-						DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_replacedDialogFile, _replacedDialogKey));
-						yield return Wait.Until(() => DialogManager.Showing);
-					}
+					if (_dialogAfterReplace)
+						yield return DialogManager.Current.ShowEasyLocalizationAndWait(_replacedDialogFile, _replacedDialogKey);
+
 					break;
 
 				case Progress.Final:
-					DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>(_finalDialogFile, _finalDialogKey));
-					yield return Wait.Until(() => DialogManager.Showing);
+					yield return DialogManager.Current.ShowEasyLocalizationAndWait(_finalDialogFile, _finalDialogKey);
 					Finished = true;
 					break;
 			}

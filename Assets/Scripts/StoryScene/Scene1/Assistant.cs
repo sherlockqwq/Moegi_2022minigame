@@ -21,8 +21,8 @@ namespace StoryScene.Scene1 {
 
 		IEnumerator Story() {
 			StoryPlayerController.Current.Pause(out var id);
-			DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>("Story1_Dialog", "Assistant1"));
-			yield return Wait.Until(() => !DialogManager.Showing);
+			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story1_Dialog", "Assistant1");
+
 			yield return EasyTools.Gradient.EaseIn(0.2f, d => _assistantModel.localScale = new Vector3(1 - d, 1, 1));
 			_assistantModel.GetComponentInChildren<SpriteRenderer>(true).sprite = _2ndSprite;
 			yield return EasyTools.Gradient.EaseOut(0.2f, d => _assistantModel.localScale = new Vector3(-d, 1, 1));
@@ -30,8 +30,7 @@ namespace StoryScene.Scene1 {
 			yield return Wait.Seconds(0.3f);
 
 			yield return EasyTools.Gradient.EaseInOut(0.4f, d => _assistantModel.localScale = new Vector3(2 * d - 1, 1, 1));
-			DialogManager.Current.Show(EasyLocalization.Get<DialogMsg[]>("Story1_Dialog", "Assistant2"));
-			yield return Wait.Until(() => !DialogManager.Showing);
+			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story1_Dialog", "Assistant2");
 
 			StoryPlayerController.Current.Resume(id);
 			_device.SetActive(true);

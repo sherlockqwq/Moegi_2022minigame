@@ -191,6 +191,7 @@ MonoBehaviour:
   _skipKeys: 32010000
   _doctorAvatar: {fileID: 21300000, guid: 39e0acdda9237dc4f8349918bc7dc609, type: 3}
   _sonAvatar: {fileID: 21300000, guid: 18dc6688f7466924eb834a587f870c38, type: 3}
+  _sonSadAvatar: {fileID: 21300000, guid: d059f19f56cffb2439c239a551bd3675, type: 3}
   _wifeAvatar: {fileID: 21300000, guid: d22c1a479c688be4186550e62051a2b4, type: 3}
 --- !u!82 &3021010956964407186
 AudioSource:
