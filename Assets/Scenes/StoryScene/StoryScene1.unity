@@ -1264,6 +1264,7 @@ MonoBehaviour:
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
+  _showFloating: 1
   _canReplace: 0
   _spritesToFadeOut: []
   _spritesToFadeIn: []
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
+  _showFloating: 1
   _canReplace: 0
   _spritesToFadeOut: []
   _spritesToFadeIn: []
@@ -1587,7 +1589,7 @@ MonoBehaviour:
   _outline: {fileID: 2129604902}
   _replaceTip: {fileID: 0}
   _panel: {fileID: 2010999223}
-  _toScene: 1
+  _toScene: StoryScene2
 --- !u!1 &1515124260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
+  _showFloating: 1
   _canReplace: 0
   _spritesToFadeOut: []
   _spritesToFadeIn: []
@@ -2114,6 +2117,7 @@ MonoBehaviour:
   _canFirstInteract: 0
   _firstDialogFile: 
   _firstDialogKey: 
+  _showFloating: 1
   _canReplace: 0
   _spritesToFadeOut: []
   _spritesToFadeIn: []
