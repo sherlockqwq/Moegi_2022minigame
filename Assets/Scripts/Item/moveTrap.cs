@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+
 public class moveTrap : MonoBehaviour
 {
     public Transform pointA;
@@ -52,6 +54,14 @@ public class moveTrap : MonoBehaviour
         {
             pointDestination = PositionA;
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            GameManager.Instance.callReLoadScene();
         }
     }
 
