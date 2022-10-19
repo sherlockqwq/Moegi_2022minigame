@@ -172,7 +172,7 @@ public class PlayerControl : MonoBehaviour
         return result;
     }
 
-    private void FreshDectors()
+    public void FreshDectors()
     {
         foreach (TileDetector detector in detectors)
         {

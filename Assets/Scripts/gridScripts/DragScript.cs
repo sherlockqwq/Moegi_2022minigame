@@ -36,6 +36,8 @@ public class DragScript : MonoBehaviour
         TileManager.Instance.CreateRegisteredModules(gameObject);
         isDragable = true;
 
+        GameObject.Find("Player").GetComponent<PlayerControl>().FreshDectors();
+
     }
     private void OnMouseDrag()
     {
