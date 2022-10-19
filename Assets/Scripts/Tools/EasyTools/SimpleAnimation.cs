@@ -10,7 +10,7 @@ namespace EasyTools {
 		[SerializeField] private float _frameRate;
 
 		IEnumerator Start() {
-			if (TryGetComponent<SpriteRenderer>(out var sr)) {
+			if (_sprites.Length > 0 && TryGetComponent<SpriteRenderer>(out var sr)) {
 				float interval = 1 / _frameRate;
 				int index = 0;
 				while (true) {
