@@ -198,7 +198,9 @@ MonoBehaviour:
   _interactTip: {fileID: 3026356420544395397}
   _interactKey: 101
   _deleteKey: 113
+  _keySound: {fileID: 8300000, guid: 73b467242dd708342af7fea103b7c1bd, type: 3}
   _floating: {fileID: 7028312953628610564}
+  _floatingSound: {fileID: 8300000, guid: b48f77cb48c4baf479a2e2e50eb3cc40, type: 3}
   _triggerBufferSize: 10
   _triggerLayer:
     serializedVersion: 2

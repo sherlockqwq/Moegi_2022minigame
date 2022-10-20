@@ -20,7 +20,7 @@ namespace StoryScene {
 		IEnumerator CollectCoroutine() {
 			SetActive(false);
 
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 
 			yield return EasyTools.Gradient.Linear(0.5f, d => {
 				if (_sprite != null) _sprite.SetA(1 - d);
@@ -28,7 +28,7 @@ namespace StoryScene {
 			});
 
 			Collected = true;
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 		}
 	}
 }

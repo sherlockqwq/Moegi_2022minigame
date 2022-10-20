@@ -12,6 +12,7 @@ namespace StoryScene {
 		[SerializeField] private ReplaceAndDialog[] _required;
 		[SerializeField] private string _finishDialogFile, _finishDialogKey;
 		[SerializeField, Scene] private string _nextScene;
+		[SerializeField] private AudioClip _transitionSound;
 
 		void Start() {
 			EasyGameLoop.Do(C());
@@ -20,17 +21,19 @@ namespace StoryScene {
 		IEnumerator C() {
 			yield return Wait.Until(() => _required.All(item => item.Finished));
 
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait(_finishDialogFile, _finishDialogKey);
 
-			yield return TransitionManager.Current.ShowMaskCoroutine();
+			StoryAudio.PlaySFX(_transitionSound);
+
+			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
 
 			yield return SceneManager.LoadSceneAsync(_nextScene);
 
-			yield return TransitionManager.Current.HideMaskCoroutine();
+			yield return TransitionManager.Current.HideMaskCoroutine(1.5f);
 
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 		}
 	}
 }

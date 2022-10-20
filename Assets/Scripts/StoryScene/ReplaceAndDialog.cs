@@ -50,7 +50,7 @@ namespace StoryScene {
 		protected override void OnInteract(StoryPlayerController player) => Interact().ApplyTo(this);
 
 		IEnumerator Interact() {
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 
 			switch (_progress) {
 				case Progress.First:
@@ -76,7 +76,7 @@ namespace StoryScene {
 			}
 
 			UpdateProgress();
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 		}
 
 

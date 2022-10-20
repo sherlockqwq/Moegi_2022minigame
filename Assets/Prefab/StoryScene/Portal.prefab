@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
   collectScene: {fileID: 0}
   repairScene: {fileID: 0}
   allCollections: []

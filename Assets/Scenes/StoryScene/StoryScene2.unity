@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 2087295957}
   _replaceTip: {fileID: 345069387}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -949,6 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
@@ -2166,7 +2168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 40
   m_Sprite: {fileID: 21300000, guid: f00fcd56a9af9cf4d9cf2492407c507e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2371,6 +2373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
+  _interactSound: {fileID: 0}
   _required:
   - {fileID: 294065318}
   _canFirstInteract: 1
@@ -2760,6 +2763,7 @@ MonoBehaviour:
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
   _nextScene: Level_1
+  _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4736,6 +4740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 800808967}
 --- !u!61 &1747687336
 BoxCollider2D:
@@ -4884,6 +4889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 2106266026}
 --- !u!1 &1806913175
 GameObject:
@@ -5422,6 +5428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 15580981}
 --- !u!1 &2141883422
 GameObject:
