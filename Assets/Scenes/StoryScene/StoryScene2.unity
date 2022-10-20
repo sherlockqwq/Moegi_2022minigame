@@ -595,6 +595,9 @@ MonoBehaviour:
   _dialogAfterReplace: 1
   _replacedDialogFile: Story2_Dialog
   _replacedDialogKey: Clock
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 0
   _finalDialogFile: 
   _finalDialogKey: 
@@ -959,6 +962,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story2_Dialog
   _finalDialogKey: Desk_Correct
@@ -2379,6 +2385,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story2_Dialog
   _finalDialogKey: Sofa_Correct
@@ -2750,7 +2759,7 @@ MonoBehaviour:
   - {fileID: 647713965}
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
-  _nextScene: StoryScene3
+  _nextScene: Level_1
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0
