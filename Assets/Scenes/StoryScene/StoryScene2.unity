@@ -313,6 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73566062}
+  - component: {fileID: 73566063}
   m_Layer: 0
   m_Name: CollectScene
   m_TagString: Untagged
@@ -339,6 +340,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73566063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73566061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &127634823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +2732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871578698}
   - component: {fileID: 871578699}
+  - component: {fileID: 871578700}
   m_Layer: 0
   m_Name: RepairScene
   m_TagString: Untagged
@@ -2764,6 +2779,19 @@ MonoBehaviour:
   _finishDialogKey: Finished
   _nextScene: Level_1
   _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
+--- !u!114 &871578700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871578697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0

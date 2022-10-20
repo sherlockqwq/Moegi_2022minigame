@@ -39,6 +39,8 @@ namespace StoryScene {
 			_obj = new GameObject("StorySound");
 			_sfxSource = _obj.AddComponent<AudioSource>();
 			_bgmSource = _obj.AddComponent<AudioSource>();
+			_bgmSource.playOnAwake = false;
+			_bgmSource.loop = true;
 			Object.DontDestroyOnLoad(_obj);
 		}
 	}
