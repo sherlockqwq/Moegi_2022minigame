@@ -1271,6 +1271,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Documentations
@@ -1511,6 +1514,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: LeftDoor
@@ -1589,7 +1595,7 @@ MonoBehaviour:
   _outline: {fileID: 2129604902}
   _replaceTip: {fileID: 0}
   _panel: {fileID: 2010999223}
-  _toScene: StoryScene2
+  _toScene: Level_1
 --- !u!1 &1515124260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1681,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Computer
@@ -2124,6 +2133,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Son

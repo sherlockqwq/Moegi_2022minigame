@@ -19,7 +19,7 @@ namespace EasyTools {
 
 		private static AutoInstantiate _current;
 
-		[RuntimeInitializeOnLoadMethod]
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		private static void StartupLoad() {
 			SceneManager.sceneLoaded += OnSceneLoaded;
 			_current = Resources.Load<AutoInstantiate>(_fileName);
