@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[SerializeField]
+[System.Serializable]
 public class Music
 {
-    string name;
-    AudioClip audio;
+    public string name;
+    public AudioClip clip;
 }
