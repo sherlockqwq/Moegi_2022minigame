@@ -40,12 +40,12 @@ namespace StoryScene.Scene3 {
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Sofa_Correct");
 
 			yield return EasyTools.Gradient.Linear(0.5f, _letter.SetA); // 显示信件
-			StoryAudio.PlaySFX(_paperSound);
+			GameAudio.PlaySFX(_paperSound);
 			foreach (var letter in _letters) {
 				_letter.sprite = letter;
 				yield return Wait.Seconds(0.5f);
 				yield return Wait.Until(() => _nextKeys.Any(key => Input.GetKeyDown(key)));
-				StoryAudio.PlaySFX(_paperSound);
+				GameAudio.PlaySFX(_paperSound);
 			}
 			yield return EasyTools.Gradient.Linear(0.5f, d => _letter.SetA(1 - d)); // 隐藏信件
 
@@ -55,7 +55,7 @@ namespace StoryScene.Scene3 {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Finished");
 
-			StoryAudio.PlaySFX(_transitionSound);
+			GameAudio.PlaySFX(_transitionSound);
 
 			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
 

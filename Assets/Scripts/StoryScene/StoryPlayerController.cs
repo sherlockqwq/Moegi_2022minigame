@@ -80,7 +80,7 @@ namespace StoryScene {
 		private void CheckInteractable() {
 			bool deleteDown = Input.GetKeyDown(_deleteKey), interactDown = Input.GetKeyDown(_interactKey);
 
-			if (deleteDown || interactDown) StoryAudio.PlaySFX(_keySound);
+			if (deleteDown || interactDown) GameAudio.PlaySFX(_keySound);
 
 			_currentInteractable = null;
 
@@ -170,7 +170,7 @@ namespace StoryScene {
 				3f, _ => _floating.transform.Translate(Vector3.up * 0.1f * Time.deltaTime)
 			).ApplyTo(this);
 
-			StoryAudio.PlaySFX(_floatingSound);
+			GameAudio.PlaySFX(_floatingSound);
 
 			yield return EasyTools.Gradient.Linear(0.5f, _floating.SetA);
 			yield return Wait.Seconds(1.5f);

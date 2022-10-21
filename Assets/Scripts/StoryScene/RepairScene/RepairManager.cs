@@ -25,7 +25,7 @@ namespace StoryScene {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait(_finishDialogFile, _finishDialogKey);
 
-			StoryAudio.PlaySFX(_transitionSound);
+			GameAudio.PlaySFX(_transitionSound);
 
 			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
 

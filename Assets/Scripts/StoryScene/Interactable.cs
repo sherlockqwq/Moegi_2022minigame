@@ -26,7 +26,7 @@ namespace StoryScene {
 		/// </summary>
 		/// <param name="player">与该物体交互的玩家</param>
 		public void Interact(StoryPlayerController player) {
-			StoryAudio.PlaySFX(_interactSound);
+			GameAudio.PlaySFX(_interactSound);
 			OnInteract(player);
 		}
 
