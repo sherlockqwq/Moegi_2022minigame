@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 62814541}
+  _interactSound: {fileID: 8300000, guid: 47d9944aeb8f3404fbea5f1a67959d9b, type: 3}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: Story3_Dialog
@@ -752,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 691933874}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -1156,6 +1158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 1
   _firstDialogFile: Story3_Dialog
@@ -1769,6 +1772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 2003495742}
 --- !u!4 &505960967
 Transform:
@@ -2128,6 +2132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 632041435}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 8300000, guid: 47d9944aeb8f3404fbea5f1a67959d9b, type: 3}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: Story3_Dialog
@@ -2338,6 +2343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 1
   _firstDialogFile: Story3_Dialog
@@ -2957,6 +2963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 871578698}
+  - component: {fileID: 871578699}
   m_Layer: 0
   m_Name: RepairScene
   m_TagString: Untagged
@@ -2983,6 +2990,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871578699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871578697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &875434304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 990953766}
 --- !u!61 &988494183
 BoxCollider2D:
@@ -3237,18 +3258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: {x: 0, y: 0, z: 0}
   _rotateSpeed: {x: 0, y: 0, z: 15}
-  _sprites:
-  - {fileID: 21300000, guid: 59675fd1b076c1f4bb9e3c989a45a517, type: 3}
-  - {fileID: 21300000, guid: 59675fd1b076c1f4bb9e3c989a45a517, type: 3}
-  - {fileID: 21300000, guid: 5676cd3b690a7f2479cf6a9be4fbdb9f, type: 3}
-  - {fileID: 21300000, guid: b44cdf0210baf994c9ca92240b3c3241, type: 3}
-  - {fileID: 21300000, guid: a8addfa265bed3744a42c8fca94c7db3, type: 3}
-  - {fileID: 21300000, guid: b6c685e8b003f9a43ad3d3229912e7f2, type: 3}
-  - {fileID: 21300000, guid: a8addfa265bed3744a42c8fca94c7db3, type: 3}
-  - {fileID: 21300000, guid: b44cdf0210baf994c9ca92240b3c3241, type: 3}
-  - {fileID: 21300000, guid: 5676cd3b690a7f2479cf6a9be4fbdb9f, type: 3}
-  - {fileID: 21300000, guid: 59675fd1b076c1f4bb9e3c989a45a517, type: 3}
-  - {fileID: 21300000, guid: 59675fd1b076c1f4bb9e3c989a45a517, type: 3}
+  _sprites: []
   _frameRate: 5
 --- !u!212 &990953766
 SpriteRenderer:
@@ -4731,6 +4741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 559902709}
 --- !u!4 &1596295699
 Transform:
@@ -5498,6 +5509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 2097693}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -6146,6 +6158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2014158141}
+  - component: {fileID: 2014158142}
   m_Layer: 0
   m_Name: CollectScene
   m_TagString: Untagged
@@ -6172,6 +6185,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2014158142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014158140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &2027806490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6532,6 +6558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required:
   - {fileID: 647713965}
   - {fileID: 294065318}
@@ -6541,7 +6568,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5061c111d7af7f5489f8fa784abe5a5f, type: 3}
   - {fileID: 21300000, guid: dfbf734d4e3b15b4ba78d2d19cee216b, type: 3}
   _nextKeys: 4301000065000000
-  _nextScene: SampleScene
+  _paperSound: {fileID: 8300000, guid: b7ab80c654e31ce49baa54697b64887c, type: 3}
+  _nextScene: Level_1
+  _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
 --- !u!1 &2103077509
 GameObject:
   m_ObjectHideFlags: 0

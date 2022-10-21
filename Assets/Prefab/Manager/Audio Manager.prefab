@@ -49,9 +49,23 @@ MonoBehaviour:
   MusicSounds:
   - name: BGM
     clip: {fileID: 8300000, guid: cd519a49b0e580e4791a6482883a8458, type: 3}
+  - name: 10
+    clip: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
   SFXSounds:
-  - name: 
-    clip: {fileID: 0}
+  - name: 4
+    clip: {fileID: 8300000, guid: 99667bb8a5f93da4aae93b3597aa835c, type: 3}
+  - name: 5
+    clip: {fileID: 8300000, guid: 33e3ce9fec3dcf447a65a0bc5cf4a76d, type: 3}
+  - name: 7
+    clip: {fileID: 8300000, guid: 73b467242dd708342af7fea103b7c1bd, type: 3}
+  - name: 8
+    clip: {fileID: 8300000, guid: b48f77cb48c4baf479a2e2e50eb3cc40, type: 3}
+  - name: 9
+    clip: {fileID: 8300000, guid: 47d9944aeb8f3404fbea5f1a67959d9b, type: 3}
+  - name: 11
+    clip: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
+  - name: 12
+    clip: {fileID: 8300000, guid: b7ab80c654e31ce49baa54697b64887c, type: 3}
   MusicSource: {fileID: 1158473444853258057}
   SFXSource: {fileID: 1158473445298599690}
 --- !u!1 &1158473444853258056
