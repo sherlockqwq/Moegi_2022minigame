@@ -96,11 +96,11 @@ namespace StoryScene {
 			}
 			else {
 				if (_currentInteractable.Replaceable) {  // 是要替换的物体
-					if (deleteDown) _currentInteractable.Interact(this); // 检查按键
+					if (deleteDown) InteractWith(_currentInteractable); // 检查按键
 				}
 				else {  // 不是要替换的物体
 					_interactTip.SetActive(true);   // 显示提示图标
-					if (interactDown) _currentInteractable.Interact(this);   // 检查交互按键
+					if (interactDown) InteractWith(_currentInteractable);   // 检查交互按键
 				}
 			}
 
@@ -110,6 +110,11 @@ namespace StoryScene {
 				_lastInteractable = _currentInteractable;
 			}
 
+		}
+
+		private void InteractWith(PlayerInteractable interactable) {
+			Model.FaceLeft(interactable.transform.position.x < transform.position.x);
+			interactable.Interact(this);
 		}
 
 		private void ClearInteractTip() {

@@ -18,15 +18,19 @@ namespace StoryScene {
 		/// </summary>
 		public void SetAnimVelocity(float velocity) {
 			if (velocity < -0.01f) {
-				transform.localScale = new Vector3(-1, 1, 1);
+				FaceLeft(true);
 				_anim.SetBool(_walking, true);
 			}
 			else if (velocity > 0.01f) {
-				transform.localScale = new Vector3(1, 1, 1);
+				FaceLeft(false);
 				_anim.SetBool(_walking, true);
 			}
-			else
-				_anim.SetBool(_walking, false);
+			else _anim.SetBool(_walking, false);
 		}
+
+		/// <summary>
+		/// 设置面向左边还是右边
+		/// </summary>
+		public void FaceLeft(bool faceLeft) => transform.localScale = new Vector3(faceLeft ? -1 : 1, 1, 1);
 	}
 }
