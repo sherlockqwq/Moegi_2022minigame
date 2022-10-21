@@ -2780,7 +2780,7 @@ MonoBehaviour:
   - {fileID: 647713965}
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
-  _nextScene: Level_1
+  _nextScene: StoryScene3
   _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
 --- !u!114 &871578700
 MonoBehaviour:

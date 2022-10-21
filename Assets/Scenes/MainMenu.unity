@@ -377,7 +377,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -425,6 +425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vidPlayer: {fileID: 826581480}
   _vidImg: {fileID: 623838687}
+  _bg: {fileID: 1220801522}
+  _buttonSFX: {fileID: 8300000, guid: a88c4dff89e258e41891c24a57d01f14, type: 3}
   _startScene: StoryScene1
 --- !u!1 &1022617300
 GameObject:
@@ -864,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1220801523
 RectTransform:
   m_ObjectHideFlags: 0
