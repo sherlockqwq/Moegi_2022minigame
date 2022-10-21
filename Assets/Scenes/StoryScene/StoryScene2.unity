@@ -313,6 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73566062}
+  - component: {fileID: 73566063}
   m_Layer: 0
   m_Name: CollectScene
   m_TagString: Untagged
@@ -339,6 +340,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73566063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73566061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &127634823
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 2087295957}
   _replaceTip: {fileID: 345069387}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -595,6 +610,9 @@ MonoBehaviour:
   _dialogAfterReplace: 1
   _replacedDialogFile: Story2_Dialog
   _replacedDialogKey: Clock
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 0
   _finalDialogFile: 
   _finalDialogKey: 
@@ -946,6 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 459417761}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 1
   _firstDialogFile: Story2_Dialog
@@ -959,6 +978,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story2_Dialog
   _finalDialogKey: Desk_Correct
@@ -2160,7 +2182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 40
   m_Sprite: {fileID: 21300000, guid: f00fcd56a9af9cf4d9cf2492407c507e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2365,6 +2387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 131194699}
+  _interactSound: {fileID: 0}
   _required:
   - {fileID: 294065318}
   _canFirstInteract: 1
@@ -2379,6 +2402,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story2_Dialog
   _finalDialogKey: Sofa_Correct
@@ -2706,6 +2732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871578698}
   - component: {fileID: 871578699}
+  - component: {fileID: 871578700}
   m_Layer: 0
   m_Name: RepairScene
   m_TagString: Untagged
@@ -2750,7 +2777,21 @@ MonoBehaviour:
   - {fileID: 647713965}
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
-  _nextScene: StoryScene3
+  _nextScene: Level_1
+  _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
+--- !u!114 &871578700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871578697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,6 +4768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 800808967}
 --- !u!61 &1747687336
 BoxCollider2D:
@@ -4875,6 +4917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 2106266026}
 --- !u!1 &1806913175
 GameObject:
@@ -5413,6 +5456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _sprite: {fileID: 15580981}
 --- !u!1 &2141883422
 GameObject:

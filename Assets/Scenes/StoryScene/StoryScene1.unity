@@ -878,6 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _assistantModel: {fileID: 607047794}
   _2ndSprite: {fileID: 21300000, guid: 23eb8f288f7d1204aa181610c103e682, type: 3}
   _device: {fileID: 1479958252}
@@ -1260,6 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 334575412}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 8300000, guid: 33e3ce9fec3dcf447a65a0bc5cf4a76d, type: 3}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -1271,6 +1273,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Documentations
@@ -1500,6 +1505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 329502272}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -1511,6 +1517,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: LeftDoor
@@ -1545,6 +1554,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2129604901}
+  - {fileID: 1726053647}
   m_Father: {fileID: 730025526}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1588,8 +1598,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 2129604902}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 8300000, guid: 4ea47840856b62944b876bcffb8260a2, type: 3}
   _panel: {fileID: 2010999223}
-  _toScene: StoryScene2
+  _toScene: Level_1
 --- !u!1 &1515124260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 1263606112}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -1675,6 +1687,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Computer
@@ -1979,8 +1994,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2010999223}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1479958250}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2113,6 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 0}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 0}
   _required: []
   _canFirstInteract: 0
   _firstDialogFile: 
@@ -2124,6 +2140,9 @@ MonoBehaviour:
   _dialogAfterReplace: 0
   _replacedDialogFile: 
   _replacedDialogKey: 
+  _afterReplace:
+    m_PersistentCalls:
+      m_Calls: []
   _canFinalInteract: 1
   _finalDialogFile: Story1_Dialog
   _finalDialogKey: Son
@@ -2453,6 +2472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _outline: {fileID: 9188311}
   _replaceTip: {fileID: 0}
+  _interactSound: {fileID: 8300000, guid: 99667bb8a5f93da4aae93b3597aa835c, type: 3}
   _leftCam: {fileID: 1710603781}
   _rightCam: {fileID: 182478897}
   _leftPos: {fileID: 492889020314408160}

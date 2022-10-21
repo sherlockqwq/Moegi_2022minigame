@@ -20,7 +20,7 @@ namespace StoryScene.Scene1 {
 		}
 
 		IEnumerator Story() {
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story1_Dialog", "Assistant1");
 
 			yield return EasyTools.Gradient.EaseIn(0.2f, d => _assistantModel.localScale = new Vector3(1 - d, 1, 1));
@@ -32,7 +32,7 @@ namespace StoryScene.Scene1 {
 			yield return EasyTools.Gradient.EaseInOut(0.4f, d => _assistantModel.localScale = new Vector3(2 * d - 1, 1, 1));
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story1_Dialog", "Assistant2");
 
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 			_device.SetActive(true);
 			SetActive(false);
 		}

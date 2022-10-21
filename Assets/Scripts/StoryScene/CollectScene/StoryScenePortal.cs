@@ -31,14 +31,14 @@ namespace StoryScene {
 		protected override void OnInteract(StoryPlayerController player) => EasyGameLoop.Do(ToRepairScene());
 
 		IEnumerator ToRepairScene() {
-			StoryPlayerController.Current.Pause(out var id);
-			yield return TransitionManager.Current.ShowMaskCoroutine(Color.white);  // 白屏淡入
+			StoryPlayerController.Pause(out var id);
+			yield return TransitionManager.Current.ShowMaskCoroutine(Color.white, 1.5f);  // 白屏淡入
 
 			collectScene.SetActive(false);
 			repairScene.SetActive(true);    // 切换场景
 
-			yield return TransitionManager.Current.HideMaskCoroutine(Color.white);  // 白屏淡出
-			StoryPlayerController.Current.Resume(id);
+			yield return TransitionManager.Current.HideMaskCoroutine(Color.white, 1.5f);  // 白屏淡出
+			StoryPlayerController.Resume(id);
 		}
 	}
 }

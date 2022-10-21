@@ -78,7 +78,7 @@ namespace StoryScene {
 		// 显示对话的协程
 		IEnumerator ShowDialogC() {
 			Showing = true;
-			StoryPlayerController.Current.Pause(out myPauseId);
+			StoryPlayerController.Pause(out myPauseId);
 
 			_panel.SetActive(true);
 			while (dialogues.TryDequeue(out var message)) {
@@ -115,7 +115,7 @@ namespace StoryScene {
 			StopSFX();
 
 			_panel.SetActive(false);
-			StoryPlayerController.Current.Resume(myPauseId);
+			StoryPlayerController.Resume(myPauseId);
 			if (Showing) {
 				StopAllCoroutines();
 				dialogues.Clear();

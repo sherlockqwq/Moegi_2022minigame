@@ -4,6 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using EasyTools;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace StoryScene {
 
@@ -21,6 +22,7 @@ namespace StoryScene {
 
 		[SerializeField, ShowIf(EConditionOperator.And, nameof(_canReplace), nameof(_dialogAfterReplace))]
 		private string _replacedDialogFile, _replacedDialogKey;
+		[SerializeField, ShowIf(nameof(_canReplace))] private UnityEvent _afterReplace;
 
 		[SerializeField, Header("最终无限次交互")] private bool _canFinalInteract;
 		[SerializeField, ShowIf(nameof(_canFinalInteract))] private string _finalDialogFile, _finalDialogKey;
@@ -48,7 +50,7 @@ namespace StoryScene {
 		protected override void OnInteract(StoryPlayerController player) => Interact().ApplyTo(this);
 
 		IEnumerator Interact() {
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 
 			switch (_progress) {
 				case Progress.First:
@@ -61,6 +63,7 @@ namespace StoryScene {
 						yield return EasyTools.Gradient.Linear(1f, d => _spritesToFadeOut.Each(sp => sp.SetA(1 - d)));
 					if (_spritesToFadeIn.Length > 0)
 						yield return EasyTools.Gradient.Linear(1f, d => _spritesToFadeIn.Each(sp => sp.SetA(d)));
+					_afterReplace?.Invoke();
 					if (_dialogAfterReplace)
 						yield return DialogManager.Current.ShowEasyLocalizationAndWait(_replacedDialogFile, _replacedDialogKey);
 
@@ -73,7 +76,7 @@ namespace StoryScene {
 			}
 
 			UpdateProgress();
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 		}
 
 

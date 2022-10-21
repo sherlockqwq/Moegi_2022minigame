@@ -18,9 +18,11 @@ namespace StoryScene {
 		[Header("交互")]
 		[SerializeField] private GameObject _interactTip;
 		[SerializeField] private KeyCode _interactKey = KeyCode.E, _deleteKey = KeyCode.Q;
+		[SerializeField] private AudioClip _keySound;
 
 		[Header("飘字")]
 		[SerializeField] private TMPro.TMP_Text _floating;
+		[SerializeField] private AudioClip _floatingSound;
 
 		[Header("触发器")]
 		[SerializeField] private int _triggerBufferSize = 10;
@@ -70,33 +72,44 @@ namespace StoryScene {
 
 		#region 交互
 
-		private PlayerInteractable _lastInteractable;
+		private PlayerInteractable _lastInteractable, _currentInteractable;
 
 		/// <summary>
 		/// 与可交互物体的触碰与交互的相关逻辑
 		/// </summary>
 		private void CheckInteractable() {
-			var count = Physics2D.OverlapPointNonAlloc(_rb2d.position, _triggerBuffer, _triggerLayer);
-			PlayerInteractable interactable = null;
+			bool deleteDown = Input.GetKeyDown(_deleteKey), interactDown = Input.GetKeyDown(_interactKey);
+
+			if (deleteDown || interactDown) GameAudio.PlaySFX(_keySound);
+
+			_currentInteractable = null;
+
+			int count = Physics2D.OverlapPointNonAlloc(_rb2d.position, _triggerBuffer, _triggerLayer);
 			for (int i = 0; i < count; i++) {
-				if (_triggerBuffer[i].TryGetComponent<PlayerInteractable>(out interactable)) { // 有可交互物体
-					if (interactable.Replaceable) { // 是要替换的物体
-						if (Input.GetKeyDown(_deleteKey)) interactable.Interact(this);  // 检查按键
-					}
-					else {  // 不是要替换的物体
-						_interactTip.SetActive(true);   // 显示提示图标
-						if (Input.GetKeyDown(_interactKey)) interactable.Interact(this);  // 检查交互按键
-					}
+				if (_triggerBuffer[i].TryGetComponent<PlayerInteractable>(out _currentInteractable)) { // 有可交互物体
 					break;  // 只和该物体交互
 				}
 			}
-			if (interactable == null) _interactTip.SetActive(false);  // 若当前不可交互则隐藏提示图标
 
-			if (_lastInteractable != interactable) {    // 可交互物体发生变动
-				_lastInteractable?.Leave();
-				interactable?.Touch();
-				_lastInteractable = interactable;
+			if (_currentInteractable == null) {  // 没有可交互物体
+				_interactTip.SetActive(false);  // 则隐藏提示图标
 			}
+			else {
+				if (_currentInteractable.Replaceable) {  // 是要替换的物体
+					if (deleteDown) _currentInteractable.Interact(this); // 检查按键
+				}
+				else {  // 不是要替换的物体
+					_interactTip.SetActive(true);   // 显示提示图标
+					if (interactDown) _currentInteractable.Interact(this);   // 检查交互按键
+				}
+			}
+
+			if (_lastInteractable != _currentInteractable) { // 可交互物体发生变动
+				_lastInteractable?.Leave();
+				_currentInteractable?.Touch();
+				_lastInteractable = _currentInteractable;
+			}
+
 		}
 
 		private void ClearInteractTip() {
@@ -109,16 +122,16 @@ namespace StoryScene {
 
 		#region 暂停相关
 
-		public bool IsPaused { get; private set; }
+		public static bool IsPaused { get; private set; }
 
-		private int _controlIndex = 0;
-		private HashSet<int> _pauseList = new HashSet<int>();
+		private static int _controlIndex = 0;
+		private static HashSet<int> _pauseList = new HashSet<int>();
 
 		/// <summary>
 		/// 暂停当前玩家
 		/// </summary>
 		/// <param name="pauseId">用于恢复玩家控制的ID</param>
-		public void Pause(out int pauseId) {
+		public static void Pause(out int pauseId) {
 			IsPaused = true;
 			pauseId = ++_controlIndex;
 			_pauseList.Add(_controlIndex);
@@ -127,14 +140,14 @@ namespace StoryScene {
 		/// 恢复玩家控制
 		/// </summary>
 		/// <param name="pauseId">通过 Pause 函数获取的ID</param>
-		public void Resume(int pauseId) {
+		public static void Resume(int pauseId) {
 			_pauseList.Remove(pauseId);
 			IsPaused = _pauseList.Count != 0;
 		}
 		/// <summary>
 		/// 完全恢复玩家控制（无视当前暂停的数量）
 		/// </summary>
-		public void ResumeAll() {
+		public static void ResumeAll() {
 			_pauseList.Clear();
 			IsPaused = false;
 		}
@@ -156,6 +169,8 @@ namespace StoryScene {
 			_floatPosCoroutine = EasyTools.Gradient.Linear(
 				3f, _ => _floating.transform.Translate(Vector3.up * 0.1f * Time.deltaTime)
 			).ApplyTo(this);
+
+			GameAudio.PlaySFX(_floatingSound);
 
 			yield return EasyTools.Gradient.Linear(0.5f, _floating.SetA);
 			yield return Wait.Seconds(1.5f);

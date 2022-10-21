@@ -12,6 +12,7 @@ namespace StoryScene {
 
 		[SerializeField] protected SpriteRenderer _outline;
 		[SerializeField] private SpriteRenderer _replaceTip;
+		[SerializeField] private AudioClip _interactSound;
 
 		/// <summary> 是否是需要替换的物体 </summary>
 		public virtual bool Replaceable => false;
@@ -24,7 +25,10 @@ namespace StoryScene {
 		/// 与该物体交互
 		/// </summary>
 		/// <param name="player">与该物体交互的玩家</param>
-		public void Interact(StoryPlayerController player) => OnInteract(player);
+		public void Interact(StoryPlayerController player) {
+			GameAudio.PlaySFX(_interactSound);
+			OnInteract(player);
+		}
 
 		Coroutine _outlineFadeCoroutine;
 

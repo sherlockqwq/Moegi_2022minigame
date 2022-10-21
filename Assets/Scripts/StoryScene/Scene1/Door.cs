@@ -12,7 +12,7 @@ namespace StoryScene.Scene1 {
 		protected override void OnInteract(StoryPlayerController player) => ChangePlayerPos(player).ApplyTo(this);
 
 		IEnumerator ChangePlayerPos(StoryPlayerController player) {
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 			yield return TransitionManager.Current.ShowMaskCoroutine();
 
 			if (player.transform.position.x < transform.position.x) {
@@ -27,7 +27,7 @@ namespace StoryScene.Scene1 {
 			}
 
 			yield return TransitionManager.Current.HideMaskCoroutine();
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 		}
 	}
 }

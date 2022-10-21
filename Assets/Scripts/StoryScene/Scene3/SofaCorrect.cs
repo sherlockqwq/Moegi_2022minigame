@@ -14,7 +14,9 @@ namespace StoryScene.Scene3 {
 		[SerializeField] private Image _letter;
 		[SerializeField] private Sprite[] _letters;
 		[SerializeField] private KeyCode[] _nextKeys = new KeyCode[] { KeyCode.Mouse0 };
+		[SerializeField] private AudioClip _paperSound;
 		[SerializeField, Scene] private string _nextScene;
+		[SerializeField] private AudioClip _transitionSound;
 
 		private IEnumerator Start() {
 			_letter.SetA(0);
@@ -33,15 +35,17 @@ namespace StoryScene.Scene3 {
 		}
 
 		IEnumerator C() {
-			StoryPlayerController.Current.Pause(out var id);
+			StoryPlayerController.Pause(out var id);
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Sofa_Correct");
 
 			yield return EasyTools.Gradient.Linear(0.5f, _letter.SetA); // 显示信件
+			GameAudio.PlaySFX(_paperSound);
 			foreach (var letter in _letters) {
 				_letter.sprite = letter;
 				yield return Wait.Seconds(0.5f);
 				yield return Wait.Until(() => _nextKeys.Any(key => Input.GetKeyDown(key)));
+				GameAudio.PlaySFX(_paperSound);
 			}
 			yield return EasyTools.Gradient.Linear(0.5f, d => _letter.SetA(1 - d)); // 隐藏信件
 
@@ -51,13 +55,15 @@ namespace StoryScene.Scene3 {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Finished");
 
-			yield return TransitionManager.Current.ShowMaskCoroutine();
+			GameAudio.PlaySFX(_transitionSound);
+
+			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
 
 			yield return SceneManager.LoadSceneAsync(_nextScene);
 
-			yield return TransitionManager.Current.HideMaskCoroutine();
+			yield return TransitionManager.Current.HideMaskCoroutine(1.5f);
 
-			StoryPlayerController.Current.Resume(id);
+			StoryPlayerController.Resume(id);
 
 		}
 	}

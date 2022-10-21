@@ -21,7 +21,7 @@ namespace StoryScene.Scene1 {
 		IEnumerator PanelZoom() {
 			if (_panel.gameObject.activeInHierarchy) yield break;
 
-			StoryPlayerController.Current.Pause(out _myPauseId);
+			StoryPlayerController.Pause(out _myPauseId);
 
 			_panel.gameObject.SetActive(true);
 			yield return EasyTools.Gradient.EaseOut(0.5f, _panel.SetScale);
@@ -43,7 +43,7 @@ namespace StoryScene.Scene1 {
 
 			yield return TransitionManager.Current.HideMaskCoroutine();
 
-			StoryPlayerController.Current.Resume(_myPauseId);
+			StoryPlayerController.Resume(_myPauseId);
 		}
 	}
 }
