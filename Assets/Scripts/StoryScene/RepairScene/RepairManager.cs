@@ -13,6 +13,7 @@ namespace StoryScene {
 		[SerializeField] private string _finishDialogFile, _finishDialogKey;
 		[SerializeField, Scene] private string _nextScene;
 		[SerializeField] private AudioClip _transitionSound;
+		[SerializeField] private float _finishDelay = 2f;
 
 		void Start() {
 			EasyGameLoop.Do(C());
@@ -20,6 +21,8 @@ namespace StoryScene {
 
 		IEnumerator C() {
 			yield return Wait.Until(() => _required.All(item => item.Finished));
+
+			yield return Wait.Seconds(_finishDelay);
 
 			StoryPlayerController.Pause(out var id);
 

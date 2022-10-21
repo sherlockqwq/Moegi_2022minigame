@@ -18,6 +18,18 @@
 			"content": "非常温馨的合照呢。"
 		}
 	],
+	"SmallPhoto": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "是患者和妻子年轻时的照片。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "两个人的感情看着真好啊。"
+		}
+	],
 	"Sofa_Wrong": [
 		{
 			"avatar": "wife",
