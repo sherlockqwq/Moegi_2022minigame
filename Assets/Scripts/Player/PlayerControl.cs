@@ -65,7 +65,7 @@ public class PlayerControl : MonoBehaviour
     public bool MoveInTile()
     {
         bool result = false;
-        float step = speed * Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.S))
         {
             if (down.canGet)
