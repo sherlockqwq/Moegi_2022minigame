@@ -85,8 +85,8 @@ public class TileManager : Singleton<TileManager>
     public bool CheckForPlacement(GameObject placedModule)
     {
 
-        Debug.Log("左下点" + lowerleftPoint);
-        Debug.Log("右上点" + toprightPoint);
+        /*Debug.Log("左下点" + lowerleftPoint);
+        Debug.Log("右上点" + toprightPoint);*/
         if (!dragModules.Contains(placedModule))
         {
             Debug.Log("这个模块没有注册到TileManager里");
