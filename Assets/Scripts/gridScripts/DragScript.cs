@@ -87,7 +87,14 @@ public class DragScript : MonoBehaviour
         Cursor.visible = true;
         isDragable = false;
         coll.enabled = false;
-        TileManager.Instance.dragNumInScene -= 1;
+        if (TileManager.Instance.CheckForPlacement(gameObject))
+        {
+            TileManager.Instance.dragNumInScene -= 1;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
     }
     /*private void checkTilesOverlap()
