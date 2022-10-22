@@ -917,6 +917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 3600083756032858774, guid: b7f00728fef02f248b3eb08899b42550, type: 3}
+      propertyPath: m_TagString
+      value: X_Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 3600083756032858775, guid: b7f00728fef02f248b3eb08899b42550, type: 3}
       propertyPath: sceneName
       value: Level_8

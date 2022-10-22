@@ -1757,6 +1757,7 @@ GameObject:
   - component: {fileID: 516234940}
   - component: {fileID: 516234939}
   - component: {fileID: 516234938}
+  - component: {fileID: 516234942}
   m_Layer: 0
   m_Name: X-3
   m_TagString: X_Tile
@@ -1893,6 +1894,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &516234942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516234936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &609628335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +2599,7 @@ GameObject:
   - component: {fileID: 1243636386}
   - component: {fileID: 1243636385}
   - component: {fileID: 1243636384}
+  - component: {fileID: 1243636388}
   m_Layer: 0
   m_Name: Tile7 1
   m_TagString: X_Tile
@@ -2716,6 +2736,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1243636388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243636382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &1344574825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,6 +2767,7 @@ GameObject:
   - component: {fileID: 1344574829}
   - component: {fileID: 1344574828}
   - component: {fileID: 1344574827}
+  - component: {fileID: 1344574831}
   m_Layer: 0
   m_Name: Tile5 5
   m_TagString: X_Tile
@@ -2865,6 +2904,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1344574831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344574825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &1368167659
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,7 +4706,7 @@ GameObject:
   - component: {fileID: 2121119171}
   m_Layer: 0
   m_Name: Exit 1
-  m_TagString: exit
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
