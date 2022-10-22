@@ -13,12 +13,26 @@ namespace StoryScene {
 		[SerializeField] protected SpriteRenderer _outline;
 		[SerializeField] private SpriteRenderer _replaceTip;
 		[SerializeField] private AudioClip _interactSound;
+		private enum LookToPlayerMode {
+			None, FlipIsLeft, FlipIsRight,
+		}
+		[SerializeField] private LookToPlayerMode _lookToPlayerMode;
 
 		/// <summary> 是否是需要替换的物体 </summary>
 		public virtual bool Replaceable => false;
 
 		protected virtual void Awake() {
 			Leave();
+
+			if ((_lookToPlayerMode == LookToPlayerMode.FlipIsLeft || _lookToPlayerMode == LookToPlayerMode.FlipIsRight)
+				&& TryGetComponent<SpriteRenderer>(out var sr)) {
+				this.Loop(() => {
+					if (StoryPlayerController.Current != null) {
+						sr.flipX = StoryPlayerController.Current.transform.position.x > transform.position.x ^
+									_lookToPlayerMode == LookToPlayerMode.FlipIsLeft;
+					}
+				});
+			}
 		}
 
 		/// <summary>

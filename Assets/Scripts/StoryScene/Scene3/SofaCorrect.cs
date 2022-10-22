@@ -15,6 +15,7 @@ namespace StoryScene.Scene3 {
 		[SerializeField] private Sprite[] _letters;
 		[SerializeField] private KeyCode[] _nextKeys = new KeyCode[] { KeyCode.Mouse0 };
 		[SerializeField] private AudioClip _paperSound;
+		[SerializeField] private float _finishDelay = 3f;
 		[SerializeField, Scene] private string _nextScene;
 		[SerializeField] private AudioClip _transitionSound;
 
@@ -51,7 +52,11 @@ namespace StoryScene.Scene3 {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Sofa_Finished");
 
-			yield return Wait.Seconds(3f);
+			StoryPlayerController.Resume(id);
+
+			yield return Wait.Seconds(_finishDelay);
+
+			StoryPlayerController.Pause(out id);
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Finished");
 

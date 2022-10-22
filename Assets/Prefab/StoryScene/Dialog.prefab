@@ -187,7 +187,7 @@ MonoBehaviour:
   _nameText: {fileID: 3021010956968055380}
   _contentText: {fileID: 3021010956602819015}
   _sfx: {fileID: 0}
-  _nextKeys: 4301000044010000
+  _nextKeys: 43010000440100006500000020000000
   _skipKeys: 32010000
   _doctorAvatar: {fileID: 21300000, guid: 39e0acdda9237dc4f8349918bc7dc609, type: 3}
   _sonAvatar: {fileID: 21300000, guid: 18dc6688f7466924eb834a587f870c38, type: 3}
