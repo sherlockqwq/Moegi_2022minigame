@@ -6614,7 +6614,7 @@ MonoBehaviour:
   _nextKeys: 4301000065000000
   _paperSound: {fileID: 8300000, guid: b7ab80c654e31ce49baa54697b64887c, type: 3}
   _finishDelay: 3
-  _nextScene: MainMenu
+  _nextScene: StoryScene4
   _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
 --- !u!1 &2103077509
 GameObject:
