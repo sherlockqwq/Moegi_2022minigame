@@ -1,0 +1,102 @@
+{
+	"Motorcycle": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "这里是......几年前那次事故的记忆吧。"
+		}
+	],
+	"TryDelete": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "怎么回事？无法删除修复这里。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "......"
+		}
+	],
+	"DeleteDialog": [
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "求求你了，能不能不要删除这里最后一个我。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "诶！？"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "（按理说不可能意识到我的存在，难道这是患者的潜意识......）"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "你也知道，现实中的我已经去世了，我只是想......再多陪陪他。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "用美好的记忆覆盖残酷的现实，这样做难道不好吗？"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "看来患者潜意识里也明白她已经不在了啊。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "但倘若不删除信息错误元，身体的状况就无法好转。"
+		},
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "求求你了，我真的很舍不得他，舍不得这里的一切。"
+		}
+	],
+	"ConfirmDelete": [
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "非常抱歉，这是我的工作，我没有资格在这样的选择中掺入个人情感。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "但是，真的非常抱歉。"
+		},
+		{
+			"avatar": "",
+			"name": "",
+			"content": "运行结束，正在退出神经束。"
+		}
+	],
+	"CancelDelete": [
+		{
+			"avatar": "wife",
+			"name": "患者妻子",
+			"content": "谢谢你，希望你的选择能带给他幸福。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "......"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "唉，这样做是正确的吗？......我不知道。"
+		},
+		{
+			"avatar": "doctor",
+			"name": "博士",
+			"content": "但我绝不忍心破坏这份珍贵的记忆。"
+		}
+	]
+}

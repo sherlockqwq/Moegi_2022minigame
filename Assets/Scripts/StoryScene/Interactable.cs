@@ -11,7 +11,7 @@ namespace StoryScene {
 	public abstract class PlayerInteractable : MonoBehaviour {
 
 		[SerializeField] protected SpriteRenderer _outline;
-		[SerializeField] private SpriteRenderer _replaceTip;
+		[SerializeField] protected SpriteRenderer _replaceTip;
 		[SerializeField] private AudioClip _interactSound;
 		private enum LookToPlayerMode {
 			None, FlipIsLeft, FlipIsRight,

@@ -13,6 +13,9 @@ namespace StoryScene {
 		public static TransitionManager Current { get; private set; }
 
 		[SerializeField] private Image _mask;
+		[SerializeField] private TMPro.TMP_Text _text;
+
+		public TMPro.TMP_Text MaskText => _text;
 
 		void Awake() {
 			Current = this;
