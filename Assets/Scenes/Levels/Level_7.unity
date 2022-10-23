@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: moveTrap
       objectReference: {fileID: 0}
+    - target: {fileID: 3482708694871090504, guid: 19c00856092276443bcb826d97597487, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3482708694871090507, guid: 19c00856092276443bcb826d97597487, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -185,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 3482708694871090507, guid: 19c00856092276443bcb826d97597487, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482708695076185307, guid: 19c00856092276443bcb826d97597487, type: 3}
+      propertyPath: m_TagString
+      value: X_Tile
       objectReference: {fileID: 0}
     - target: {fileID: 3482708695076185311, guid: 19c00856092276443bcb826d97597487, type: 3}
       propertyPath: m_SortingLayer

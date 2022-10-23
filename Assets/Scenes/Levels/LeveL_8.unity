@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 238582114}
   m_Layer: 13
   m_Name: Trap
-  m_TagString: Tile
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 529945998}
   m_Layer: 13
   m_Name: Trap
-  m_TagString: Tile
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
