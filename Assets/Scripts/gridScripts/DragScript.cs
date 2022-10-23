@@ -9,7 +9,7 @@ public class DragScript : MonoBehaviour
     [SerializeField] private bool snapToGrid = true;//是否启动吸附
     [SerializeField] private float gridSize = 1f;//格子吸附时的格子大小
     [SerializeField] private Vector3 originalPosition;//拖拽前原本的位置
-    private PlayerControl player; 
+    private PlayerControl player;
 
 
 
@@ -124,6 +124,7 @@ public class DragScript : MonoBehaviour
             {
                 if (child.getOverlapTile().CompareTag("Tile"))
                 {
+
                     Destroy(child.getOverlapTile());
                     Destroy(child.gameObject);
                 }
