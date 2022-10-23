@@ -5,6 +5,7 @@ using EasyTools;
 using System.Linq;
 using NaughtyAttributes;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 namespace StoryScene.Scene4 {
 
@@ -13,9 +14,13 @@ namespace StoryScene.Scene4 {
 		[SerializeField] private SpriteRenderer _standSp, _downSp;
 		[SerializeField] private Transform _stand;
 		[SerializeField] private GameObject _confirmPanel;
+		[SerializeField] private VideoPlayer _videoPlayer;
 		[SerializeField, Scene] private string _endScene;
 
 		private IEnumerator Start() {
+			_videoPlayer.gameObject.SetActive(false);
+			_confirmPanel.SetActive(false);
+
 			_standSp.SetA(1);
 			_downSp.SetA(0);
 			_replaceTip.gameObject.SetActive(false);
@@ -97,6 +102,8 @@ namespace StoryScene.Scene4 {
 		IEnumerator ShowEnding(string[] texts, string ending) {
 			yield return TransitionManager.Current.ShowMaskCoroutine(1f);
 
+			StoryPlayerController.Pause(out _pauseId);
+
 			GameAudio.FadeBGM(null);
 
 			yield return Wait.Seconds(1f);
@@ -121,10 +128,17 @@ namespace StoryScene.Scene4 {
 			yield return Wait.Seconds(2f);
 			yield return EasyTools.Gradient.Linear(1f, d => TransitionManager.Current.MaskText.SetA(1 - d));
 
-			EasyGameLoop.Do(FadeScene());
+			_videoPlayer.gameObject.SetActive(true);
+			_videoPlayer.loopPointReached += _ => EasyGameLoop.Do(FadeScene());
+			_videoPlayer.Prepare();
+			yield return Wait.Until(() => _videoPlayer.isPrepared);
+			_videoPlayer.Play();
+			yield return TransitionManager.Current.HideMaskCoroutine(1f);
 		}
 
 		IEnumerator FadeScene() {
+			StoryPlayerController.Resume(_pauseId);
+			yield return TransitionManager.Current.ShowMaskCoroutine(1f);
 			yield return SceneManager.LoadSceneAsync(_endScene);
 			yield return TransitionManager.Current.HideMaskCoroutine(1f);
 		}
