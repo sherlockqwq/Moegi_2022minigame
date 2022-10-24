@@ -2969,6 +2969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 871578698}
+  - component: {fileID: 871578700}
   - component: {fileID: 871578699}
   m_Layer: 0
   m_Name: RepairScene
@@ -3008,7 +3009,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
+  _bgm: {fileID: 8300000, guid: cf7e76617e40a8a44900634b68f39c4f, type: 3}
+  _delay: 1
+  _volume: 0.3
+--- !u!114 &871578700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871578697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgm: {fileID: 0}
+  _delay: 0
+  _volume: 1
 --- !u!1 &875434304
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,6 +6259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
+  _delay: 0
+  _volume: 1
 --- !u!1 &2027806490
 GameObject:
   m_ObjectHideFlags: 0

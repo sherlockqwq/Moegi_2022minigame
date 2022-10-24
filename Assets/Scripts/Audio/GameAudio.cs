@@ -20,25 +20,30 @@ public static class GameAudio {
 	/// <summary>
 	/// BGM淡出淡入切换
 	/// </summary>
-	public static void FadeBGM(AudioClip bgm, float fadeTime = 0.2f) {
-		if (!_fading) EasyGameLoop.Do(BGM_Fade(bgm, fadeTime));
+	public static void FadeBGM(AudioClip bgm, float fadeTime = 0.2f, float volume = 1f) {
+		if (!_fading) EasyGameLoop.Do(BGM_Fade(bgm, fadeTime, volume));
 	}
-	static IEnumerator BGM_Fade(AudioClip targetBGM, float fadeTime) {
+	static IEnumerator BGM_Fade(AudioClip targetBGM, float fadeTime, float volume) {
 		if (_obj == null) Init();
 
 		if (targetBGM != _bgmSource.clip) {
 			_fading = true;
 
+			// 淡出
 			var v = _bgmSource.volume;
 			yield return EasyTools.Gradient.Linear(fadeTime, d => _bgmSource.volume = Mathf.Lerp(v, 0, d));
+
+			// 切换
 			_bgmSource.Stop();
 			_bgmSource.clip = targetBGM;
+
+			// 淡入
 			if (targetBGM != null) {
 				_bgmSource.Play();
-				yield return EasyTools.Gradient.Linear(fadeTime, d => _bgmSource.volume = Mathf.Lerp(0, v, d));
+				yield return EasyTools.Gradient.Linear(fadeTime, d => _bgmSource.volume = Mathf.Lerp(0, volume, d));
 			}
 			else {
-				_bgmSource.volume = v;
+				_bgmSource.volume = volume;
 			}
 
 			_fading = false;
