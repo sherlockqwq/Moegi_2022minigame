@@ -104,14 +104,12 @@ namespace StoryScene.Scene4 {
 
 			StoryPlayerController.Pause(out _pauseId);
 
-			GameAudio.FadeBGM(null);
-
 			yield return Wait.Seconds(1f);
 
 			TransitionManager.Current.MaskText.text = "";
 			TransitionManager.Current.MaskText.SetA(1);
 
-			foreach (var text in texts) {
+			foreach (var text in texts) {   // 打字机效果
 				foreach (var ch in text) {
 					TransitionManager.Current.MaskText.text += ch;
 					yield return Wait.Seconds(0.1f);
@@ -119,15 +117,17 @@ namespace StoryScene.Scene4 {
 				yield return Wait.Seconds(0.5f);
 				TransitionManager.Current.MaskText.text += '\n';
 			}
+			yield return Wait.Seconds(1.5f);    // 等待一段时间
+			yield return EasyTools.Gradient.Linear(1f, d => TransitionManager.Current.MaskText.SetA(1 - d));    // 淡出
 
-			yield return Wait.Seconds(1.5f);
+			GameAudio.FadeBGM(null, 3f);    // 淡出背景音乐
 
-			yield return EasyTools.Gradient.Linear(1f, d => TransitionManager.Current.MaskText.SetA(1 - d));
-			TransitionManager.Current.MaskText.text = ending;
-			yield return EasyTools.Gradient.Linear(1f, TransitionManager.Current.MaskText.SetA);
-			yield return Wait.Seconds(2f);
-			yield return EasyTools.Gradient.Linear(1f, d => TransitionManager.Current.MaskText.SetA(1 - d));
+			TransitionManager.Current.MaskText.text = ending;   // 切换为结局文字
+			yield return EasyTools.Gradient.Linear(1f, TransitionManager.Current.MaskText.SetA);    // 淡入
+			yield return Wait.Seconds(2f);  // 等待一段时间
+			yield return EasyTools.Gradient.Linear(1f, d => TransitionManager.Current.MaskText.SetA(1 - d));    // 淡出
 
+			// 设置视频
 			_videoPlayer.gameObject.SetActive(true);
 			_videoPlayer.loopPointReached += _ => EasyGameLoop.Do(FadeScene());
 			_videoPlayer.Prepare();
