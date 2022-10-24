@@ -52,11 +52,15 @@ namespace StoryScene.Scene3 {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Sofa_Finished");
 
-			StoryPlayerController.Resume(id);
+			StoryPlayerController.Resume(id);	// 恢复控制
+
+			StoryPlayerController.Current.CanInteract = false;	// 禁止交互
 
 			yield return Wait.Seconds(_finishDelay);
 
-			StoryPlayerController.Pause(out id);
+			StoryPlayerController.Current.CanInteract = true;	// 允许交互
+
+			StoryPlayerController.Pause(out id);	// 暂停控制
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Finished");
 

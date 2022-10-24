@@ -35,6 +35,8 @@ namespace StoryScene {
 
 		private Rigidbody2D _rb2d;
 
+		public bool CanInteract { get; set; } = true;
+
 		void Awake() {
 			Current = this;
 			Model = GetComponentInChildren<StoryPlayerModel>();
@@ -47,7 +49,8 @@ namespace StoryScene {
 		void Update() {
 			if (!IsPaused) {
 				Move();
-				CheckInteractable();
+				if (CanInteract) CheckInteractable();
+				else ClearInteractTip();
 			}
 			else {
 				Stop();

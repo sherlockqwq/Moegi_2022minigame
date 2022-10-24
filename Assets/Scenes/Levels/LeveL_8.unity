@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 238582114}
   m_Layer: 13
   m_Name: Trap
-  m_TagString: Tile
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 529945998}
   m_Layer: 13
   m_Name: Trap
-  m_TagString: Tile
+  m_TagString: X_Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5194,6 +5194,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: -10.153642
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: -3.540627
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 7.9058795
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: -3.6116714
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[2].x
+      value: 7.9780016
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[2].y
+      value: 6.1947846
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[3].x
+      value: -10.117962
+      objectReference: {fileID: 0}
+    - target: {fileID: 266301730, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
+      propertyPath: m_Positions.Array.data[3].y
+      value: 6.045941
+      objectReference: {fileID: 0}
     - target: {fileID: 237521102185612804, guid: 227fbafc53d5d2f41950faa52971f9ff, type: 3}
       propertyPath: m_RootOrder
       value: 2

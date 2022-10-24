@@ -32,6 +32,7 @@ public class GameManager : Singleton<GameManager>
     public void LoadSceneByName(string sceneName)
     {
         StartCoroutine(LoadScene(sceneName));
+
     }
 
     IEnumerator LoadScene(string sceneName)

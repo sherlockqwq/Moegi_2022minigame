@@ -15,6 +15,10 @@ public class TileManager : Singleton<TileManager>
     [SerializeField] private List<GameObject> dragModules;
     [SerializeField] private List<Transform> modulesTransform;
     [SerializeField] private List<collection> collections;
+    private LineRenderer lr;
+    Vector3 lowerleftPoint;
+
+    Vector3 toprightPoint;
     private void Start()
     {
 
@@ -32,7 +36,10 @@ public class TileManager : Singleton<TileManager>
         }
 
         UI_DragNumber = GameObject.Find("UI").transform.Find("DragNumberUI").gameObject.GetComponent<Text>();
-
+        lr = GetComponent<LineRenderer>();
+        lowerleftPoint = lr.GetPosition(0);
+        toprightPoint = lr.GetPosition(2);
+        lr.enabled = false;
     }
     private void Update()
     {
@@ -74,6 +81,38 @@ public class TileManager : Singleton<TileManager>
     public int getCollectionsCount()
     {
         return collections.Count;
+    }
+    public bool CheckForPlacement(GameObject placedModule)
+    {
+
+        /*Debug.Log("左下点" + lowerleftPoint);
+        Debug.Log("右上点" + toprightPoint);*/
+        if (!dragModules.Contains(placedModule))
+        {
+            Debug.Log("这个模块没有注册到TileManager里");
+            return false;
+        }
+        else if (RectCheck(placedModule.transform.position))
+        {
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private bool RectCheck(Vector3 point)
+    {
+        if (point.x < lowerleftPoint.x || point.x > toprightPoint.x || point.y < lowerleftPoint.y || point.y > toprightPoint.y)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
     }
 
 }

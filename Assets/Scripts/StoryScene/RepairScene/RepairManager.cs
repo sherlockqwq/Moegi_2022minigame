@@ -20,11 +20,15 @@ namespace StoryScene {
 		}
 
 		IEnumerator C() {
-			yield return Wait.Until(() => _required.All(item => item.Finished));
+			yield return Wait.Until(() => _required.All(item => item.Finished));    // 等待全部完成
+
+			StoryPlayerController.Current.CanInteract = false;  // 禁止交互
 
 			yield return Wait.Seconds(_finishDelay);
 
-			StoryPlayerController.Pause(out var id);
+			StoryPlayerController.Current.CanInteract = true;   // 允许交互
+
+			StoryPlayerController.Pause(out var id);	// 暂停控制
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait(_finishDialogFile, _finishDialogKey);
 
