@@ -92,22 +92,22 @@
 	],
 	"Finished": [
 		{
-			"avatar": "doctor",
+			"avatar": "doctor_sad",
 			"name": "博士",
 			"content": "现实中的患者因为见不到妻子而感到不安，大脑自动强化了那些错误的记忆，导致身体也出现了异样。"
 		},
 		{
-			"avatar": "doctor",
+			"avatar": "doctor_sad",
 			"name": "博士",
 			"content": "删除掉所有错误信息，患者身体就能好转。唉，总觉得有些残酷呢。"
 		},
 		{
-			"avatar": "doctor",
+			"avatar": "doctor_sad",
 			"name": "博士",
 			"content": "......诶？"
 		},
 		{
-			"avatar": "doctor",
+			"avatar": "doctor_sad",
 			"name": "博士",
 			"content": "不好！患者的机体开始出现了排斥反应，修复记忆脉络时我可得小心点了。"
 		}
