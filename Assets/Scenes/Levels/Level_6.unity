@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 48944567}
   - component: {fileID: 48944566}
   - component: {fileID: 48944565}
+  - component: {fileID: 48944569}
   m_Layer: 0
   m_Name: Tile3 1
   m_TagString: X_Tile
@@ -377,6 +378,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &48944569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48944563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &64711169
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +924,7 @@ GameObject:
   - component: {fileID: 211459638}
   - component: {fileID: 211459637}
   - component: {fileID: 211459636}
+  - component: {fileID: 211459640}
   m_Layer: 0
   m_Name: Tile7 5
   m_TagString: X_Tile
@@ -1041,6 +1061,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &211459640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211459634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &228742024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,6 +4270,7 @@ GameObject:
   - component: {fileID: 1228101382}
   - component: {fileID: 1228101381}
   - component: {fileID: 1228101380}
+  - component: {fileID: 1228101384}
   m_Layer: 0
   m_Name: Tile2 6
   m_TagString: X_Tile
@@ -4368,6 +4407,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1228101384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228101378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &1238861476
 GameObject:
   m_ObjectHideFlags: 0
