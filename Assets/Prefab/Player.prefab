@@ -276,12 +276,15 @@ MonoBehaviour:
   speed: 100
   haveCopyPlayer: 0
   theCopyPlayer: {fileID: 0}
+  tileDestory: 0
+  tileDestoryClips: {fileID: 8300000, guid: c3a43918e29e80e499792d56cd03eceb, type: 3}
   X_offset: 3.5
   Y_offset: 3.5
   up: {fileID: 7233229446135146413}
   down: {fileID: 7233229447044548729}
   left: {fileID: 7233229447080404935}
   right: {fileID: 7233229446287024274}
+  tile_Now: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
