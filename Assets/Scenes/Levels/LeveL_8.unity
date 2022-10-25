@@ -2788,6 +2788,7 @@ GameObject:
   - component: {fileID: 920449340}
   - component: {fileID: 920449339}
   - component: {fileID: 920449338}
+  - component: {fileID: 920449342}
   m_Layer: 0
   m_Name: Tile9 1
   m_TagString: X_Tile
@@ -2924,6 +2925,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &920449342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920449336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &935359247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,6 +3034,7 @@ GameObject:
   - component: {fileID: 994351849}
   - component: {fileID: 994351848}
   - component: {fileID: 994351847}
+  - component: {fileID: 994351851}
   m_Layer: 0
   m_Name: X
   m_TagString: X_Tile
@@ -3151,6 +3171,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &994351851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994351845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a18dfc2f6afd448ca810089c7b7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitCondition: 1
+  exitCount: 0
+  choseEvent: 1
+  theCopyPlayer: {fileID: 0}
+  copyPlayerLocation: {fileID: 0}
+  isUsed: 0
 --- !u!1 &1031795972
 GameObject:
   m_ObjectHideFlags: 0
