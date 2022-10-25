@@ -353,6 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
+  _delay: 0
+  _volume: 1
 --- !u!1 &127634823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,7 +2782,7 @@ MonoBehaviour:
   - {fileID: 647713965}
   _finishDialogFile: Story2_Dialog
   _finishDialogKey: Finished
-  _nextScene: StoryScene3
+  _nextScene: Level_4
   _transitionSound: {fileID: 8300000, guid: eeebf71db777f5e47845487b4c6d4033, type: 3}
   _finishDelay: 2
 --- !u!114 &871578700
@@ -2796,6 +2798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgm: {fileID: 8300000, guid: fb36ed961f5334742b0a473f876053f1, type: 3}
+  _delay: 0
+  _volume: 1
 --- !u!1 &877750300
 GameObject:
   m_ObjectHideFlags: 0
