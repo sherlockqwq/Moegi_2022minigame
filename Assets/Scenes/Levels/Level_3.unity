@@ -2574,6 +2574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "bgmPlayer\uFF081-6\uFF09"
       objectReference: {fileID: 0}
+    - target: {fileID: 4942257124770001106, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: _bgm
+      value: 
+      objectReference: {fileID: 8300000, guid: 322eb0e5948821a4097d222098d8da2a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
 --- !u!1 &1399127592

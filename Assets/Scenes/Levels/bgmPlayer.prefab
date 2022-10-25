@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013f58752a0710741a2a619d7ca880ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgm: {fileID: 8300000, guid: 539d664efed90ab4bb53fb82e088ed3c, type: 3}
+  _bgm: {fileID: 8300000, guid: 0dbc1376b610fa745b3d25ee08c954ae, type: 3}
   _delay: 0
   _volume: 1
