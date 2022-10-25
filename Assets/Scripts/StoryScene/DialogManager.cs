@@ -25,11 +25,12 @@ namespace StoryScene {
 		[SerializeField] private KeyCode[] _skipKeys = new KeyCode[] { KeyCode.LeftControl };
 
 		// TODO 这里序列化各种立绘
-		[SerializeField] private Sprite _doctorAvatar, _sonAvatar, _sonSadAvatar, _wifeAvatar;
+		[SerializeField] private Sprite _doctorAvatar, _doctorSadAvatar, _sonAvatar, _sonSadAvatar, _wifeAvatar;
 
 		private void SetSpeaker(DialogMsg message) {
 			_avatarImg.sprite = message.avatar.ToLower() switch {
 				"doctor" => _doctorAvatar,
+				"doctor_sad" => _doctorSadAvatar,
 				"son" => _sonAvatar,
 				"son_sad" => _sonSadAvatar,
 				"wife" => _wifeAvatar,
