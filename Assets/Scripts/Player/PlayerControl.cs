@@ -12,7 +12,6 @@ public class PlayerControl : MonoBehaviour
 
     [Header("��������")]
     public bool tileDestory;
-    public AudioClip tileDestoryClips ; 
 
     [Header("Detectors")]
     [SerializeField] private float X_offset;
@@ -78,7 +77,6 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
-                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -105,7 +103,6 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
-                        GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -133,7 +130,6 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
-                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -160,7 +156,6 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
-                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -196,6 +191,7 @@ public class PlayerControl : MonoBehaviour
         if (other.CompareTag("Tile"))
         {
             tile_Now = other.gameObject;
+            tile_Now.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
 
     }
