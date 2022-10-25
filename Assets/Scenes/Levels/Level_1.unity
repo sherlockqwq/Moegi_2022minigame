@@ -1069,7 +1069,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b6d187df6ecb924b8edb96236ffc527, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54f8c10dc4b046d45a24ff40a69bf78f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1184,6 +1184,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1336256000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4977541
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5192425
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.34484166
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461687145833785642, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900614127853347685, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
+      propertyPath: m_Name
+      value: "bgmPlayer\uFF081-6\uFF09"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7b51b7a4a4255144859e4b137209035, type: 3}
 --- !u!1 &1495587275
 GameObject:
   m_ObjectHideFlags: 0
@@ -6512,6 +6569,7 @@ MonoBehaviour:
   snapToGrid: 1
   gridSize: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  clips: {fileID: 0}
 --- !u!61 &1939929613
 BoxCollider2D:
   m_ObjectHideFlags: 0

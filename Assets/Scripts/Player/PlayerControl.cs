@@ -6,12 +6,13 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed;
 
-    [Header("¸´ÖÆÌåÉèÖÃ")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")]
     public bool haveCopyPlayer;
     public CopyPlayer theCopyPlayer;
 
-    [Header("·½¿éÍÑÂä")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")]
     public bool tileDestory;
+    public AudioClip tileDestoryClips ; 
 
     [Header("Detectors")]
     [SerializeField] private float X_offset;
@@ -25,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject tile_Now;
 
     private Dictionary<TileDetector, Transform> maps = new Dictionary<TileDetector, Transform>();
-    //TileDetectorÓÃÓÚ¼ì²âÊÇ·ñ¿ÉÒÔÒÆ¶¯£¬TranformÊÇ¶ÔÓ¦µÄËÄ¸ö·½ÏòµÄ¸ñ×Ó
+    //TileDetectorï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½Tranformï¿½Ç¶ï¿½Ó¦ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
 
     [SerializeField] public LayerMask groundLayer;
     public float groundRayLength;
@@ -77,6 +78,7 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
+                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -103,6 +105,7 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
+                        GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -130,6 +133,7 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
+                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -156,6 +160,7 @@ public class PlayerControl : MonoBehaviour
 
                 if (tileDestory)
                 {
+                    GameAudio.PlaySFX(tileDestoryClips);
                     Destroy(tile_Now);
                 }
 
@@ -203,7 +208,7 @@ public class PlayerControl : MonoBehaviour
         {
             if(_EnterName == "Player")
             {
-                Debug.Log("Player½øÈë");
+                Debug.Log("Playerï¿½ï¿½ï¿½ï¿½");
                 transform.position = theCopyPlayer.transform.position;
                 Destroy(theCopyPlayer.gameObject);
                 gameObject.name = "CopyPlayer(Clone)";
@@ -211,7 +216,7 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
-                Debug.Log("¸´ÖÆÌåÏÈ½øÈë");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ï¿½");
                 Destroy(theCopyPlayer.gameObject);
                 haveCopyPlayer = false;
             }

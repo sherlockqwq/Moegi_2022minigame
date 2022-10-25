@@ -712,3 +712,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: Level_1
+  sfx: {fileID: 8300000, guid: b2843da34d60c934f82c2ec2ac8e2446, type: 3}

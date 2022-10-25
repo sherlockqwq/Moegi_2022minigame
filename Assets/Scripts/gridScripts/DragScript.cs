@@ -11,7 +11,7 @@ public class DragScript : MonoBehaviour
     [SerializeField] private Vector3 originalPosition;//拖拽前原本的位置
     private PlayerControl player;
 
-
+    public AudioClip clips; 
 
     private BoxCollider2D coll;
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class DragScript : MonoBehaviour
     {
         coll = GetComponent<BoxCollider2D>();
         player = GameObject.Find("Player").GetComponent<PlayerControl>();
+        clips = Resources.Load<AudioClip>("3-重叠脱落音");
 
     }
     void Start()
@@ -127,9 +128,11 @@ public class DragScript : MonoBehaviour
 
                     Destroy(child.getOverlapTile());
                     Destroy(child.gameObject);
+                    GameAudio.PlaySFX(clips);
                 }
                 else if (child.getOverlapTile().CompareTag("X_Tile"))
                 {
+                    GameAudio.PlaySFX(clips);
                     Destroy(child.gameObject);
                 }
 

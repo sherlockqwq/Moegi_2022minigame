@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class collection : MonoBehaviour
 {
+    public AudioClip sfx ; 
     private void Start()
     {
         TileManager.Instance.RegisterCollections(this);
@@ -13,6 +14,7 @@ public class collection : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TileManager.Instance.removeCollection(this);
+            GameAudio.PlaySFX(sfx);
             Destroy(gameObject);
         }
     }
