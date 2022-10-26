@@ -242,7 +242,7 @@ public class PlayerControl : MonoBehaviour
             if (!isSetTile)
             {
                 tile_Now = other.gameObject;
-                tile_Now.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+                //tile_Now.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
             }
 
         }
