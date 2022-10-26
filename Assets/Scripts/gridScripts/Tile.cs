@@ -39,7 +39,7 @@ public class Tile : MonoBehaviour
     {
 
     }
-    public void FadeOut()// Õâ¿éµÄ¹¦ÄÜÃþÁË£¨
+    public void FadeOut()// ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½
     {
         StartCoroutine(FadeOutZoom());
     }
@@ -75,7 +75,7 @@ public class Tile : MonoBehaviour
     {
         if (collision.CompareTag("Tile") && isdragging)
         {
-            /*Debug.Log(name + "½øÈë" + collision.name + "µÄtrigger");*/
+            
             collision.GetComponent<SpriteRenderer>().color = Color.red;
             overlapTile = collision.gameObject;
         }
