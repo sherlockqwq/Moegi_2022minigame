@@ -34,11 +34,7 @@ namespace StoryScene {
 
 			GameAudio.PlaySFX(_transitionSound);
 
-			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
-
-			yield return SceneManager.LoadSceneAsync(_nextScene);
-
-			yield return TransitionManager.Current.HideMaskCoroutine(1.5f);
+			yield return TransitionManager.Current.LoadSceneCoroutine(_nextScene, 1.5f);
 
 			StoryPlayerController.Resume(id);
 		}

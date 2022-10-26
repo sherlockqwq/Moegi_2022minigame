@@ -52,25 +52,21 @@ namespace StoryScene.Scene3 {
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Sofa_Finished");
 
-			StoryPlayerController.Resume(id);	// 恢复控制
+			StoryPlayerController.Resume(id);   // 恢复控制
 
-			StoryPlayerController.Current.CanInteract = false;	// 禁止交互
+			StoryPlayerController.Current.CanInteract = false;  // 禁止交互
 
 			yield return Wait.Seconds(_finishDelay);
 
-			StoryPlayerController.Current.CanInteract = true;	// 允许交互
+			StoryPlayerController.Current.CanInteract = true;   // 允许交互
 
-			StoryPlayerController.Pause(out id);	// 暂停控制
+			StoryPlayerController.Pause(out id);    // 暂停控制
 
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story3_Dialog", "Finished");
 
 			GameAudio.PlaySFX(_transitionSound);
 
-			yield return TransitionManager.Current.ShowMaskCoroutine(1.5f);
-
-			yield return SceneManager.LoadSceneAsync(_nextScene);
-
-			yield return TransitionManager.Current.HideMaskCoroutine(1.5f);
+			yield return TransitionManager.Current.LoadSceneCoroutine(_nextScene, 1.5f);
 
 			StoryPlayerController.Resume(id);
 

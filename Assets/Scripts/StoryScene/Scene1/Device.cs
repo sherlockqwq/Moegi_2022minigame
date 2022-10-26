@@ -37,11 +37,7 @@ namespace StoryScene.Scene1 {
 		}
 
 		IEnumerator SwitchScene() {
-			yield return TransitionManager.Current.ShowMaskCoroutine();
-
-			yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(_toScene);
-
-			yield return TransitionManager.Current.HideMaskCoroutine();
+			yield return TransitionManager.Current.LoadSceneCoroutine(_toScene);
 
 			StoryPlayerController.Resume(_myPauseId);
 		}

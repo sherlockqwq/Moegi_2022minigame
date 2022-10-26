@@ -35,9 +35,11 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    IEnumerator LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-        yield return 1;
+    IEnumerator LoadScene(string sceneName) {
+		yield return StoryScene.TransitionManager.Current.ShowMaskCoroutine();
+
+		yield return SceneManager.LoadSceneAsync(sceneName);
+
+		yield return StoryScene.TransitionManager.Current.HideMaskCoroutine();
     }
 }
