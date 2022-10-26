@@ -14,6 +14,7 @@ public class DragScript : MonoBehaviour
     public AudioClip clips; 
 
     private BoxCollider2D coll;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class DragScript : MonoBehaviour
     }
     private void OnMouseDrag()
     {
+        player.setTile(1);
 
         if (TileManager.Instance.dragNumInScene <= 0 || !isDragable)
             return;
@@ -82,6 +84,8 @@ public class DragScript : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        player.setTile(0);
+
         ChildrenDragFinished();
 
         Cursor.visible = true;
