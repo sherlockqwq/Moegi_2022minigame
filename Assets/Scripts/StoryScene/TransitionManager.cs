@@ -91,6 +91,21 @@ namespace StoryScene {
 
 		#endregion
 
+		#region 场景切换
+
+		public void LoadScene(string sceneName, float fadeTime = 0.5f) {
+			StopFade();
+			LoadSceneCoroutine(sceneName, fadeTime).ApplyTo(this);
+		}
+
+		public IEnumerator LoadSceneCoroutine(string sceneName, float fadeTime = 0.5f) {
+			yield return ShowMaskCoroutine(fadeTime);
+			yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
+			yield return HideMaskCoroutine(fadeTime);
+		}
+
+		#endregion
+
 		/// <summary>
 		/// 停止淡入与淡出
 		/// </summary>

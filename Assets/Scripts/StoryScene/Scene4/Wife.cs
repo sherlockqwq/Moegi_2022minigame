@@ -16,6 +16,7 @@ namespace StoryScene.Scene4 {
 		[SerializeField] private GameObject _confirmPanel;
 		[SerializeField] private VideoPlayer _videoPlayer;
 		[SerializeField, Scene] private string _endScene;
+		[SerializeField] private Transform _2ndPos;
 
 		private IEnumerator Start() {
 			_videoPlayer.gameObject.SetActive(false);
@@ -31,7 +32,8 @@ namespace StoryScene.Scene4 {
 			SetActive(true);
 		}
 
-		public override bool Replaceable => true;
+		private bool _replaceable = true;
+		public override bool Replaceable => _replaceable;
 
 		private bool _firstTouch = true;
 		protected override void OnPlayerTouch() {
@@ -50,17 +52,19 @@ namespace StoryScene.Scene4 {
 		}
 
 		private int _pauseId;
+		private bool _confirmed = false;
+		protected override void OnInteract(StoryPlayerController player) {
+			if (!_confirmed) FirstDialog().ApplyTo(this);
+			else SecondDialog().ApplyTo(this);
+		}
 
-		protected override void OnInteract(StoryPlayerController player) => C().ApplyTo(this);
-
-		IEnumerator C() {
-			SetActive(false);
+		IEnumerator FirstDialog() {
 
 			StoryPlayerController.Pause(out _pauseId);
 			yield return Wait.Seconds(2f);
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story4_Dialog", "TryDelete");
 
-			if (StoryPlayerController.Current.transform.position.x > _stand.position.x) {
+			if (StoryPlayerController.Current.transform.position.x < _stand.position.x) {
 				yield return EasyTools.Gradient.EaseInOut(1f, d => _stand.localScale = new Vector3(1 - 2 * d, 1, 1));
 			}
 			else yield return Wait.Seconds(1f);
@@ -68,19 +72,22 @@ namespace StoryScene.Scene4 {
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story4_Dialog", "DeleteDialog");
 
 			_confirmPanel.SetActive(true);
+			_confirmed = true;
 		}
+
 
 		public void ConfirmDelete() => Delete().ApplyTo(this);
 		IEnumerator Delete() {
 			_confirmPanel.SetActive(false);
 			yield return EasyTools.Gradient.Linear(0.5f, d => _standSp.SetA(1 - d));
+			transform.position = _2ndPos.position;
+			_replaceable = false;
 			yield return EasyTools.Gradient.Linear(0.5f, _downSp.SetA);
 			StoryPlayerController.Resume(_pauseId);
-
-			yield return Wait.Seconds(2f);
-
+		}
+		IEnumerator SecondDialog() {
+			SetActive(false);
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story4_Dialog", "ConfirmDelete");
-
 			yield return ShowEnding(
 				EasyLocalization.Get<string[]>("Ending", "Deleted"),
 				EasyLocalization.Get<string>("Ending", "DeletedEnding")
@@ -89,6 +96,8 @@ namespace StoryScene.Scene4 {
 
 		public void CancelDelete() => Cancel().ApplyTo(this);
 		IEnumerator Cancel() {
+			SetActive(false);
+
 			_confirmPanel.SetActive(false);
 			StoryPlayerController.Resume(_pauseId);
 			yield return DialogManager.Current.ShowEasyLocalizationAndWait("Story4_Dialog", "CancelDelete");
@@ -98,6 +107,7 @@ namespace StoryScene.Scene4 {
 				EasyLocalization.Get<string>("Ending", "KeptEnding")
 			);
 		}
+
 
 		IEnumerator ShowEnding(string[] texts, string ending) {
 			yield return TransitionManager.Current.ShowMaskCoroutine(1f);
@@ -129,17 +139,13 @@ namespace StoryScene.Scene4 {
 
 			// 设置视频
 			_videoPlayer.gameObject.SetActive(true);
-			_videoPlayer.loopPointReached += _ => EasyGameLoop.Do(FadeScene());
+			_videoPlayer.loopPointReached += _ => {
+				StoryPlayerController.Resume(_pauseId);
+				TransitionManager.Current.LoadScene(_endScene, 1f);
+			};
 			_videoPlayer.Prepare();
 			yield return Wait.Until(() => _videoPlayer.isPrepared);
 			_videoPlayer.Play();
-			yield return TransitionManager.Current.HideMaskCoroutine(1f);
-		}
-
-		IEnumerator FadeScene() {
-			StoryPlayerController.Resume(_pauseId);
-			yield return TransitionManager.Current.ShowMaskCoroutine(1f);
-			yield return SceneManager.LoadSceneAsync(_endScene);
 			yield return TransitionManager.Current.HideMaskCoroutine(1f);
 		}
 	}
