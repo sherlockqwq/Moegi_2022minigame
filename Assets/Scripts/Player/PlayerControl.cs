@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] public LayerMask groundLayer;
     public float groundRayLength;
+    [SerializeField] private bool isSetTile = false; 
+
+    [Header("游戏中菜单")]
+    private bool openGameMenu = false;
+    public GameObject gameMenuObject; 
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -44,7 +49,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     public void linkCopyPlayer(CopyPlayer _copy)
@@ -56,10 +61,41 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (openGameMenu)
+            {
+                //关闭
+                CloseGameMenu();
+            }
+            else if (!openGameMenu)
+            {
+                //开启
+                OpenGameMenu();
+            }
+        }
+
         if (MoveInTile())
         {
             FreshDectors();
         }
+    }
+
+    public void OpenGameMenu()
+    {
+        gameMenuObject.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void CloseGameMenu()
+    {
+        gameMenuObject.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     public bool MoveInTile()
@@ -172,6 +208,19 @@ public class PlayerControl : MonoBehaviour
         return result;
     }
 
+    public void setTile(int _mode)
+    {
+        if(_mode == 1)
+        {
+            isSetTile = true;
+        }
+
+        if(_mode == 0)
+        {
+            isSetTile = false; 
+        }
+    }
+
     public void FreshDectors()
     {
         foreach (TileDetector detector in detectors)
@@ -190,8 +239,12 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("Tile"))
         {
-            tile_Now = other.gameObject;
-            tile_Now.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+            if (!isSetTile)
+            {
+                tile_Now = other.gameObject;
+                tile_Now.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
+            }
+
         }
 
     }
