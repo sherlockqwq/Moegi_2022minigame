@@ -85,12 +85,14 @@ public class PlayerControl : MonoBehaviour
     {
         gameMenuObject.SetActive(true);
         Time.timeScale = 0.0f;
+        openGameMenu=!openGameMenu;
     }
 
     public void CloseGameMenu()
     {
         gameMenuObject.SetActive(false);
         Time.timeScale = 1.0f;
+        openGameMenu=!openGameMenu;
     }
 
     public void ExitGame()
